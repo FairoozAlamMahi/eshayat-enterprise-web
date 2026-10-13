@@ -1,0 +1,1236 @@
+import { DivisionId, BilingualText } from "./divisions";
+
+export type ProductStatus = "in_stock" | "available_bulk" | "custom_sourcing";
+
+export interface Product {
+  id: string;
+  slug: string;
+  title: BilingualText;
+  model: string;
+  brand: string;
+  divisionId: DivisionId;
+  subcategoryId: string;
+  image: string;
+  gallery?: string[];
+  status: ProductStatus;
+  certifications: string[];
+  shortDescription: BilingualText;
+  features: {
+    en: string[];
+    bn: string[];
+  };
+  specs?: Record<string, string>;
+  featured: boolean;
+  views?: number;
+  whatsappClicks?: number;
+  createdAt: string;
+}
+
+export const INITIAL_PRODUCTS: Product[] = [
+  // ============================================================================
+  // 1. LAB GLASSWARE & SCIENTIFIC INSTRUMENTS
+  // ============================================================================
+  {
+    id: "prod-schott-duran-reagent-bottles",
+    slug: "schott-duran-borosilicate-reagent-bottles",
+    title: {
+      en: "Laboratory Borosilicate Reagent Bottles (Clear & Amber)",
+      bn: "ল্যাবরেটরি বোরোসিলিকেট রিএজেন্ট বোতল (স্বচ্ছ ও অ্যাম্বার)",
+    },
+    model: "30mL – 2000mL Screw Cap",
+    brand: "Schott Duran / Borosilicate 3.3",
+    divisionId: "lab-glassware",
+    subcategoryId: "reagent-bottles-glassware",
+    image: "/images/products/reagent-bottle.jpg",
+    gallery: [
+      "/images/products/reagent-bottle.jpg",
+      "/images/products/schott-duran-caliper-kit.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["ISO 4796", "Autoclavable", "Borosilicate 3.3"],
+    shortDescription: {
+      en: "Chemical and heat-resistant borosilicate glass reagent bottles in clear and amber with leak-proof GL45 screw caps and pouring rings.",
+      bn: "কেমিক্যাল ও তাপ প্রতিরোধী বোরোসিলিকেট গ্লাসের তৈরি রিএজেন্ট বোতল—লিক-প্রুফ স্ক্রু ক্যাপ এবং স্পষ্ট মাপযুক্ত।",
+    },
+    features: {
+      en: [
+        "Available capacities: 30 mL, 60 mL, 100 mL, 250 mL, 500 mL, 800 mL, 1000 mL & 2000 mL",
+        "High thermal shock resistance and autoclavable at 121°C / 140°C",
+        "Clear and UV-protective amber borosilicate glass options",
+        "Crisp white enamel volume graduations for accurate lab storage",
+      ],
+      bn: [
+        "উপলব্ধ সাইজ: ৩০ মিলি, ৬০ মিলি, ১০০ মিলি, ২৫০ মিলি, ৫০০ মিলি, ৮০০ মিলি, ১০০০ মিলি ও ২০০০ মিলি",
+        "উচ্চ তাপ ও রাসায়নিক প্রতিরোধী এবং অটোক্লেভযোগ্য",
+        "স্বচ্ছ (Clear) এবং অ্যাম্বার (Amber) উভয় গ্লাসে পাওয়া যায়",
+        "নিখুঁত পরিমাপের জন্য স্পষ্ট সাদা দাগ ও লিক-প্রুফ স্ক্রু ক্যাপ",
+      ],
+    },
+    specs: {
+      Material: "Borosilicate Glass 3.3",
+      Sizes: "30mL to 2000mL",
+      Cap: "PP Screw Cap (GL45)",
+      Origin: "Germany / Imported",
+    },
+    featured: true,
+    createdAt: "2026-10-01T10:00:00Z",
+  },
+  {
+    id: "prod-volumetric-pipettes-class-a",
+    slug: "class-a-volumetric-pipettes-borosilicate",
+    title: {
+      en: "Class A Volumetric Transfer Pipettes",
+      bn: "ক্লাস-এ ভলিউমেট্রিক ট্রান্সফার পিপেট",
+    },
+    model: "5mL | 10mL | 20mL | 25mL | 50mL",
+    brand: "Class A Certified Glass",
+    divisionId: "lab-glassware",
+    subcategoryId: "pipettes-liquid-handling",
+    image: "/images/products/volumetric-pipettes-class-a.jpg",
+    status: "in_stock",
+    certifications: ["Class A Accuracy", "TD Calibrated", "Borosilicate"],
+    shortDescription: {
+      en: "High-precision Class A borosilicate volumetric pipettes calibrated to deliver (TD) exact liquid volumes for QC and analytical laboratories.",
+      bn: "নিখুঁত ল্যাবরেটরি পরিমাপের জন্য ক্লাস-এ বোরোসিলিকেট গ্লাসের তৈরি ভলিউমেট্রিক পিপেট।",
+    },
+    features: {
+      en: [
+        "Available volumes: 5 mL, 10 mL, 20 mL, 25 mL, and 50 mL",
+        "Class A high-precision calibration for pharmaceutical QC & analytical labs",
+        "Durable chemical-resistant borosilicate glass construction",
+        "Color-coded bands and sharp permanent graduation lines",
+      ],
+      bn: [
+        "উপলব্ধ সাইজ: ৫ মিলি, ১০ মিলি, ২০ মিলি, ২৫ মিলি এবং ৫০ মিলি",
+        "ফার্মাসিউটিক্যাল কিউসি এবং অ্যানালিটিক্যাল ল্যাবের জন্য ক্লাস-এ অ্যাকুরেসি",
+        "রাসায়নিক প্রতিরোধী উন্নত বোরোসিলিকেট গ্লাস",
+        "সহজে চেনার জন্য কালার-কোডেড ব্যান্ড ও স্পষ্ট দাগ",
+      ],
+    },
+    specs: {
+      Accuracy: "Class A (TD 20°C)",
+      Sizes: "5mL, 10mL, 20mL, 25mL, 50mL",
+      Material: "Borosilicate Glass",
+    },
+    featured: false,
+    createdAt: "2026-10-01T10:05:00Z",
+  },
+  {
+    id: "prod-qiujing-adjustable-micropipette",
+    slug: "adjustable-single-channel-micropipette-20-200ul",
+    title: {
+      en: "Adjustable Digital Micropipette (20–200 µL)",
+      bn: "অ্যাডজাস্টেবল ডিজিটাল মাইক্রোপিপেট (২০–২০০ µL)",
+    },
+    model: "QIUJING / DLAB HiPette 20–200 µL",
+    brand: "QIUJING / DLAB",
+    divisionId: "lab-glassware",
+    subcategoryId: "pipettes-liquid-handling",
+    image: "/images/products/micropipette.jpg",
+    status: "in_stock",
+    certifications: ["ISO 8655 Calibrated", "2-Year Warranty", "CE"],
+    shortDescription: {
+      en: "Ergonomic variable-volume single-channel micropipette with clear 4-digit volume display and 2-year brand warranty.",
+      bn: "সহজ ও নিখুঁত লিকুইড হ্যান্ডলিংয়ের জন্য ডিজিটাল ডিসপ্লে ও ২ বছরের ওয়ারেন্টিসহ অ্যাডজাস্টেবল মাইক্রোপিপেট।",
+    },
+    features: {
+      en: [
+        "Adjustable volume range: 20–200 µL (also available in 10–100 µL & 100–1000 µL)",
+        "Clear digital volume readout and smooth plunger action",
+        "Autoclavable lower tip cone for sterile microbiology work",
+        "Backed by 2-Year Brand Warranty",
+      ],
+      bn: [
+        "ভলিউম রেঞ্জ: ২০–২০০ মাইক্রোলিটার (১০–১০০ ও ১০০–১০০০ µL সাইজেও পাওয়া যায়)",
+        "স্পষ্ট ডিজিটাল ডিসপ্লে এবং আরামদায়ক ও হালকা ডিজাইন",
+        "জীবাণুমুক্ত কাজের জন্য অটোক্লেভযোগ্য টিপ কোন",
+        "২ বছরের অফিসিয়াল ব্র্যান্ড ওয়ারেন্টি",
+      ],
+    },
+    specs: {
+      "Volume Range": "20–200 µL",
+      Channels: "Single Channel",
+      Warranty: "2 Years Brand Warranty",
+    },
+    featured: true,
+    createdAt: "2026-10-01T10:10:00Z",
+  },
+  {
+    id: "prod-discovery-h-pipettes",
+    slug: "discovery-h-single-channel-pipettes-full-range",
+    title: {
+      en: "Discovery-H Single-Channel Laboratory Pipettes",
+      bn: "ডিসকভারি-এইচ সিঙ্গেল-চ্যানেল ল্যাবরেটরি পিপেট",
+    },
+    model: "10–100 µL | 20–200 µL | 100–1000 µL | 0.5–5 mL",
+    brand: "Discovery-H",
+    divisionId: "lab-glassware",
+    subcategoryId: "pipettes-liquid-handling",
+    image: "/images/products/discovery-h-pipettes.jpg",
+    status: "in_stock",
+    certifications: ["ISO 8655", "CE Certified", "Autoclavable"],
+    shortDescription: {
+      en: "Full range of high-precision single-channel laboratory pipettes engineered for pharmaceutical QC, clinical diagnostics, and molecular biology.",
+      bn: "ফার্মাসিউটিক্যাল কিউসি, ডায়াগনস্টিক ল্যাব ও গবেষণার জন্য ডিসকভারি-এইচ সিঙ্গেল-চ্যানেল পিপেট সিরিজ।",
+    },
+    features: {
+      en: [
+        "Complete volume range: 10–100 µL, 20–200 µL, 100–1000 µL, and 0.5–5 mL",
+        "Low plunger force prevents repetitive strain during batch testing",
+        "UV-resistant body and fully autoclavable manifold",
+        "Supplied with individual calibration certificate",
+      ],
+      bn: [
+        "সকল প্রয়োজনীয় সাইজে উপলব্ধ: ১০–১০০ µL, ২০–২০০ µL, ১০০–১০০০ µL এবং ০.৫–৫ মিলি",
+        "দীর্ঘক্ষণ কাজের জন্য হালকা ও আরামদায়ক প্লাঞ্জার মেকানিজম",
+        "ইউভি-প্রতিরোধী বডি এবং সহজে ক্যালিব্রেশন করার সুবিধা",
+        "প্রতিটি পিপেটের সাথে আলাদা ক্যালিব্রেশন সার্টিফিকেট",
+      ],
+    },
+    specs: {
+      Models: "10-100µL, 20-200µL, 100-1000µL, 0.5-5mL",
+      Calibration: "ISO 8655 Tested",
+    },
+    featured: false,
+    createdAt: "2026-10-01T10:15:00Z",
+  },
+  {
+    id: "prod-peristaltic-pump-bt600fc",
+    slug: "peristaltic-pump-bt600fc-cf3000",
+    title: {
+      en: "Intelligent Touch-Screen Peristaltic Pump",
+      bn: "স্মার্ট টাচ-স্ক্রিন পেরিস্টালটিক পাম্প (BT600FC / CF3000)",
+    },
+    model: "BT600FC & CF3000",
+    brand: "Industrial Lab Grade",
+    divisionId: "lab-glassware",
+    subcategoryId: "pumps-scientific-instruments",
+    image: "/images/products/peristaltic-pump.jpg",
+    status: "available_bulk",
+    certifications: ["CE Certified", "ISO 9001", "Pharma Grade"],
+    shortDescription: {
+      en: "Precision fluid transfer peristaltic pump featuring smart color touch-screen control, low-noise motor, and programmable dispensing modes.",
+      bn: "ফার্মাসিউটিক্যাল, কেমিক্যাল ও ল্যাবরেটরিতে নিখুঁত তরল স্থানান্তরের জন্য স্মার্ট টাচ-স্ক্রিন পেরিস্টালটিক পাম্প।",
+    },
+    features: {
+      en: [
+        "Models available: BT600FC & CF3000 high-accuracy fluid transfer systems",
+        "Smart touch-screen interface with flow rate and dispensing volume control",
+        "Contamination-free pumping (liquid only contacts medical-grade tubing)",
+        "Ideal for pharmaceutical filling, chemical dosing, and water treatment",
+      ],
+      bn: [
+        "উপলব্ধ মডেল: BT600FC এবং CF3000 হাই-প্রিসিশন পাম্প",
+        "স্মার্ট কালার টাচ-স্ক্রিন কন্ট্রোল এবং একাধিক ওয়ার্কিং মোড",
+        "দূষণমুক্ত ফ্লুইড ট্রান্সফার ও অত্যন্ত কম শব্দে (Low-noise) পরিচালনা",
+        "ফার্মাসিউটিক্যাল, কেমিক্যাল প্রসেসিং, ফুড ও ওয়াটার ট্রিটমেন্টের জন্য আদর্শ",
+      ],
+    },
+    specs: {
+      Models: "BT600FC / CF3000",
+      Control: "Color Touch Screen",
+      Application: "Pharma, Lab, Chemical Dosing",
+    },
+    featured: true,
+    createdAt: "2026-10-01T10:20:00Z",
+  },
+  {
+    id: "prod-general-lab-glassware-suite",
+    slug: "borosilicate-beakers-flasks-cylinders-glassware",
+    title: {
+      en: "Borosilicate Lab Glassware Suite (Beakers, Flasks & Cylinders)",
+      bn: "ল্যাবরেটরি বোরোসিলিকেট গ্লাসওয়্যার সেট (বিকার, ফ্লাস্ক ও সিলিন্ডার)",
+    },
+    model: "Full Range 10mL – 5000mL",
+    brand: "Borosilicate 3.3",
+    divisionId: "lab-glassware",
+    subcategoryId: "reagent-bottles-glassware",
+    image: "/images/products/lab-glassware-collection.jpg",
+    gallery: [
+      "/images/products/lab-glassware-collection.jpg",
+      "/images/products/lab-accessories-suite.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["Borosilicate 3.3", "ASTM / ISO Standard"],
+    shortDescription: {
+      en: "Complete institutional supply of graduated beakers, Erlenmeyer conical flasks, volumetric flasks, test tubes, burettes, and measuring cylinders.",
+      bn: "গবেষণাগার, হাসপাতাল ও শিক্ষা প্রতিষ্ঠানের জন্য বিকার, কনিক্যাল ফ্লাস্ক, টেস্ট টিউব, ব্যুরেট ও মেজারিং সিলিন্ডারের পূর্ণাঙ্গ সম্ভার।",
+    },
+    features: {
+      en: [
+        "Beakers, Erlenmeyer flasks, volumetric flasks, measuring cylinders & funnels",
+        "Uniform wall thickness for safe laboratory heating and titration",
+        "High resistance to strong acids, alkalis, and thermal shock",
+        "Bulk carton supply for universities, hospitals, and industrial QC labs",
+      ],
+      bn: [
+        "বিকার, ফ্লাস্ক, টেস্ট টিউব, মেজারিং সিলিন্ডার, ব্যুরেট ও ফানেল",
+        "তাপ ও রাসায়নিক বিক্রিয়া সহনশীল উন্নত বোরোসিলিকেট গ্লাস",
+        "স্পষ্ট মাপকাঠি এবং দীর্ঘস্থায়ী ল্যাবরেটরি মান",
+        "বিশ্ববিদ্যালয়, হাসপাতাল ও ফ্যাক্টরি ল্যাবে পাইকারি সরবরাহের সুবিধা",
+      ],
+    },
+    featured: false,
+    createdAt: "2026-10-01T10:25:00Z",
+  },
+
+  // ============================================================================
+  // 2. LAB SOLUTIONS & CONSUMABLES
+  // ============================================================================
+  {
+    id: "prod-autosampler-vials-2ml",
+    slug: "2ml-autosampler-vials-screw-cap-bkmam-wqs",
+    title: {
+      en: "2mL HPLC/GC Autosampler Vials with Screw Cap & Septa",
+      bn: "২ মিলি অটোস্যাম্পলার ভায়াল (স্ক্রু ক্যাপ ও সেপ্টা সহ)",
+    },
+    model: "2mL (32×12mm, 9mm Neck)",
+    brand: "BKMAM® / WQS®",
+    divisionId: "lab-consumables",
+    subcategoryId: "vials-septa",
+    image: "/images/products/autosampler-vials-2ml.jpg",
+    status: "in_stock",
+    certifications: ["HPLC / GC Grade", "ISO 9001", "PTFE / Silicone Septa"],
+    shortDescription: {
+      en: "Clear and amber 2mL borosilicate chromatography autosampler vials with write-on patch, 9mm PP screw cap, and pre-slit/bonded PTFE-silicone septa.",
+      bn: "HPLC ও GC অ্যানালাইসিসের জন্য ২ মিলি ক্লিয়ার ও অ্যাম্বার গ্লাস অটোস্যাম্পলার ভায়াল—PTFE/সিলিকন সেপ্টা এবং লিক-প্রুফ স্ক্রু ক্যাপ সহ।",
+    },
+    features: {
+      en: [
+        "Brands in stock: BKMAM® and WQS® (Clear & Amber glass options)",
+        "Standard dimensions: 2 mL volume, 32 mm height × 12 mm diameter, 9 mm neck",
+        "Chemical-inert PTFE/Silicone septa (6.2 mm thickness) prevents sample evaporation",
+        "Compatible with Agilent, Waters, Shimadzu, and Thermo HPLC/GC autosamplers",
+      ],
+      bn: [
+        "উপলব্ধ ব্র্যান্ড: BKMAM® এবং WQS® (স্বচ্ছ ও অ্যাম্বার গ্লাস)",
+        "মাপ: ২ মিলি ভলিউম, উচ্চতা ৩২ মিমি, ব্যাস ১২ মিমি, নেক ৯ মিমি",
+        "উন্নত PTFE/Silicone Septa যা নমুনার বাষ্পীভবন ও লিক রোধ করে",
+        "সকল আধুনিক HPLC এবং GC অটোস্যাম্পলার মেশিনের সাথে উপযোগী",
+      ],
+    },
+    specs: {
+      Volume: "2 mL",
+      Dimensions: "32mm (H) × 12mm (D), 9mm Neck",
+      Septa: "PTFE / Silicone (6.2mm)",
+      Brands: "BKMAM® | WQS®",
+    },
+    featured: true,
+    createdAt: "2026-10-01T10:30:00Z",
+  },
+  {
+    id: "prod-sterile-petri-dishes-bkmam",
+    slug: "sterile-polystyrene-petri-dishes-bkmam-labshark",
+    title: {
+      en: "Sterile Disposable Polystyrene Petri Dishes",
+      bn: "স্টেরাইল ডিসপোজেবল পেট্রি ডিশ (BKMAM® / Labshark®)",
+    },
+    model: "55mm | 90mm×15mm | 100mm | 150mm",
+    brand: "BKMAM® / BKMANLAB® / Labshark®",
+    divisionId: "lab-consumables",
+    subcategoryId: "petri-dishes-culture",
+    image: "/images/products/petri-dishes-bkmam.jpg",
+    gallery: [
+      "/images/products/petri-dishes-bkmam.jpg",
+      "/images/products/petri-dishes-sterile.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["FDA Approved", "ISO Certified", "CE Certified", "Sterile"],
+    shortDescription: {
+      en: "100% virgin medical-grade polystyrene sterile Petri dishes with crystal-clear optical transparency and flat uniform growth surface.",
+      bn: "মাইক্রোবায়োলজি ও ক্লিনিক্যাল ল্যাবের জন্য ১০০% ভার্জিন পলিস্টাইরিনে তৈরি স্বচ্ছ ও জীবাণুমুক্ত (Sterile) পেট্রি ডিশ।",
+    },
+    features: {
+      en: [
+        "Available diameters: 55 mm, 90 mm × 15 mm, 100 mm, and 150 mm",
+        "Wholesale carton packing: 300 pcs/carton or 500 pcs/carton (90mm), 2000 pcs/carton (55mm)",
+        "EO / Gamma sterilized, DNase/RNase-free, non-pyrogenic",
+        "Vented lids for consistent gas exchange during microbial incubation",
+      ],
+      bn: [
+        "উপলব্ধ সাইজ: ৫৫ মিমি, ৯০ মিমি × ১৫ মিমি, ১০০ মিমি এবং ১৫০ মিমি",
+        "কার্টন প্যাকিং: ৩০০ পিস বা ৫০০ পিস/কার্টন (৯০ মিমি), ২০০০ পিস/কার্টন (৫৫ মিমি)",
+        "FDA, ISO এবং CE সার্টিফাইড—সম্পূর্ণ জীবাণুমুক্ত ও স্বচ্ছ পৃষ্ঠতল",
+        "ডায়াগনস্টিক সেন্টার, ফার্মা কিউসি এবং মাইক্রোবায়োলজি ল্যাবের জন্য আদর্শ",
+      ],
+    },
+    specs: {
+      Material: "100% Virgin Polystyrene",
+      Sizes: "55mm, 90mm, 100mm, 150mm",
+      Packing: "300 / 500 / 2000 PCS per Carton",
+      Certifications: "FDA • ISO • CE",
+    },
+    featured: true,
+    createdAt: "2026-10-01T10:35:00Z",
+  },
+  {
+    id: "prod-kmn-heat-seal-reel",
+    slug: "kmn-medical-sterilization-heat-seal-reel-300mm-200m",
+    title: {
+      en: "KMN® Medical & Lab Sterilization Heat Seal Reel",
+      bn: "KMN® মেডিকেল ও ল্যাব স্টেরিলাইজেশন হিট সিল রিল",
+    },
+    model: "300mm × 200m Flat Roll",
+    brand: "KMN®",
+    divisionId: "lab-consumables",
+    subcategoryId: "sterilization-filtration",
+    image: "/images/products/kmn-heat-seal-reel.jpg",
+    status: "in_stock",
+    certifications: ["ISO 11607", "EN 868-5", "Steam & EO Indicators"],
+    shortDescription: {
+      en: "Heavy-duty medical and pharmaceutical sterilization packaging reel (300mm × 200m) with multi-layer laminated film and microbial barrier paper.",
+      bn: "ফার্মাসিউটিক্যাল, হাসপাতাল ও ল্যাবরেটরি যন্ত্রপাতির নিরাপদ জীবাণুমুক্ত প্যাকিংয়ের জন্য KMN® হিট সিল রিল (৩০০ মিমি × ২০০ মিটার)।",
+    },
+    features: {
+      en: [
+        "Roll dimensions: 300 mm width × 200 meters length",
+        "Strong puncture-resistant transparent film + medical-grade wet-strength paper",
+        "Printed chemical process indicators for Steam Autoclave and EO Gas sterilization",
+        "Clean, fiber-free peel for sterile surgical, hospital, and pharma instruments",
+      ],
+      bn: [
+        "রিল সাইজ: ৩০০ মিমি প্রস্থ × ২০০ মিটার দৈর্ঘ্য",
+        "শক্তিশালী ও লিক-প্রুফ সিলিং যা জীবাণু সংক্রমণ সম্পূর্ণ প্রতিরোধ করে",
+        "স্টিম অটোক্লেভ এবং ইও (EO) গ্যাস ইন্ডিকেটর যুক্ত",
+        "ফার্মাসিউটিক্যাল প্ল্যান্ট, হাসপাতাল ও সার্জিক্যাল যন্ত্রপাতি প্যাকিংয়ের জন্য উপযুক্ত",
+      ],
+    },
+    specs: {
+      Dimensions: "300mm × 200m",
+      Brand: "KMN®",
+      Sterilization: "Steam & Ethylene Oxide (EO)",
+    },
+    featured: false,
+    createdAt: "2026-10-01T10:40:00Z",
+  },
+  {
+    id: "prod-stainless-sintered-mesh-filters",
+    slug: "stainless-steel-sintered-and-mesh-filters",
+    title: {
+      en: "Stainless Steel Sintered & Fine Mesh Filtration Elements",
+      bn: "স্টেইনলেস স্টিল সিন্টারড ও ফাইন মেশ ফিল্টার",
+    },
+    model: "SS 304 / 316L Multi-Layer",
+    brand: "Industrial Filtration",
+    divisionId: "lab-consumables",
+    subcategoryId: "sterilization-filtration",
+    image: "/images/products/sintered-filter.jpg",
+    gallery: [
+      "/images/products/sintered-filter.jpg",
+      "/images/products/stainless-mesh-filter.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["SS 316L Grade", "High-Temp Resistant", "Corrosion Proof"],
+    shortDescription: {
+      en: "Precision stainless steel sintered porous cartridges and fine mesh disc filters for high-temperature, corrosive chemical, and pharmaceutical filtration.",
+      bn: "উচ্চ তাপমাত্রা ও রাসায়নিক পরিস্রাবণের জন্য স্টেইনলেস স্টিল সিন্টারড এবং ফাইন মেশ ফিল্টার।",
+    },
+    features: {
+      en: [
+        "Available in sintered porous metal cylinders and precision woven wire mesh discs",
+        "Exceptional resistance to high temperatures, pressure, and corrosive solvents",
+        "Back-flushable and cleanable for extended industrial service life",
+        "Used across pharma water systems, chemical plants, and gas filtration",
+      ],
+      bn: [
+        "উন্নত স্টেইনলেস স্টিল নির্মিত সিন্টারড কার্ট্রিজ ও ফাইন মেশ ফিল্টার",
+        "মরিচা ও ক্ষয় প্রতিরোধী এবং উচ্চ তাপমাত্রায় দীর্ঘস্থায়ী কার্যকারিতা",
+        "পরিষ্কার করে বারবার ব্যবহারযোগ্য (Reusable)",
+        "ফার্মাসিউটিক্যাল, কেমিক্যাল ও ওয়াটার ফিল্টারেশন সিস্টেমের জন্য আদর্শ",
+      ],
+    },
+    specs: {
+      Material: "SS 304 / SS 316L Stainless Steel",
+      Types: "Sintered Cylinder & Woven Mesh",
+    },
+    featured: false,
+    createdAt: "2026-10-01T10:45:00Z",
+  },
+
+  // ============================================================================
+  // 3. PPE PRODUCTS
+  // ============================================================================
+  {
+    id: "prod-runner-safety-shoes",
+    slug: "runner-industrial-steel-toe-safety-shoes",
+    title: {
+      en: "Runner® Steel-Toe Industrial Safety Shoes",
+      bn: "রানার (Runner®) স্টিল-টো ইন্ডাস্ট্রিয়াল সেফটি সুজ",
+    },
+    model: "Runner® Classic & Knit Series",
+    brand: "Runner® ( & 20+ Enlisted Shoe Brands)",
+    divisionId: "ppe-products",
+    subcategoryId: "safety-footwear",
+    image: "/images/products/safety-shoes-runner.jpg",
+    gallery: [
+      "/images/products/safety-shoes-runner.jpg",
+      "/images/products/runner-shoes-offer.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["200J Steel Toe", "Slip-Resistant", "CE EN ISO 20345"],
+    shortDescription: {
+      en: "Breathable, lightweight steel-toe safety footwear with oil and slip-resistant outsole. Plus wholesale sourcing for 20+ additional shoe brands.",
+      bn: "হালকা, বাতাস চলাচলকারী ও স্লিপ-রেজিস্ট্যান্ট স্টিল-টো সেফটি সুজ। এছাড়াও আমরা অর্ডারে ২০+ ব্র্যান্ডের সেফটি সুজ সরবরাহ করি।",
+    },
+    features: {
+      en: [
+        "Reinforced 200-Joule steel toe cap protects against heavy falling impact",
+        "Anti-slip, oil-resistant, and shock-absorbing PU/rubber outsole",
+        "Available in lace-up leather, slip-on, and breathable sport knit styles",
+        "Note: Beyond Runner®, we source Vaultex, Safety Jogger, Karam & custom factory shoe brands on bulk order",
+      ],
+      bn: [
+        "ভারী আঘাত ও চাপ থেকে পা রক্ষায় শক্তিশালী ২০০-জুল স্টিল-টো ক্যাপ",
+        "তেল ও পিচ্ছিল মেঝেতে নিরাপদ চলাচলের জন্য অ্যান্টি-স্লিপ আউটসোল",
+        "দীর্ঘ সময় আরামদায়কভাবে পরার জন্য বাতাস চলাচলকারী ও হালকা ডিজাইন",
+        "বিশেষ দ্রষ্টব্য: Runner® ছাড়াও আমরা চাহিদা অনুযায়ী যেকোনো ব্র্যান্ডের সেফটি সুজ পাইকারি সরবরাহ করি",
+      ],
+    },
+    specs: {
+      "Toe Cap": "200J Impact Resistant Steel Toe",
+      Outsole: "Dual-Density Anti-Slip PU",
+      Sizes: "EU 38 – 45 (All Sizes)",
+    },
+    featured: true,
+    createdAt: "2026-10-01T10:50:00Z",
+  },
+  {
+    id: "prod-trek-heavy-duty-safety-boots",
+    slug: "trek-haoia-heavy-duty-safety-shoes",
+    title: {
+      en: "Heavy-Duty Puncture-Resistant Safety Boots (Trek / HAOIA)",
+      bn: "হেভি-ডিউটি পাংচার-রেজিস্ট্যান্ট সেফটি বুট (Trek / HAOIA)",
+    },
+    model: "Trek & HAOIA Industrial Series",
+    brand: "Trek / HAOIA",
+    divisionId: "ppe-products",
+    subcategoryId: "safety-footwear",
+    image: "/images/products/safety-shoes-trek.jpg",
+    status: "in_stock",
+    certifications: ["Steel Toe + Midsole", "Puncture Proof", "Oil & Acid Resistant"],
+    shortDescription: {
+      en: "Rugged ankle-support industrial safety boots with steel toe cap and puncture-resistant midsole plate for construction, steel mills, and engineering sites.",
+      bn: "কনস্ট্রাকশন সাইট, স্টিল মিল ও ভারী শিল্পকারখানার জন্য পেরেক ও ধারালো বস্তু প্রতিরোধী হেভি-ডিউটি সেফটি বুট।",
+    },
+    features: {
+      en: [
+        "Steel toe cap + puncture-resistant midsole protects against nails and sharp scrap",
+        "Water-repellent embossed split leather upper with padded collar",
+        "Deep-cleated sole for mud, oil, and uneven construction terrain",
+        "Additional international boot models available on wholesale indent",
+      ],
+      bn: [
+        "স্টিল-টো ক্যাপ এবং নিচ থেকে পেরেক বা ধারালো বস্তু রোধী স্টিল মিডসোল",
+        "পানি ও রাসায়নিক প্রতিরোধী মজবুত চামড়ার আপার",
+        "কনস্ট্রাকশন, ইঞ্জিনিয়ারিং এবং ভারী ফ্যাক্টরির কাজের জন্য বিশেষভাবে তৈরি",
+        "পাইকারি অর্ডারে আরও বিভিন্ন ব্র্যান্ড ও মডেল সরবরাহ করা হয়",
+      ],
+    },
+    specs: {
+      Protection: "Steel Toe + Steel Midsole Plate",
+      Upper: "Embossed Industrial Leather",
+      Application: "Construction, Heavy Industry, Steel",
+    },
+    featured: false,
+    createdAt: "2026-10-01T10:55:00Z",
+  },
+  {
+    id: "prod-autoclave-cleanroom-safety-shoes",
+    slug: "autoclave-cleanroom-pharma-safety-shoes",
+    title: {
+      en: "Autoclave Sterilizable Cleanroom & Pharma Safety Shoes",
+      bn: "অটোক্লেভ যোগ্য ক্লিনরুম ও ফার্মাসিউটিক্যাল সেফটি সুজ",
+    },
+    model: "Sterile Cleanroom Grade",
+    brand: "PharmaClean Series",
+    divisionId: "ppe-products",
+    subcategoryId: "safety-footwear",
+    image: "/images/products/autoclave-safety-shoe.jpg",
+    status: "in_stock",
+    certifications: ["Autoclave Safe 121°C", "Cleanroom Class 100", "Anti-Static"],
+    shortDescription: {
+      en: "Specialized cleanroom and hospital footwear engineered to withstand high-temperature steam autoclave sterilization without deformation.",
+      bn: "ফার্মাসিউটিক্যাল ক্লিনরুম, হাসপাতাল ও ল্যাবরেটরির জন্য উচ্চ তাপমাত্রায় অটোক্লেভ জীবাণুমুক্তকরণ উপযোগী সেফটি সুজ।",
+    },
+    features: {
+      en: [
+        "Withstands repeated high-temperature steam autoclave sterilization cycles",
+        "Non-shedding, chemical-resistant, and anti-slip one-piece molded polymer",
+        "Lightweight ergonomic comfort for sterile pharma operators and hospital staff",
+        "Essential for GMP pharmaceutical plants, aseptic filling rooms, and ICUs",
+      ],
+      bn: [
+        "উচ্চ তাপমাত্রায় অটোক্লেভ মেশিনে বারবার জীবাণুমুক্ত (Sterilize) করার উপযোগী",
+        "কেমিক্যাল প্রতিরোধী, অ্যান্টি-স্লিপ এবং অত্যন্ত হালকা ও আরামদায়ক",
+        "ধূলিকণা বা ফাইবার ছড়ায় না—জিএমপি (GMP) ফার্মা ক্লিনরুমের জন্য অপরিহার্য",
+        "ফার্মাসিউটিক্যাল ইন্ডাস্ট্রি, হাসপাতাল ও মাইক্রোবায়োলজি ল্যাবের জন্য বিশেষভাবে তৈরি",
+      ],
+    },
+    specs: {
+      Sterilization: "Steam Autoclave Compatible",
+      Environment: "GMP Cleanroom, Pharma, Hospital",
+    },
+    featured: true,
+    createdAt: "2026-10-01T11:00:00Z",
+  },
+  {
+    id: "prod-electrical-gloves-1000v",
+    slug: "1000v-electrical-insulating-safety-gloves",
+    title: {
+      en: "1000V Electrical Insulating Safety Gloves (Blue & Green)",
+      bn: "১০০০ ভোল্ট ইলেকট্রিক্যাল ইনসুলেটিং সেফটি গ্লাভস",
+    },
+    model: "1000V Insulated Grip Series",
+    brand: "Eshayat Electrical Safety",
+    divisionId: "ppe-products",
+    subcategoryId: "hand-protection",
+    image: "/images/products/electrical-gloves-1000v.jpg",
+    status: "in_stock",
+    certifications: ["1000V Insulation", "Water & Wear Proof", "Anti-Slip"],
+    shortDescription: {
+      en: "High-protection 1000V dielectric insulating gloves with anti-slip palm coating for electrical panels, substation maintenance, and live wiring.",
+      bn: "বৈদ্যুতিক প্যানেল, সাবস্টেশন ও লাইভ ওয়্যারিংয়ের কাজে ১০০০ ভোল্ট পর্যন্ত সুরক্ষা প্রদানকারী ইনসুলেটেড সেফটি গ্লাভস।",
+    },
+    features: {
+      en: [
+        "Rated for up to 1000V electrical insulation protection",
+        "Available in Blue 1000V and Green 1000V variants",
+        "Textured anti-slip palm coating for precision tool handling",
+        "Water-resistant, tear-proof, and flexible fit for electricians",
+      ],
+      bn: [
+        "১০০০ ভোল্ট পর্যন্ত বৈদ্যুতিক শক প্রতিরোধী ইনসুলেশন সুরক্ষা",
+        "ব্লু (Blue) এবং গ্রিন (Green)—দুটি ভ্যারিয়েন্টে পাওয়া যাচ্ছে",
+        "যন্ত্রপাতি শক্তভাবে ধরার জন্য অ্যান্টি-স্লিপ ও ওয়াটার-রেজিস্ট্যান্ট কোটিং",
+        "ইলেকট্রিক্যাল, কনস্ট্রাকশন ও ইন্ডাস্ট্রিয়াল মেইনটেন্যান্সের জন্য আদর্শ",
+      ],
+    },
+    specs: {
+      "Voltage Rating": "Up to 1000V",
+      Colors: "Blue 1000V / Green 1000V",
+      Coating: "Anti-Slip Dielectric Rubber",
+    },
+    featured: true,
+    createdAt: "2026-10-01T11:05:00Z",
+  },
+  {
+    id: "prod-industrial-chemical-rubber-gloves",
+    slug: "14-inch-industrial-chemical-rubber-hand-gloves",
+    title: {
+      en: "14-Inch Heavy-Duty Chemical Resistant Rubber Gloves",
+      bn: "১৪-ইঞ্চি হেভি-ডিউটি কেমিক্যাল রেজিস্ট্যান্ট রাবার গ্লাভস",
+    },
+    model: "35cm Length × 20cm Opening",
+    brand: "Industrial Grade",
+    divisionId: "ppe-products",
+    subcategoryId: "hand-protection",
+    image: "/images/products/rubber-gloves.jpg",
+    status: "in_stock",
+    certifications: ["EN 374 Chemical", "Acid & Alkali Proof", "Lab Tested"],
+    shortDescription: {
+      en: "Extended 14-inch (35 cm) gauntlet rubber gloves protecting hands and forearms against strong acids, alkalis, oils, and industrial solvents.",
+      bn: "অ্যাসিড, ক্ষার, তেল ও কেমিক্যাল থেকে হাত ও কব্জি সুরক্ষিত রাখতে ১৪ ইঞ্চি (৩৫ সেমি) লম্বা হেভি-ডিউটি রাবার গ্লাভস।",
+    },
+    features: {
+      en: [
+        "Extended 14-inch (35 cm) length with 20 cm cuff opening for forearm splash protection",
+        "Resistant to concentrated acids, caustic alkalis, oils, and chemical solvents",
+        "Abrasion, cut, and puncture resistant natural/nitrile rubber compound",
+        "Textured palm grip for handling wet glassware and chemical drums",
+      ],
+      bn: [
+        "১৪ ইঞ্চি (৩৫ সেমি) দৈর্ঘ্য যা হাত ও কনুইয়ের নিচ পর্যন্ত রাসায়নিক ছিটা থেকে রক্ষা করে",
+        "অ্যাসিড, ক্ষার, তেল ও সলভেন্ট প্রতিরোধী পুরু রাবার",
+        "ভেজা বা পিচ্ছিল বোতল ও ড্রাম ধরার জন্য গ্রিপ যুক্ত তালু",
+        "কেমিক্যাল ফ্যাক্টরি, ল্যাবরেটরি এবং ক্লিনিং কাজের জন্য অপরিহার্য",
+      ],
+    },
+    specs: {
+      Length: "14 Inch (35 cm)",
+      "Opening Diameter": "20 cm",
+      Protection: "Acids, Oils, Solvents & Abrasion",
+    },
+    featured: false,
+    createdAt: "2026-10-01T11:10:00Z",
+  },
+  {
+    id: "prod-reusable-half-face-respirator",
+    slug: "en140-reusable-half-face-respirator-mask-and-filters",
+    title: {
+      en: "Reusable Half-Face Respirator Mask & Cartridge Filters",
+      bn: "রিইউজেবল হাফ-ফেস রেসপিরেটর মাস্ক ও কার্ট্রিজ ফিল্টার",
+    },
+    model: "EN 140:1998 Dual-Filter System",
+    brand: "CE Certified Respiratory",
+    divisionId: "ppe-products",
+    subcategoryId: "respiratory-masks",
+    image: "/images/products/respirator.jpg",
+    gallery: [
+      "/images/products/respirator.jpg",
+      "/images/products/respirator-filters.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["EN 140:1998", "CE Certified", "Dual Cartridge"],
+    shortDescription: {
+      en: "EN 140:1998 certified reusable elastomeric half-face respirator mask with replaceable gas, organic vapor, acid gas, and particulate filters.",
+      bn: "ধূলিকণা, রাসায়নিক ধোঁয়া ও ক্ষতিকর গ্যাস থেকে শ্বাসযন্ত্রের সুরক্ষায় EN 140:1998 প্রত্যয়িত রিইউজেবল রেসপিরেটর মাস্ক ও ফিল্টার।",
+    },
+    features: {
+      en: [
+        "Certified to EN 140:1998 standard with soft, airtight thermoplastic face seal",
+        "Compatible with Gas/Vapor, Combined, Particulate, and Pre-filter cartridges",
+        "Low-resistance exhalation valve reduces heat and moisture buildup",
+        "Adjustable 4-point head cradle for chemical, paint spray, and cement plants",
+      ],
+      bn: [
+        "EN 140:1998 এবং CE সার্টিফাইড—মুখের সাথে আরামদায়ক ও এয়ারটাইট ফিট",
+        "গ্যাস/ভেপার, পার্টিকুলেট এবং কম্বাইন্ড ফিল্টার কার্ট্রিজ প্রতিস্থাপনযোগ্য",
+        "সহজে শ্বাস নেওয়ার জন্য লো-রেজিস্ট্যান্স এক্সহেলেশন ভালভ",
+        "কেমিক্যাল, পেইন্টিং, সিমেন্ট, গার্মেন্টস ও ল্যাবরেটরি কাজের জন্য উপযুক্ত",
+      ],
+    },
+    specs: {
+      Standard: "EN 140:1998 & CE",
+      Filters: "Gas/Vapor, Combined & Particulate",
+      Type: "Reusable Half-Face",
+    },
+    featured: true,
+    createdAt: "2026-10-01T11:15:00Z",
+  },
+  {
+    id: "prod-karam-es71-welding-face-shield",
+    slug: "karam-es71-helmet-mounted-welding-face-shield",
+    title: {
+      en: "Welding Face Shield with Flip-Front Lens (Karam ES 71)",
+      bn: "ওয়েল্ডিং ফেস শিল্ড – ফ্লিপ-ফ্রন্ট লেন্স (Karam ES 71)",
+    },
+    model: "KARAM ES 71",
+    brand: "Karam",
+    divisionId: "ppe-products",
+    subcategoryId: "eye-face-hearing",
+    image: "/images/products/welding-face-shield.jpg",
+    status: "in_stock",
+    certifications: ["CE Certified", "EN 175", "Polycarbonate Lens"],
+    shortDescription: {
+      en: "Heavy-duty polypropylene welding shield with flip-up yellow inspection window and universal adjustable helmet-mounting brackets.",
+      bn: "ওয়েল্ডিং স্পার্ক, তাপ ও ক্ষতিকর রশ্মি থেকে চোখ ও মুখের সম্পূর্ণ সুরক্ষার জন্য Karam ES 71 ওয়েল্ডিং ফেস শিল্ড।",
+    },
+    features: {
+      en: [
+        "Flip-front yellow window frame allows quick weld inspection without lifting hood",
+        "High-impact polycarbonate lens and heat-resistant polypropylene shell",
+        "Adjustable helmet-mounting brackets with heavy-duty tightening knobs",
+        "CE EN 175 certified for arc welding, cutting, and grinding",
+      ],
+      bn: [
+        "সহজে ওয়েল্ডিং পরীক্ষা করার জন্য ফ্লিপ-ফ্রন্ট হলুদ উইন্ডো ফ্রেম",
+        "হাই-ইমপ্যাক্ট পলিকার্বোনেট লেন্স এবং তাপ-প্রতিরোধী পলিপ্রোপিলিন শেল",
+        "সেফটি হেলমেটের সাথে যুক্ত করার জন্য অ্যাডজাস্টেবল ব্র্যাকেট ও নব",
+        "CE EN 175 প্রত্যয়িত—আর্ক ওয়েল্ডিং, কাটিং ও গ্রাইন্ডিংয়ের জন্য আদর্শ",
+      ],
+    },
+    specs: {
+      Model: "KARAM ES 71",
+      Shell: "High-Impact Polypropylene",
+      Mounting: "Universal Helmet Bracket",
+    },
+    featured: false,
+    createdAt: "2026-10-01T11:20:00Z",
+  },
+  {
+    id: "prod-protective-eyewear-goggles",
+    slug: "industrial-safety-goggles-and-1710in-eyewear",
+    title: {
+      en: "Anti-Splash Chemical Safety Goggles & 1710IN Eyewear",
+      bn: "অ্যান্টি-স্প্ল্যাশ কেমিক্যাল সেফটি গগলস ও প্রোটেক্টিভ আইওয়্যার",
+    },
+    model: "1710IN & Indirect-Vent Goggles",
+    brand: "Industrial Eye Safety",
+    divisionId: "ppe-products",
+    subcategoryId: "eye-face-hearing",
+    image: "/images/products/safety-goggles-chemical.jpg",
+    gallery: [
+      "/images/products/safety-goggles-chemical.jpg",
+      "/images/products/protective-eyewear-1710in.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["ANSI Z87.1", "Anti-Fog", "UV & Splash Protection"],
+    shortDescription: {
+      en: "Panoramic indirect-vent chemical splash goggles and lightweight polycarbonate safety spectacles for lab technicians and factory workers.",
+      bn: "ধূলিকণা, কেমিক্যাল ছিটা ও আঘাত থেকে চোখ রক্ষায় প্যানোরামিক সেফটি গগলস এবং হালকা প্রোটেক্টিভ চশমা।",
+    },
+    features: {
+      en: [
+        "Available in full-seal chemical splash goggles and 1710IN wrap-around spectacles",
+        "Scratch-resistant, anti-fog polycarbonate lens with wide field of vision",
+        "Fits comfortably over prescription glasses",
+        "Suitable for pharmaceutical labs, chemical handling, and mechanical workshops",
+      ],
+      bn: [
+        "ফুল-সিল কেমিক্যাল গগলস এবং 1710IN প্রোটেক্টিভ আইওয়্যার উভয় মডেলে উপলব্ধ",
+        "স্ক্র্যাচ ও কুয়াশা প্রতিরোধী (Anti-Fog) স্বচ্ছ পলিকার্বোনেট লেন্স",
+        "পাওয়ার চশমার ওপরেও আরামদায়কভাবে পরা যায়",
+        "ল্যাবরেটরি, কেমিক্যাল ও মেকানিক্যাল কাজের জন্য অপরিহার্য",
+      ],
+    },
+    featured: false,
+    createdAt: "2026-10-01T11:25:00Z",
+  },
+  {
+    id: "prod-industrial-ear-muff",
+    slug: "high-nrr-industrial-noise-reduction-ear-muff",
+    title: {
+      en: "High-NRR Industrial Hearing Protection Ear Muff",
+      bn: "হাই-এনআরআর (NRR) ইন্ডাস্ট্রিয়াল ইয়ার মাফ",
+    },
+    model: "Heavy-Duty Cushioned Headband",
+    brand: "Industrial Hearing Safety",
+    divisionId: "ppe-products",
+    subcategoryId: "eye-face-hearing",
+    image: "/images/products/ear-muff.jpg",
+    status: "in_stock",
+    certifications: ["High NRR Rating", "CE EN 352-1"],
+    shortDescription: {
+      en: "Acoustic foam-cushioned industrial ear muffs with padded adjustable headband for generator rooms, textile mills, and heavy machinery.",
+      bn: "জেনারেটর রুম, টেক্সটাইল মিল ও উচ্চ শব্দযুক্ত ফ্যাক্টরিতে কানের সুরক্ষায় আরামদায়ক ইন্ডাস্ট্রিয়াল ইয়ার মাফ।",
+    },
+    features: {
+      en: [
+        "High Noise Reduction Rating (NRR) attenuates harmful industrial decibel levels",
+        "Soft foam-filled ear cushions provide an acoustic seal without ear fatigue",
+        "Pivoting cups and adjustable headband fit all head sizes and hard hats",
+        "Ideal for power plants, spinning mills, stamping presses, and airports",
+      ],
+      bn: [
+        "উচ্চ মাত্রার শব্দ কমিয়ে শ্রবণশক্তি সুরক্ষিত রাখে (High NRR)",
+        "নরম ফোম কুশন ও অ্যাডজাস্টেবল হেডব্যান্ড দীর্ঘক্ষণ ব্যবহারেও আরামদায়ক",
+        "হালকা ও মজবুত গঠন যা প্রতিদিন ফ্যাক্টরি ব্যবহারের উপযোগী",
+        "পাওয়ার প্ল্যান্ট, টেক্সটাইল ও স্পিনিং মিল এবং ইঞ্জিনিয়ারিং ওয়ার্কশপের জন্য আদর্শ",
+      ],
+    },
+    featured: false,
+    createdAt: "2026-10-01T11:30:00Z",
+  },
+  {
+    id: "prod-en50365-safety-helmet-visor",
+    slug: "en50365-electrically-insulating-safety-helmet-with-visor",
+    title: {
+      en: "EN 50365 Electrically Insulating Safety Helmet with Visor",
+      bn: "EN 50365 ইলেকট্রিক্যাল ইনসুলেটিং সেফটি হেলমেট (ভাইজর সহ)",
+    },
+    model: "Class 0 (1000V AC / 1500V DC) + ABS Shell",
+    brand: "Eshayat Safety (Custom Logo Available)",
+    divisionId: "ppe-products",
+    subcategoryId: "head-body-fall",
+    image: "/images/products/safety-helmet-en50365.jpg",
+    gallery: [
+      "/images/products/safety-helmet-en50365.jpg",
+      "/images/products/safety-helmet-visor.jpg",
+      "/images/products/industrial-safety-helmets.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["EN 50365:2002 Class 0", "1000V AC / 1500V DC", "ABS Shell"],
+    shortDescription: {
+      en: "High-impact ABS safety helmets with 6-point ratchet suspension, chin strap, and retractable clear visor. Custom company logo printing available.",
+      bn: "হাই-ইমপ্যাক্ট এবিএস শেল, ৬-পয়েন্ট সাসপেনশন এবং বিল্ট-ইন ক্লিয়ার ভাইজর যুক্ত EN 50365 সেফটি হেলমেট। কোম্পানির কাস্টম লোগো প্রিন্টিং সুবিধা।",
+    },
+    features: {
+      en: [
+        "EN 50365:2002 Class 0 rated for electrical insulation up to 1000V AC / 1500V DC",
+        "Available in standard HDPE/ABS, transparent high-impact shell, and retractable visor models",
+        "6-point shock-absorbing suspension harness with ratchet knob and chin strap",
+        "Corporate OEM/ODM service: Custom company logo printing and custom colors on bulk orders",
+      ],
+      bn: [
+        "EN 50365:2002 Class 0 প্রত্যয়িত (১০০০ ভোল্ট এসি / ১৫০০ ভোল্ট ডিসি পর্যন্ত বৈদ্যুতিক সুরক্ষা)",
+        "হাই-ইমপ্যাক্ট এবিএস (ABS) শেল, ৬-পয়েন্ট র‍্যাচেট সাসপেনশন ও চিন স্ট্র্যাপ",
+        "চোখের বাড়তি সুরক্ষার জন্য যুক্ত ক্লিয়ার ভাইজর (Visor) মডেল উপলব্ধ",
+        "কর্পোরেট অর্ডারে আপনার কোম্পানির নিজস্ব লোগো ও রঙ কাস্টমাইজ করার সুবিধা",
+      ],
+    },
+    specs: {
+      Standard: "EN 50365:2002 Class 0",
+      Shell: "High-Impact ABS",
+      Suspension: "6-Point Ratchet + Chin Strap",
+      Customization: "Custom Logo & Color Available",
+    },
+    featured: true,
+    createdAt: "2026-10-01T11:35:00Z",
+  },
+  {
+    id: "prod-high-vis-reflective-vest",
+    slug: "high-visibility-reflective-safety-vest-orange-yellow",
+    title: {
+      en: "High-Visibility Reflective Safety Vest (Orange & Neon Yellow)",
+      bn: "হাই-ভিজিবিলিটি রিফ্লেক্টিভ সেফটি ভেস্ট (অরেঞ্জ ও ইয়েলো)",
+    },
+    model: "Zipper Front with 2\" Reflective Tape",
+    brand: "Industrial Visibility",
+    divisionId: "ppe-products",
+    subcategoryId: "head-body-fall",
+    image: "/images/products/safety-vest.jpg",
+    status: "in_stock",
+    certifications: ["EN ISO 20471", "360° Reflective", "Breathable Mesh"],
+    shortDescription: {
+      en: "Fluorescent orange and neon yellow safety vests with high-intensity retro-reflective stripes, front zipper, and multi-pocket utility layout.",
+      bn: "দিনে ও রাতে দূর থেকে স্পষ্ট দৃশ্যমানতার জন্য রিফ্লেক্টিভ স্ট্রাইপ ও জিপার যুক্ত হাই-ভিজিবিলিটি সেফটি ভেস্ট।",
+    },
+    features: {
+      en: [
+        "Available in high-visibility Fluorescent Orange and Neon Yellow",
+        "360-degree 50mm retro-reflective strips for night and low-light safety",
+        "Breathable polyester mesh/tricote fabric with heavy-duty front zipper",
+        "Custom company name/logo screen printing available for corporate teams",
+      ],
+      bn: [
+        "উজ্জ্বল অরেঞ্জ এবং নিওন ইয়েলো—দুটি রঙে পাওয়া যাচ্ছে",
+        "রাতের অন্ধকারে বা কম আলোতে ৩৬০-ডিগ্রি দৃশ্যমানতার জন্য রিফ্লেক্টিভ টেপ",
+        "বাতাস চলাচলকারী হালকা কাপড় ও মজবুত ফ্রন্ট জিপার",
+        "কনস্ট্রাকশন টিম, ট্রাফিক, ওয়্যারহাউস ও ফ্যাক্টরির জন্য লোগো প্রিন্ট করার সুবিধা",
+      ],
+    },
+    featured: false,
+    createdAt: "2026-10-01T11:40:00Z",
+  },
+  {
+    id: "prod-full-body-safety-harness",
+    slug: "full-body-fall-arrest-safety-harness-with-lanyard",
+    title: {
+      en: "Full-Body Fall Arrest Safety Harness with Shock Lanyard",
+      bn: "ফুল-বডি ফল অ্যারেস্ট সেফটি হারনেস (শক ল্যানইয়ার্ড সহ)",
+    },
+    model: "5-Point Adjustable + Double Hook",
+    brand: "Height Safety Certified",
+    divisionId: "ppe-products",
+    subcategoryId: "head-body-fall",
+    image: "/images/products/full-body-safety-harness.jpg",
+    status: "in_stock",
+    certifications: ["CE EN 361", "EN 355 Shock Absorber", "High-Tensile Webbing"],
+    shortDescription: {
+      en: "Heavy-duty 5-point full-body fall protection harness with dorsal D-ring, energy-absorbing lanyard, and forged steel scaffold hooks.",
+      bn: "উঁচু ভবন, টাওয়ার বা ফ্যাক্টরিতে ঝুঁকিপূর্ণ কাজের নিরাপত্তায় ফুল-বডি সেফটি হারনেস ও শক-অ্যাবজরবিং ল্যানইয়ার্ড।",
+    },
+    features: {
+      en: [
+        "High-tenacity polyester webbing with reinforced contrast stitching",
+        "Dorsal forged alloy steel D-ring for fall arrest + chest attachment loops",
+        "Adjustable chest, shoulder, and thigh straps for secure ergonomic fit",
+        "Available with single or twin-leg shock-absorbing scaffold hook lanyards",
+      ],
+      bn: [
+        "উচ্চ ক্ষমতাসম্পন্ন পলিয়েস্টার ওয়েবিং এবং মজবুত স্টিচিং",
+        "পিঠে ফোর্জড অ্যালয় স্টিলের ডি-রিং (D-Ring) এবং ডাবল স্ক্যাফোল্ড হুক",
+        "বুক, কাঁধ ও পায়ের ফিতা সহজে ছোট-বড় করার সুবিধা",
+        "কনস্ট্রাকশন, টাওয়ার ও মেইনটেন্যান্স কাজে উঁচু স্থান থেকে পড়া রোধ করে",
+      ],
+    },
+    featured: false,
+    createdAt: "2026-10-01T11:45:00Z",
+  },
+
+  // ============================================================================
+  // 4. INDUSTRIAL SAFETY ITEMS
+  // ============================================================================
+  {
+    id: "prod-emergency-shower-eyewash-station",
+    slug: "stainless-steel-emergency-safety-shower-and-eyewash-station",
+    title: {
+      en: "Stainless Steel Emergency Safety Shower & Dual Eyewash Station",
+      bn: "স্টেইনলেস স্টিল ইমার্জেন্সি সেফটি শাওয়ার ও ডুয়াল আইওয়াশ স্টেশন",
+    },
+    model: "SS 304 Industrial Combination Unit",
+    brand: "ANSI Z358.1 Compliant",
+    divisionId: "industrial-safety",
+    subcategoryId: "emergency-shower-eyewash",
+    image: "/images/products/eyewash-station.jpg",
+    status: "in_stock",
+    certifications: ["ANSI Z358.1", "SS 304 Stainless", "Factory Audit Approved"],
+    shortDescription: {
+      en: "Corrosion-resistant SS 304 combination emergency drench shower and dual-nozzle eyewash station for rapid chemical spill decontamination.",
+      bn: "কেমিক্যাল বা অ্যাসিড দুর্ঘটনায় তাৎক্ষণিক চোখ ও শরীর ধোয়ার জন্য স্টেইনলেস স্টিল ইমার্জেন্সি সেফটি শাওয়ার ও আইওয়াশ স্টেশন।",
+    },
+    features: {
+      en: [
+        "Heavy-duty corrosion-resistant 304 stainless steel piping, bowl, and shower head",
+        "Instant pull-rod overhead body drench shower + push-plate/foot-pedal dual eyewash",
+        "Aerated soft-flow eyewash nozzles with flip-off dust covers",
+        "Mandatory compliance fixture for pharmaceutical plants, chemical stores, and RMG boilers",
+      ],
+      bn: [
+        "মরিচা ও অ্যাসিড প্রতিরোধী হেভি-ডিউটি ৩০৪ স্টেইনলেস স্টিল বডি",
+        "তাৎক্ষণিক ফুল-বডি শাওয়ারের জন্য পুল-রড এবং চোখের জন্য ডুয়াল নজল ও ফুট পেডাল",
+        "ধূলিকণা রোধী কভার সহ চোখের জন্য মৃদু ও নিরাপদ পানির প্রবাহ",
+        "ফার্মাসিউটিক্যাল প্ল্যান্ট, ল্যাবরেটরি ও কেমিক্যাল ফ্যাক্টরির কমপ্লায়েন্সের জন্য অপরিহার্য",
+      ],
+    },
+    specs: {
+      Material: "304 Stainless Steel (Corrosion Proof)",
+      Activation: "Pull Rod (Shower) + Push Handle & Foot Pedal (Eyewash)",
+      Standard: "ANSI Z358.1 / EN 15154",
+    },
+    featured: true,
+    createdAt: "2026-10-01T11:50:00Z",
+  },
+  {
+    id: "prod-electrical-isolation-mat",
+    slug: "high-voltage-electrical-switchboard-isolation-mat",
+    title: {
+      en: "High-Voltage Electrical Switchboard Isolation Mat",
+      bn: "হাই-ভোল্টেজ ইলেকট্রিক্যাল সুইচবোর্ড আইসোলেশন ম্যাট",
+    },
+    model: "IEC 61111 / IS 15652 Dielectric Rubber",
+    brand: "Substation Grade",
+    divisionId: "industrial-safety",
+    subcategoryId: "electrical-safety-mats",
+    image: "/images/products/isolation-mat.jpg",
+    status: "in_stock",
+    certifications: ["High Dielectric Strength", "Anti-Slip Ribbed", "Flame Retardant"],
+    shortDescription: {
+      en: "Heavy-duty insulating anti-slip elastomer floor matting for HT/LT electrical panels, substation switchboards, transformer rooms, and control rooms.",
+      bn: "সাবস্টেশন, এইচটি/এলটি সুইচগিয়ার ও কন্ট্রোল রুমের মেঝেতে বৈদ্যুতিক শক প্রতিরোধের জন্য হাই-ভোল্টেজ ইলেকট্রিক্যাল আইসোলেশন ম্যাট।",
+    },
+    features: {
+      en: [
+        "High dielectric insulation strength protects operators standing in front of live panels",
+        "Fine ribbed anti-slip textured surface prevents workplace slipping hazards",
+        "Oil, acid, moisture, and flame retardant synthetic elastomer compound",
+        "Supplied in custom roll lengths and thicknesses for factory compliance audits",
+      ],
+      bn: [
+        "উচ্চ ভোল্টেজ সুইচবোর্ড ও কন্ট্রোল প্যানেলের সামনে দাঁড়িয়ে কাজ করার শতভাগ বৈদ্যুতিক সুরক্ষা",
+        "পিচ্ছিল রোধী রিবড (Ribbed) অ্যান্টি-স্লিপ টেক্সচার্ড সারফেস",
+        "তেল, অ্যাসিড, আর্দ্রতা ও আগুন প্রতিরোধী দীর্ঘস্থায়ী রাবার ম্যাট",
+        "পাওয়ার প্ল্যান্ট, সাবস্টেশন ও ফ্যাক্টরি ইলেকট্রিক্যাল রুমের জন্য কাস্টম সাইজে সরবরাহযোগ্য",
+      ],
+    },
+    specs: {
+      Surface: "Anti-Slip Ribbed / Textured",
+      Application: "HT/LT Switchgear, Control Panels, Substations",
+    },
+    featured: true,
+    createdAt: "2026-10-01T11:55:00Z",
+  },
+  {
+    id: "prod-fire-protection-equipment-suite",
+    slug: "fire-blankets-cabinets-extinguishers-and-firefighting-gear",
+    title: {
+      en: "Fire Blankets, Hose Cabinets & Firefighting Equipment Suite",
+      bn: "ফায়ার ব্ল্যাঙ্কেট, ক্যাবিনেট, এক্সটিংগুইশার ও ফায়ার সেফটি সরঞ্জাম",
+    },
+    model: "1.2×1.8m Blanket | Cabinets | Extinguishers | Boots",
+    brand: "Fire Defense Solutions",
+    divisionId: "industrial-safety",
+    subcategoryId: "fire-protection",
+    image: "/images/products/fire-protection.jpg",
+    gallery: [
+      "/images/products/fire-protection.jpg",
+      "/images/products/fire-extinguisher.jpg",
+      "/images/products/fire-safety-full-suite.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["EN 1869 Fire Blanket", "FSCD Audit Compliant", "CE"],
+    shortDescription: {
+      en: "Complete workplace fire protection supply: fiberglass fire blankets (1.2×1.8m), ABC/CO2 fire extinguishers, fire hose cabinets, fire boots, helmets, and bolt cutters.",
+      bn: "ফ্যাক্টরি, ওয়্যারহাউস ও ভবনের অগ্নি নিরাপত্তায় ফায়ার ব্ল্যাঙ্কেট, ফায়ার এক্সটিংগুইশার, ফায়ার ক্যাবিনেট, হেলমেট, বুট ও বোল্ট কাটার।",
+    },
+    features: {
+      en: [
+        "Fiberglass Fire Blankets (1.2 m × 1.8 m) in quick-release hard/soft PVC cases",
+        "ABC Dry Powder, CO2, and Foam Fire Extinguishers with refilling & mounting brackets",
+        "Heavy-gauge red powder-coated Fire Hose Cabinets, Fire Boots, and Fire Helmets",
+        "Emergency response tools: Fire Sand Shovels, Fire Axes, Bolt Cutters & Escape Ladders",
+      ],
+      bn: [
+        "ফাইবারগ্লাস ফায়ার ব্ল্যাঙ্কেট (১.২ × ১.৮ মিটার)—দ্রুত ব্যবহারের উপযোগী কেস সহ",
+        "এবিসি (ABC) ড্রাই পাউডার, CO2 এবং ফোম ফায়ার এক্সটিংগুইশার",
+        "ফায়ার হোস ক্যাবিনেট, ফায়ার ফাইটিং হেলমেট, গ্লাভস ও ফায়ার বুট",
+        "জরুরি উদ্ধার সরঞ্জাম: ফায়ার বেলচা, কুড়াল, বোল্ট কাটার এবং এস্কেপ ল্যাডার",
+      ],
+    },
+    specs: {
+      "Fire Blanket": "1.2m × 1.8m Fiberglass",
+      Range: "Extinguishers, Cabinets, Boots, Helmets, Tools",
+    },
+    featured: true,
+    createdAt: "2026-10-01T12:00:00Z",
+  },
+
+  // ============================================================================
+  // 5. MRO ITEMS
+  // ============================================================================
+  {
+    id: "prod-saft-ls17500-lithium-battery",
+    slug: "saft-ls-17500-3-6v-li-socl2-industrial-lithium-battery",
+    title: {
+      en: "SAFT LS 17500 (3.6V Li-SOCl₂) Industrial Lithium Battery",
+      bn: "SAFT LS 17500 (৩.৬ ভোল্ট Li-SOCl₂) ইন্ডাস্ট্রিয়াল লিথিয়াম ব্যাটারি",
+    },
+    model: "LS 17500 (A-Size 3.6V Primary Lithium)",
+    brand: "SAFT (Made in France)",
+    divisionId: "mro-items",
+    subcategoryId: "industrial-batteries",
+    image: "/images/products/lithium-battery.jpg",
+    status: "in_stock",
+    certifications: ["Original SAFT", "3.6V Li-SOCl2", "UL & IEC Certified"],
+    shortDescription: {
+      en: "Genuine SAFT LS 17500 3.6V Lithium-Thionyl Chloride battery for industrial PLC memory backup, smart utility meters, CNC machines, and IoT sensors.",
+      bn: "পিএলসি মেমোরি ব্যাকআপ, স্মার্ট মিটার, সিএনসি মেশিন ও ইন্ডাস্ট্রিয়াল আইওটি ডিভাইসের জন্য আসল SAFT LS 17500 ৩.৬ ভোল্ট লিথিয়াম ব্যাটারি।",
+    },
+    features: {
+      en: [
+        "Nominal voltage: 3.6V Lithium-Thionyl Chloride (Li-SOCl₂) high energy density cell",
+        "10+ year shelf life with ultra-low self-discharge rate (< 1% per year)",
+        "Wide operating temperature range (-60°C to +85°C)",
+        "Ideal for utility smart meters, PLC/CNC memory backup, telemetry, and security systems",
+      ],
+      bn: [
+        "৩.৬ ভোল্ট লিথিয়াম-থায়োনিল ক্লোরাইড (Li-SOCl₂) হাই এনার্জি ডেনসিটি ব্যাটারি",
+        "১০ বছরের অধিক শেলফ-লাইফ এবং অত্যন্ত কম সেলফ-ডিসচার্জ",
+        "-৬০°C থেকে +৮৫°C তাপমাত্রায় নিরবচ্ছিন্নভাবে কাজ করতে সক্ষম",
+        "স্মার্ট মিটার, পিএলসি মেমোরি ব্যাকআপ, ট্র্যাকিং ও ইন্ডাস্ট্রিয়াল যন্ত্রপাতির জন্য আদর্শ",
+      ],
+    },
+    specs: {
+      Model: "SAFT LS 17500",
+      Chemistry: "3.6V Li-SOCl₂ (Lithium-Thionyl Chloride)",
+      Size: "A-Size (17.1mm × 50.9mm)",
+      Origin: "France",
+    },
+    featured: true,
+    createdAt: "2026-10-01T12:05:00Z",
+  },
+  {
+    id: "prod-stainless-digital-caliper-mro",
+    slug: "150mm-stainless-steel-digital-vernier-caliper-and-mro-tools",
+    title: {
+      en: "150mm (6\") Stainless Steel Digital Caliper & MRO Hardware",
+      bn: "১৫০ মিমি (৬ ইঞ্চি) স্টেইনলেস স্টিল ডিজিটাল ক্যালিপার ও এমআরও টুলস",
+    },
+    model: "0–150mm / 0–6\" LCD Digital",
+    brand: "Precision MRO",
+    divisionId: "mro-items",
+    subcategoryId: "precision-tools-hardware",
+    image: "/images/products/schott-duran-caliper-kit.jpg",
+    gallery: [
+      "/images/products/schott-duran-caliper-kit.jpg",
+      "/images/products/mro-industrial-tools.jpg",
+    ],
+    status: "in_stock",
+    certifications: ["0.01mm Resolution", "Hardened SS", "Metric/Inch"],
+    shortDescription: {
+      en: "Hardened stainless steel digital Vernier caliper with instant mm/inch conversion, plus complete factory MRO tools, fasteners, lubricants, and maintenance supplies.",
+      bn: "নিখুঁত ইঞ্জিনিয়ারিং পরিমাপের জন্য স্টেইনলেস স্টিল ডিজিটাল ক্যালিপার এবং ফ্যাক্টরি মেইনটেন্যান্সের সকল প্রকার MRO হার্ডওয়্যার ও লুব্রিকেন্ট।",
+    },
+    features: {
+      en: [
+        "150 mm (6 inch) hardened stainless steel frame with large LCD digital readout",
+        "One-touch Metric (mm) and Imperial (inch) conversion + zero-setting at any position",
+        "Internal, external, depth, and step precision measurements",
+        "Full MRO catalog supply: hand tools, power tools, industrial lubricants, adhesives & fasteners",
+      ],
+      bn: [
+        "১৫০ মিমি (৬ ইঞ্চি) হার্ডেনড স্টেইনলেস স্টিল বডি ও বড় এলসিডি ডিসপ্লে",
+        "এক বাটনেই মিলিমিটার (mm) ও ইঞ্চি (Inch) পরিবর্তনের সুবিধা",
+        "ভেতর, বাহির ও গভীরতা নিখুঁতভাবে পরিমাপের উপযোগী",
+        "এছাড়াও হ্যান্ড টুলস, পাওয়ার টুলস, ফাস্টেনার, লুব্রিকেন্ট ও অ্যাডহেসিভ পাইকারি সরবরাহ করা হয়",
+      ],
+    },
+    specs: {
+      Range: "0 – 150 mm (0 – 6 inch)",
+      Material: "Hardened Stainless Steel",
+      Conversion: "Metric (mm) / Inch",
+    },
+    featured: false,
+    createdAt: "2026-10-01T12:10:00Z",
+  },
+
+  // ============================================================================
+  // 6. GENERAL SUPPLY SOLUTIONS (HOSPITAL & INSTITUTIONAL ENLISTMENT)
+  // ============================================================================
+  {
+    id: "prod-hospital-beds-clinical-furniture",
+    slug: "hospital-patient-beds-icu-beds-and-clinical-furniture-supply",
+    title: {
+      en: "Hospital Patient Beds, ICU Beds & Clinical Ward Furniture (Tender Supply)",
+      bn: "হাসপাতালের পেশেন্ট বেড, আইসিইউ বেড ও মেডিকেল ফার্নিচার (টেন্ডার ও অর্ডার সরবরাহ)",
+    },
+    model: "Manual / Semi-Fowler / Full-Electric ICU / Ward Beds & Trolleys",
+    brand: "Enlisted Hospital Supplier",
+    divisionId: "general-supply",
+    subcategoryId: "hospital-medical-supply",
+    image: "/images/products/hospital-patient-bed.jpg",
+    gallery: [
+      "/images/products/hospital-patient-bed.jpg",
+    ],
+    status: "custom_sourcing",
+    certifications: ["Hospital Enlisted Vendor", "ISO 13485 Sourcing", "Competitive Tender Rate"],
+    shortDescription: {
+      en: "M/S Eshayat Enterprise is an enlisted institutional vendor supplying hospital patient beds, examination tables, stainless steel medicine trolleys, and clinical fixtures on tender.",
+      bn: "এম/এস এশায়াত এন্টারপ্রাইজ বিভিন্ন হাসপাতাল ও স্বাস্থ্য প্রতিষ্ঠানের তালিকাভুক্ত (Enlisted) সরবরাহকারী হিসেবে পেশেন্ট বেড, আইসিইউ বেড ও মেডিকেল ফার্নিচার প্রতিযোগিতামূলক দরে সরবরাহ করে।",
+    },
+    features: {
+      en: [
+        "Supplied via official hospital enlistment, RFQ tenders, and direct institutional work orders",
+        "Full range: Manual 1-crank/2-crank Fowler beds, 5-function electric ICU beds, and stretchers",
+        "Stainless steel bedside lockers, instrument trolleys, overbed tables, and IV stands",
+        "Invite us to your hospital's vendor list or email your tender specification for our lowest quote",
+      ],
+      bn: [
+        "সরকারি-বেসরকারি হাসপাতাল ও ক্লিনিকের তালিকাভুক্ত (Enlisted) ভেন্ডর হিসেবে টেন্ডার ও ওয়ার্ক অর্ডারে সরবরাহ",
+        "ম্যানুয়াল ফাওলার বেড, সেমি-ইলেকট্রিক ও ফুল-ইলেকট্রিক আইসিইউ বেড এবং স্ট্রেচার",
+        "স্টেইনলেস স্টিল মেডিসিন ট্রলি, বেডসাইড লকার, ওভারবেড টেবিল ও স্যালাইন স্ট্যান্ড",
+        "আপনার হাসপাতালের যেকোনো রিকুইজিশন বা কোটেশন ইমেইল করুন—আমরা সর্বনিম্ন দরে সেরা মানের নিশ্চয়তা দিই",
+      ],
+    },
+    specs: {
+      SupplyMode: "Hospital Enlistment / Tender / Direct Work Order",
+      Items: "Patient Beds, ICU Beds, Trolleys, Lockers, Ward Equipment",
+      Quotation: "eshayat.enterprise@outlook.com | 01309-816266",
+    },
+    featured: true,
+    createdAt: "2026-10-01T12:15:00Z",
+  },
+  {
+    id: "prod-custom-brand-institutional-sourcing",
+    slug: "custom-brand-and-institutional-tender-sourcing",
+    title: {
+      en: "Multi-Brand Institutional Sourcing & Unlisted Item Indenting",
+      bn: "মাল্টি-ব্র্যান্ড প্রাতিষ্ঠানিক সোর্সিং ও কাস্টম টেন্ডার সরবরাহ",
+    },
+    model: "20+ Safety Shoe, Lab & Hospital Brands Beyond Online Display",
+    brand: "M/S Eshayat Enterprise Importer Network",
+    divisionId: "general-supply",
+    subcategoryId: "institutional-tender-sourcing",
+    image: "/images/brand/field-safety.jpg",
+    gallery: [
+      "/images/brand/field-safety.jpg",
+      "/images/products/lab-glassware-collection.jpg",
+    ],
+    status: "custom_sourcing",
+    certifications: ["Direct Importer Network", "20+ Partner Brands", "Lowest Tender Quote"],
+    shortDescription: {
+      en: "Need a specific brand, budget tier, or technical model not shown on our website? We source across 20+ partner brands and direct importers to deliver the lowest wholesale quotation.",
+      bn: "ওয়েবসাইটে নেই এমন কোনো নির্দিষ্ট ব্র্যান্ড, বাজেট মডেল বা টেন্ডার স্পেসিফিকেশন প্রয়োজন? আমরা ২০+ ব্র্যান্ড ও প্রত্যক্ষ আমদানিকারক নেটওয়ার্ক থেকে সর্বনিম্ন পাইকারি দরে সরবরাহ করি।",
+    },
+    features: {
+      en: [
+        "Direct importer & wholesale sourcing network across China, Germany, Europe & local manufacturers",
+        "20+ additional brands of safety footwear, gumboots, lab instruments, and clinical consumables",
+        "Competitive quotation comparison for hospital, pharmaceutical, and factory procurement committees",
+        "Dedicated account management by Efaz Alam (Business Manager) for fast proforma invoices",
+      ],
+      bn: [
+        "ওয়েবসাইটে নেই এমন যেকোনো ব্র্যান্ড বা মডেলের পণ্য সরাসরি ইমপোর্টার নেটওয়ার্ক থেকে সংগ্রহের সুবিধা",
+        "২০+ অতিরিক্ত ব্র্যান্ডের সেফটি জুতা, গামবুট, ল্যাবরেটরি যন্ত্রপাতি ও হাসপাতাল সামগ্রী",
+        "হাসপাতাল, গার্মেন্টস, এনজিও এবং কর্পোরেট টেন্ডারের জন্য দ্রুততম সময়ে সর্বনিম্ন কোটেশন প্রদান",
+        "বিজনেস ম্যানেজার ইফাজ আলমের সরাসরি তত্ত্বাবধানে বিশ্বস্ত ও নির্ভরযোগ্য ডেলিভারি",
+      ],
+    },
+    specs: {
+      Scope: "Unlisted Brands, Hospital Tenders & Bulk Corporate Indenting",
+      Contact: "Efaz Alam (Business Manager) — 01309-816266",
+    },
+    featured: false,
+    createdAt: "2026-10-01T12:20:00Z",
+  },
+];

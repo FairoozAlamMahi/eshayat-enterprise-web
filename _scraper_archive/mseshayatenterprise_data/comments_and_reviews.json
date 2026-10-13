@@ -1,0 +1,65 @@
+{
+  "reviews_summary": "Not yet rated (0 reviews on Facebook /reviews tab)",
+  "mentions_summary": "No public user mentions/tags on /mentions tab",
+  "comments": [
+    {
+      "id": "Y29tbWVudDoxMjIxMDQ5MTQ4OTc0MjU3MDJfMjk3MTYwMzI5MzE4MzQ2Nw==",
+      "author": "Nazareno Fernandez",
+      "text": "Magkano po",
+      "created_time": 1790267531,
+      "date_iso": "2026-09-24T16:32:11+00:00"
+    },
+    {
+      "id": "Y29tbWVudDoxMjIxMDI4NjE5MzE0MjU3MDJfMTc5MzgzMTgyODI3NDYyOA==",
+      "author": "M/s.Eshayat Enterprise",
+      "text": "Inbox please.",
+      "created_time": 1786133143,
+      "date_iso": "2026-08-07T20:05:43+00:00"
+    },
+    {
+      "id": "Y29tbWVudDoxMjIxMDI4NjAxMTM0MjU3MDJfMTczMjczMDQ4MTI3MDM2Mg==",
+      "author": "Shaharin Alvi Badhan",
+      "text": "Pp",
+      "created_time": 1786132788,
+      "date_iso": "2026-08-07T19:59:48+00:00"
+    },
+    {
+      "id": "Y29tbWVudDoxMjIxMDI4NjE5MzE0MjU3MDJfMTIwNzg1Mjg5ODE5MzQ3NQ==",
+      "author": "Shaharin Alvi Badhan",
+      "text": "Pp",
+      "created_time": 1786132775,
+      "date_iso": "2026-08-07T19:59:35+00:00"
+    }
+  ],
+  "dom_comment_snapshots": [
+    {
+      "aria_label": "Comment by Shaharin Alvi Badhan 9 weeks ago",
+      "links": [],
+      "text_blocks": [
+        "Shaharin Alvi Badhan"
+      ],
+      "raw_text": "Shaharin Alvi Badhan\nPp\n9w\n1",
+      "images": []
+    },
+    {
+      "aria_label": "Comment by M/s.Eshayat Enterprise 9 weeks ago",
+      "links": [],
+      "text_blocks": [
+        "M/s.Eshayat Enterprise",
+        "Inbox please."
+      ],
+      "raw_text": "Author\nM/s.Eshayat Enterprise\nInbox please.\n9w",
+      "images": []
+    },
+    {
+      "aria_label": "Comment by Nazareno Fernandez 2 weeks ago",
+      "links": [],
+      "text_blocks": [
+        "Nazareno Fernandez",
+        "Magkano po"
+      ],
+      "raw_text": "Nazareno Fernandez\nMagkano po\n2w",
+      "images": []
+    }
+  ]
+}

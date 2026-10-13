@@ -1,0 +1,642 @@
+[
+  {
+    "id": "runner-safety-shoes-knit",
+    "slug": "runner-safety-shoes",
+    "title": {
+      "en": "Runner Safety Shoes – Steel Toe Lightweight",
+      "bn": "রানার সেফটি সুজ – স্টিল টো লাইটওয়েট"
+    },
+    "division": "ppe",
+    "subcategory": {
+      "en": "Safety Footwear",
+      "bn": "সেফটি জুতা"
+    },
+    "brand": "Runner®",
+    "model": "Knit Impact Series",
+    "images": [
+      "/images/products/runner-safety-shoes.jpg",
+      "/images/products/safety-shoes-runner-range.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 10 Pairs (Wholesale Tier Available)",
+      "bn": "সর্বনিম্ন ১০ জোড়া (পাইকারি দর প্রযোজ্য)"
+    },
+    "certifications": [
+      "EN ISO 20345:2011",
+      "CE Certified",
+      "Steel Toe 200J"
+    ],
+    "features": {
+      "en": [
+        "200 Joules impact-resistant steel toe cap",
+        "Anti-slip polyurethane (PU) outsole for wet & oily surfaces",
+        "Breathable fly-knit upper for 12-hour continuous comfort",
+        "Puncture-resistant Kevlar midsole protection"
+      ],
+      "bn": [
+        "২০০ জুলস আঘাত সহনশীল স্টিল টো ক্যাপ",
+        "ভেজা ও তৈলাক্ত মেঝেতে অ্যান্টি-স্লিপ পিইউ আউটসোল",
+        "দীর্ঘ সময় আরামদায়ক ব্যবহারের জন্য ব্রিদেবল ফ্লাই-নিট আপার",
+        "তীক্ষ্ণ বস্তু থেকে সুরক্ষায় কেভলার মিডসোলে পাংচার রেজিস্ট্যান্ট"
+      ]
+    },
+    "specs": {
+      "Toe Cap": "Steel (200 Joules Impact)",
+      "Outsole": "Dual Density PU (Oil & Acid Resistant)",
+      "Upper": "High-Strength Fly Knit",
+      "Sizes": "39, 40, 41, 42, 43, 44, 45 (EU)"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "trek-series-safety-shoes",
+    "slug": "trek-series-safety-shoes",
+    "title": {
+      "en": "Safety Shoes – Trek Heavy Duty Series",
+      "bn": "সেফটি সুজ – ট্রেক হেভি ডিউটি সিরিজ"
+    },
+    "division": "ppe",
+    "subcategory": {
+      "en": "Safety Footwear",
+      "bn": "সেফটি জুতা"
+    },
+    "brand": "HAOIA / Trek",
+    "model": "Trek Heavy Duty",
+    "images": [
+      "/images/products/trek-safety-shoes.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Wholesale Carton (10-20 Pairs)",
+      "bn": "পাইকারি কার্টন (১০-২০ জোড়া)"
+    },
+    "certifications": [
+      "CE Certified",
+      "Anti-Puncture",
+      "Steel Toe"
+    ],
+    "features": {
+      "en": [
+        "Reinforced steel toe cap with deep tread gripping sole",
+        "Genuine leather construction with water-resistant coating",
+        "Heavy shock absorbing heel for factory and construction sites"
+      ],
+      "bn": [
+        "শক্তিশালী স্টিল টো ক্যাপ এবং গভীর গ্রিপযুক্ত সোল",
+        "পানি প্রতিরোধী কোটিংসহ জেনুইন লেদার ফিনিশ",
+        "কনস্ট্রাকশন ও ভারী কারখানার কাজের জন্য শক-অ্যাবজরবিং হিল"
+      ]
+    },
+    "specs": {
+      "Material": "Split Leather + High-Tread Rubber",
+      "Toe Cap": "Impact Resistant Steel",
+      "Usage": "Heavy Industrial & Construction"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "welding-face-shield-karam-es71",
+    "slug": "welding-face-shield-karam",
+    "title": {
+      "en": "Welding Face Shield – Karam ES 71",
+      "bn": "ওয়েল্ডিং ফেস শিল্ড – কারাম ES 71"
+    },
+    "division": "ppe",
+    "subcategory": {
+      "en": "Eye & Face Protection",
+      "bn": "চোখ ও মুখ সুরক্ষা"
+    },
+    "brand": "KARAM®",
+    "model": "ES 71",
+    "images": [
+      "/images/products/welding-face-shield-karam-es71.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 5 Units",
+      "bn": "সর্বনিম্ন ৫ পিস"
+    },
+    "certifications": [
+      "CE Certified EN 175",
+      "ANSI Z87.1"
+    ],
+    "features": {
+      "en": [
+        "Flip-front yellow window frame for quick weld inspection",
+        "High-density polypropylene shell with heat resistance",
+        "Adjustable ratchet head harness with yellow tightening knobs"
+      ],
+      "bn": [
+        "দ্রুত কাজের সুবিধার্থে ফ্লিপ-ফ্রন্ট উইন্ডো ফ্রেম",
+        "উচ্চ তাপ সহনশীল হাই-ডেনসিটি পলিপ্রোপিলিন শেল",
+        "সহজে অ্যাডজাস্ট করার জন্য র্যাচেট হেড হারনেস"
+      ]
+    },
+    "specs": {
+      "Standard": "EN 175:1997 / CE Mark",
+      "Window Size": "4.25 x 2 inches",
+      "Shell": "Heat Resistant Polypropylene"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "half-face-respirator-en140",
+    "slug": "half-face-respirator-mask",
+    "title": {
+      "en": "Reusable Half Face Respirator Mask",
+      "bn": "রিইউজেবল হাফ ফেস রেসপিরেটর মাস্ক"
+    },
+    "division": "ppe",
+    "subcategory": {
+      "en": "Respiratory Protection",
+      "bn": "শ্বাসযন্ত্রের সুরক্ষা"
+    },
+    "brand": "Industrial Grade",
+    "model": "EN 140:1998 Certified",
+    "images": [
+      "/images/products/half-face-respirator-en140.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 10 Units",
+      "bn": "সর্বনিম্ন ১০ পিস"
+    },
+    "certifications": [
+      "EN 140:1998",
+      "CE Certified"
+    ],
+    "features": {
+      "en": [
+        "Food-grade silicone seal for tight, leak-free facial contour",
+        "Dual cartridge filter system for chemical vapours and particulates",
+        "Downward exhalation valve reducing heat and moisture buildup"
+      ],
+      "bn": [
+        "নিখুঁত ফিটিংয়ের জন্য আরামদায়ক সিলিকন ফেস সিল",
+        "রাসায়নিক ধোঁয়া ও ধূলিকণা রোধে ডুয়াল কার্টিজ ফিল্টার সিস্টেম",
+        "শ্বাসপ্রশ্বাস সহজ করতে ডাউনওয়ার্ড এক্সহলেশন ভালভ"
+      ]
+    },
+    "specs": {
+      "Standard": "EN 140:1998 CE Certified",
+      "Facepiece": "Hypoallergenic Silicone / Thermoplastic",
+      "Cartridge Compatibility": "Organic Vapour, Acid Gas, Particulate"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "industrial-rubber-hand-gloves",
+    "slug": "industrial-rubber-hand-gloves",
+    "title": {
+      "en": "Industrial Chemical Rubber Hand Gloves (14 Inch)",
+      "bn": "ইন্ডাস্ট্রিয়াল কেমিক্যাল রাবার হ্যান্ড গ্লাভস (১৪ ইঞ্চি)"
+    },
+    "division": "ppe",
+    "subcategory": {
+      "en": "Hand Protection",
+      "bn": "হাতের সুরক্ষা"
+    },
+    "brand": "Heavy Duty",
+    "model": "35cm Chemical Shield",
+    "images": [
+      "/images/products/industrial-rubber-hand-gloves.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 20 Pairs",
+      "bn": "সর্বনিম্ন ২০ জোড়া"
+    },
+    "certifications": [
+      "Lab Tested Acid & Alkali Resistant"
+    ],
+    "features": {
+      "en": [
+        "14-inch (35cm) extended forearm splash barrier",
+        "High chemical resistance against acids, oils, solvents, and alkalis",
+        "Textured diamond-grip palm for non-slip wet handling"
+      ],
+      "bn": [
+        "হাতের কনুই পর্যন্ত সুরক্ষায় ১৪ ইঞ্চি (৩৫ সেমি) দৈর্ঘ্য",
+        "অ্যাসিড, তেল, ক্ষার ও ক্ষতিকর কেমিক্যাল প্রতিরোধক",
+        "পিচ্ছিল জিনিস শক্তভাবে ধরার জন্য ডায়মন্ড-গ্রিপ টেক্সচারযুক্ত তালু"
+      ]
+    },
+    "specs": {
+      "Length": "14 Inch (35 cm)",
+      "Opening Diameter": "20 cm",
+      "Material": "Thick Natural Rubber Compound"
+    },
+    "isFeatured": false
+  },
+  {
+    "id": "industrial-ear-muff-nrr",
+    "slug": "industrial-ear-muff-noise-reduction",
+    "title": {
+      "en": "Industrial Air Muff – High Noise Reduction",
+      "bn": "ইন্ডাস্ট্রিয়াল এয়ার মাফ – উচ্চ শব্দ নিরোধক"
+    },
+    "division": "ppe",
+    "subcategory": {
+      "en": "Hearing Protection",
+      "bn": "শ্রবণ সুরক্ষা"
+    },
+    "brand": "Acoustic Guard",
+    "model": "High NRR Series",
+    "images": [
+      "/images/products/industrial-ear-muff.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 10 Units",
+      "bn": "সর্বনিম্ন ১০ পিস"
+    },
+    "certifications": [
+      "ANSI S3.19",
+      "CE EN 352-1"
+    ],
+    "features": {
+      "en": [
+        "High Noise Reduction Rating (NRR) for loud machinery and generator rooms",
+        "Ergonomic padded headband with 360-degree pivoting ear cups",
+        "Soft acoustic foam cushions providing pressure-free all-day seal"
+      ],
+      "bn": [
+        "জেনারেটর ও ভারী মেশিনের উচ্চ শব্দ রোধে হাই নয়েজ রিডাকশন রেটিং (NRR)",
+        "মাথায় আরামদায়ক ফিটিংয়ের জন্য প্যাডেড অ্যাডজাস্টেবল হেডব্যান্ড",
+        "কানে দীর্ঘ সময় ব্যবহারের জন্য নরম ফোম কুশন"
+      ]
+    },
+    "specs": {
+      "Standard": "CE EN 352-1 / ANSI S3.19",
+      "Noise Reduction": "Up to 30 dB NRR",
+      "Cup Material": "High-Impact ABS"
+    },
+    "isFeatured": false
+  },
+  {
+    "id": "high-visibility-safety-vest",
+    "slug": "high-visibility-reflective-safety-vest",
+    "title": {
+      "en": "High Visibility Reflective Safety Vest",
+      "bn": "হাই ভিজিবিলিটি রিফ্লেক্টিভ সেফটি ভেস্ট"
+    },
+    "division": "ppe",
+    "subcategory": {
+      "en": "Body Protection",
+      "bn": "শরীরের সুরক্ষা"
+    },
+    "brand": "Safety First",
+    "model": "Dual-Stripe Zipper",
+    "images": [
+      "/images/products/high-visibility-safety-vest.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 50 Units (Corporate Branding Available)",
+      "bn": "সর্বনিম্ন ৫০ পিস (কর্পোরেট লোগো প্রিন্ট সুবিধাসহ)"
+    },
+    "certifications": [
+      "EN ISO 20471 Class 2"
+    ],
+    "features": {
+      "en": [
+        "Fluorescent neon fabric with 2-inch wide 360° reflective silver bands",
+        "Durable front resin zipper with reinforced perimeter stitching",
+        "Breathable lightweight mesh ideal for hot factory and road environments"
+      ],
+      "bn": [
+        "ফ্লুরোসেন্ট কাপড়ে ২-ইঞ্চি চওড়া ৩৬০ ডিগ্রি রিফ্লেক্টিভ ব্যান্ড",
+        "মজবুত ফ্রন্ট জিপার ও টেকসই স্টিচিং",
+        "গরম পরিবেশে আরামদায়ক ব্রিদেবল পলিয়েস্টার ফ্যাব্রিক"
+      ]
+    },
+    "specs": {
+      "Colors": "Fluorescent Neon Yellow & Neon Orange",
+      "Standard": "EN ISO 20471 Class 2",
+      "Closure": "Front Heavy Duty Zipper"
+    },
+    "isFeatured": false
+  },
+  {
+    "id": "schott-duran-reagent-bottle",
+    "slug": "schott-duran-reagent-bottle",
+    "title": {
+      "en": "Schott Duran Laboratory Reagent Bottles (Borosilicate 3.3)",
+      "bn": "শট ডুরান ল্যাবরেটরি রিএজেন্ট বটল (বোরোসিলিকেট ৩.৩)"
+    },
+    "division": "lab-instruments",
+    "subcategory": {
+      "en": "Laboratory Glassware",
+      "bn": "ল্যাব গ্লাসওয়্যার"
+    },
+    "brand": "Schott Duran® (Made in Germany)",
+    "model": "GL 45 Screw Cap",
+    "images": [
+      "/images/products/laboratory-reagent-bottles-borosilicate.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 1 Box (6-10 pcs depending on size)",
+      "bn": "সর্বনিম্ন ১ বক্স (সাইজ অনুযায়ী ৬-১০ পিস)"
+    },
+    "certifications": [
+      "ISO 4796-1",
+      "USP Standard",
+      "Autoclavable 121°C / 140°C"
+    ],
+    "features": {
+      "en": [
+        "Original Schott Duran borosilicate 3.3 thermal shock resistant glass",
+        "Clear enamel graduation with durable ceramic white labeling field",
+        "Leakproof GL 45 blue polypropylene cap with drip-free pouring ring"
+      ],
+      "bn": [
+        "জার্মানির অরিজিনাল শট ডুরান বোরোসিলিকেট ৩.৩ গ্লাস",
+        "সহজে মাপ বোঝার জন্য স্পষ্ট গ্র্যাজুয়েশন ও লেখার জায়গা",
+        "লিক-প্রুফ জিএল ৪৫ ব্লু স্ক্রু ক্যাপ এবং ড্রিপ-ফ্রি পোরিং রিং"
+      ]
+    },
+    "specs": {
+      "Available Sizes": "100ml, 250ml, 500ml, 1000ml, 2000ml",
+      "Origin": "Germany",
+      "Thermal Resistance": "Up to 500°C (Glass) / 140°C (Cap)"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "adjustable-micropipette-qiujing",
+    "slug": "adjustable-micropipette-qiujing",
+    "title": {
+      "en": "Adjustable Micropipette (20–200 µL / 100–1000 µL)",
+      "bn": "অ্যাডজাস্টেবল মাইক্রোপাইপেট (২০–২০০ µL / ১০০–১০০০ µL)"
+    },
+    "division": "lab-instruments",
+    "subcategory": {
+      "en": "Liquid Handling",
+      "bn": "লিকুইড হ্যান্ডলিং"
+    },
+    "brand": "QIUJING / DLAB",
+    "model": "HiPette Precision Series",
+    "images": [
+      "/images/products/adjustable-micropipette-qiujing.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "1 Piece (Bulk lab discounts available)",
+      "bn": "১ পিস (ল্যাবরেটরি ডিসকাউন্টসহ)"
+    },
+    "certifications": [
+      "ISO 8655 Calibrated",
+      "2 Year Brand Warranty"
+    ],
+    "features": {
+      "en": [
+        "High precision volumetric delivery with smooth plunger stroke",
+        "Clear digital display window with lockable volume setting",
+        "Fully autoclavable tip cone and lightweight ergonomic hand balance"
+      ],
+      "bn": [
+        "নিখুঁত ল্যাব টেস্ট ফলাফলের জন্য হাই প্রিসিশন ভলিউমেট্রিক ডেলিভারি",
+        "সহজে ভলিউম সেট করার জন্য ক্লিয়ার ডিজিটাল ডিসপ্লে",
+        "অটোক্লেভেবল টিপ কোন এবং দীর্ঘ সময় ব্যবহারে হাত ব্যথামুক্ত ডিজাইন"
+      ]
+    },
+    "specs": {
+      "Volume Range": "0.5-10µL, 10-100µL, 20-200µL, 100-1000µL, 1-5mL",
+      "Calibration": "Factory Calibrated to ISO 8655",
+      "Warranty": "2 Years Official Warranty"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "emergency-shower-eyewash-station",
+    "slug": "emergency-shower-eyewash-station",
+    "title": {
+      "en": "Emergency Safety Shower & Eyewash Station (Stainless Steel)",
+      "bn": "জরুরি সেফটি শাওয়ার ও আইওয়াশ স্টেশন (স্টেইনলেস স্টিল)"
+    },
+    "division": "industrial-safety",
+    "subcategory": {
+      "en": "Decontamination Equipment",
+      "bn": "ডিকনটামিনেশন সরঞ্জাম"
+    },
+    "brand": "Industrial Grade",
+    "model": "Floor Mounted Combo",
+    "images": [
+      "/images/products/emergency-shower-eyewash-station.jpg"
+    ],
+    "status": "bulk_available",
+    "moq": {
+      "en": "1 Set",
+      "bn": "১ সেট"
+    },
+    "certifications": [
+      "ANSI Z358.1-2014",
+      "OSHA Compliant"
+    ],
+    "features": {
+      "en": [
+        "Instant pull-rod emergency deluge shower for full-body chemical rinse",
+        "Foot treadle and push-plate activated dual aerated eyewash nozzles",
+        "304 corrosion-resistant polished stainless steel piping and basin"
+      ],
+      "bn": [
+        "কেমিক্যালের তাৎক্ষণিক চিকিৎসায় পুল-রড অ্যাক্টিভেটেড ফুল-বডি শাওয়ার",
+        "হাতে পুশ-প্লেট ও পায়ে প্যাডেলের সাহায্যে পরিচালিত আইওয়াশ নজেল",
+        "মরিচারোধক উচ্চমানের ৩০৪ স্টেইনলেস স্টিল পাইপিং ও বেসিন"
+      ]
+    },
+    "specs": {
+      "Material": "SUS 304 Stainless Steel",
+      "Eyewash Flow": "≥ 11.4 L/min (3.0 GPM)",
+      "Shower Flow": "≥ 75.7 L/min (20.0 GPM)",
+      "Standard": "ANSI Z358.1-2014"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "electrical-isolation-mat",
+    "slug": "electrical-isolation-mat-switchboard",
+    "title": {
+      "en": "Electrical Isolation Mat – High Voltage Switchboard",
+      "bn": "ইলেকট্রিক্যাল আইসোলেশন ম্যাট – হাই ভোল্টেজ সুইচবোর্ড"
+    },
+    "division": "industrial-safety",
+    "subcategory": {
+      "en": "Electrical Protection",
+      "bn": "বৈদ্যুতিক সুরক্ষা"
+    },
+    "brand": "ElectroSafe",
+    "model": "High Voltage Safety Mat",
+    "images": [
+      "/images/products/electrical-isolation-mat.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Per Roll (1m x 2m / 1m x 10m)",
+      "bn": "রোল হিসেবে (১মি x ২মি / ১মি x ১০মি)"
+    },
+    "certifications": [
+      "IEC 61111:2009 Class 2 / 3",
+      "Dielectric Tested"
+    ],
+    "features": {
+      "en": [
+        "High dielectric strength insulating elastomeric compound",
+        "Anti-skid corrugated surface prevents slipping in control rooms",
+        "Fire retardant, acid, oil and low temperature resistant"
+      ],
+      "bn": [
+        "বিদ্যুতিক শক থেকে রক্ষায় উচ্চ ডায়ইলেক্ট্রিক ইনসুলেশন ক্ষমতা",
+        "সুইচ ও কন্ট্রোল রুমে পিছলে পড়া রোধে অ্যান্টি-স্কিড টেক্সচারযুক্ত সারফেস",
+        "অগ্নি প্রতিরোধী, অ্যাসিড ও তেল প্রতিরোধী বিশেষ কম্পাউন্ড"
+      ]
+    },
+    "specs": {
+      "Voltage Rating": "Class 2 (17kV) / Class 3 (26.5kV) / Class 4 (36kV)",
+      "Thickness": "2.5 mm, 3.0 mm, 5.0 mm",
+      "Standard": "IEC 61111:2009 / IS 15652"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "saft-ls17500-battery",
+    "slug": "saft-ls-17500-lithium-battery",
+    "title": {
+      "en": "Saft LS 17500 3.6V A-Size Industrial Lithium Battery",
+      "bn": "সাফট LS 17500 ৩.৬ ভোল্ট A-সাইজ ইন্ডাস্ট্রিয়াল লিথিয়াম ব্যাটারি"
+    },
+    "division": "mro",
+    "subcategory": {
+      "en": "Industrial Batteries",
+      "bn": "ইন্ডাস্ট্রিয়াল ব্যাটারি"
+    },
+    "brand": "SAFT® (Made in France)",
+    "model": "LS 17500 (Li-SOCl2)",
+    "images": [
+      "/images/products/saft-ls17500-lithium-battery.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 10 Units (Carton packs available)",
+      "bn": "সর্বনিম্ন ১০ পিস"
+    },
+    "certifications": [
+      "UL Component Recognized",
+      "IEC 60086-4"
+    ],
+    "features": {
+      "en": [
+        "High and stable 3.6V operating voltage for industrial electronics",
+        "Extremely low self-discharge rate (less than 1% per year of storage)",
+        "Wide temperature range from -60°C to +85°C for severe environments",
+        "Ideal for utility metering (water/gas), IoT trackers, and memory backup"
+      ],
+      "bn": [
+        "ইলেকট্রনিক্স ও মিটারের জন্য উচ্চ ও স্থিতিশীল ৩.৬ ভোল্ট অপারেটিং পাওয়ার",
+        "অত্যন্ত দীর্ঘস্থায়ী—প্রতি বছর ১% এরও কম সেলফ-ডিসচার্জ রেট",
+        "-৬০°C থেকে +৮৫°C পর্যন্ত তীব্র তাপমাত্রায় নিরবচ্ছিন্ন কার্যক্ষমতা",
+        "ইউটিলিটি মিটারিং, আইওটি ডিভাইস ও পিএলসি মেমোরি ব্যাকআপের জন্য আদর্শ"
+      ]
+    },
+    "specs": {
+      "Voltage": "3.6 V",
+      "Nominal Capacity": "3.6 Ah (3600 mAh)",
+      "Chemistry": "Lithium-thionyl chloride (Li-SOCl2)",
+      "Cell Size": "A (Diameter 17.2 mm, Height 50.8 mm)"
+    },
+    "isFeatured": true
+  },
+  {
+    "id": "fire-protection-solutions-bundle",
+    "slug": "fire-protection-solutions-blanket",
+    "title": {
+      "en": "Industrial Fire Blankets & Emergency Cabinets",
+      "bn": "ইন্ডাস্ট্রিয়াল ফায়ার ব্ল্যাঙ্কেট ও ইমার্জেন্সি ক্যাবিনেট"
+    },
+    "division": "industrial-safety",
+    "subcategory": {
+      "en": "Fire Safety",
+      "bn": "অগ্নি নিরাপত্তা"
+    },
+    "brand": "FlameShield",
+    "model": "Fiberglass Heavy Duty (1.2m x 1.8m)",
+    "images": [
+      "/images/products/fire-protection-solutions.jpg"
+    ],
+    "status": "in_stock",
+    "moq": {
+      "en": "Min. 5 Units",
+      "bn": "সর্বনিম্ন ৫ পিস"
+    },
+    "certifications": [
+      "EN 1869:1997 Certified"
+    ],
+    "features": {
+      "en": [
+        "100% woven fiberglass fabric flame retardant up to 550°C",
+        "Quick release pull-tapes for rapid 2-second deployment in emergencies",
+        "Suitable for kitchen fires, clothing fires, and workshop spark barriers"
+      ],
+      "bn": [
+        "৫৫০ ডিগ্রি সেলসিয়াস পর্যন্ত তাপসহনশীল ১০০% ফাইবারগ্লাস ফ্যাব্রিক",
+        "জরুরি মুহূর্তে মাত্র ২ সেকেন্ডে খোলার জন্য কুইক-রিলিজ পুল টেপ",
+        "পোশাকে লাগা আগুন, কিচেন এবং ওয়েল্ডিংয়ের ফুলকি সুরক্ষায় অত্যন্ত কার্যকর"
+      ]
+    },
+    "specs": {
+      "Standard": "EN 1869:1997 / CE",
+      "Size": "1.2 m × 1.8 m (4 ft × 6 ft)",
+      "Storage": "Quick-Pull Wall Mount Pouch"
+    },
+    "isFeatured": false
+  },
+  {
+    "id": "hospital-icu-electric-bed-enlisted",
+    "slug": "hospital-icu-electric-bed-supply",
+    "title": {
+      "en": "Hospital ICU Multi-Function Medical Bed (Enlisted Supply)",
+      "bn": "হাসপাতাল আইসিইউ মাল্টি-ফাংশন মেডিক্যাল বেড (এনলিস্টেড সাপ্লাই)"
+    },
+    "division": "general-supply",
+    "subcategory": {
+      "en": "Hospital & Healthcare Solutions",
+      "bn": "হাসপাতাল ও স্বাস্থ্যসেবা সরঞ্জাম"
+    },
+    "brand": "Healthcare Institutional",
+    "model": "5-Function Electric ICU",
+    "images": [
+      "/images/products/fb_product_1.jpg"
+    ],
+    "status": "import_on_request",
+    "moq": {
+      "en": "Supplied on Hospital Tender / Requisition",
+      "bn": "হাসপাতালের টেন্ডার বা চাহিদাপত্র অনুযায়ী সরবরাহ"
+    },
+    "certifications": [
+      "CE Medical",
+      "ISO 13485"
+    ],
+    "features": {
+      "en": [
+        "Supplied to leading enlisted hospitals and clinics across Dhaka & Bangladesh",
+        "Electric adjustment for backrest, kneerest, Trendelenburg, and height",
+        "Heavy-duty ABS collapsible side rails with integrated patient controls",
+        "Central braking system with anti-static medical swivel casters"
+      ],
+      "bn": [
+        "ঢাকা ও সারা দেশের এনলিস্টেড হাসপাতাল ও ক্লিনিকে নিয়মিত সরবরাহকৃত",
+        "রোগীর সুবিধার্থে রিমোট বা প্যানেল কন্ট্রোল্ড ইলেকট্রিক অ্যাডজাস্টমেন্ট",
+        "মজবুত এবিএস সাইড রেল এবং রোগী বান্ধব নিরাপত্তা ফিচার",
+        "অ্যান্টি-স্ট্যাটিক মেডিক্যাল চাকা এবং সেন্ট্রাল লকিং ব্রেকিং সিস্টেম"
+      ]
+    },
+    "specs": {
+      "Functions": "5-Function Full Motorized Control",
+      "Weight Capacity": "Up to 250 kg Safe Working Load",
+      "Enlistment Type": "Direct Healthcare Institutional Tender Supply"
+    },
+    "isFeatured": true
+  }
+]

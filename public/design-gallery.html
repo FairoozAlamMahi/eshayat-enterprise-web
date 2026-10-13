@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M/S Eshayat Enterprise — 20 Interactive Design & Animation Concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060911;
+      --text: #f8fafc;
+      --amber: #f59e0b;
+      --cyan: #06b6d4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #060911;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+
+    /* Sticky Concept Switcher Bar */
+    .top-switcher {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: rgba(6, 9, 17, 0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .top-switcher-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .top-switcher h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .top-switcher h1 span {
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .nav-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .nav-track {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: thin;
+    }
+    .nav-track::-webkit-scrollbar { height: 4px; }
+    .nav-track::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+    .nav-track-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #f59e0b;
+      margin-bottom: 2px;
+    }
+    .nav-pills a {
+      text-decoration: none;
+      color: #94a3b8;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 7px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .nav-pills a:hover {
+      color: #fff;
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.18);
+      transform: translateY(-1px);
+    }
+    .nav-pills a.active-pill {
+      background: #f59e0b;
+      color: #090d16;
+      border-color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .concept-wrapper {
+      max-width: 1360px;
+      margin: 44px auto;
+      padding: 0 24px;
+      scroll-margin-top: 140px;
+    }
+    .concept-badge-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .concept-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .concept-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 99px;
+      background: #f59e0b;
+      color: #090d16;
+    }
+    .concept-num.motion-tag {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      color: #fff;
+    }
+    .concept-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .concept-ref {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .concept-ref a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .concept-stage {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.7);
+      min-height: 540px;
+      position: relative;
+    }
+
+    /* Common Keyframes */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.45; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.08); }
+    }
+    @keyframes marqueeLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes borderBeam {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ==============================================================
+       CONCEPTS 1 TO 10 STYLES (PREVIOUSLY BUILT)
+       ============================================================== */
+    .c1 { background: radial-gradient(circle at 80% 20%, #e0f2fe 0%, #f0f9ff 45%, #ffffff 100%); color: #0f172a; padding: 36px 44px; position: relative; overflow: hidden; }
+    .c1-orb { position: absolute; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(14,165,233,0.22) 0%, rgba(56,189,248,0) 70%); top: -80px; right: -80px; animation: pulseGlow 6s ease-in-out infinite; }
+    .c1-nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: rgba(255,255,255,0.75); backdrop-filter: blur(20px); border: 1px solid rgba(14,165,233,0.2); border-radius: 16px; margin-bottom: 32px; box-shadow: 0 10px 30px rgba(2,132,199,0.06); }
+    .c1-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 36px; align-items: center; }
+    .c1-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(2,132,199,0.1); color: #0369a1; padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+    .c1-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 40px; font-weight: 800; line-height: 1.12; color: #0c4a6e; margin-bottom: 16px; }
+    .c1-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .c1-card { background: rgba(255,255,255,0.82); backdrop-filter: blur(16px); border: 1px solid rgba(14,165,233,0.22); border-radius: 18px; padding: 18px; box-shadow: 0 14px 35px rgba(2,132,199,0.08); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); animation: floatSlow 5s ease-in-out infinite; }
+    .c1-card:nth-child(2) { animation-delay: 1.5s; }
+    .c1-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 22px 45px rgba(2,132,199,0.18); border-color: #0284c7; }
+    .c1-card img { width: 100%; height: 120px; object-fit: contain; background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 8px; }
+
+    .c2 { background: #090c10; color: #fff; padding: 36px 44px; position: relative; background-image: linear-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 158, 11, 0.04) 1px, transparent 1px); background-size: 32px 32px; }
+    .c2-hazard-bar { height: 8px; background: repeating-linear-gradient(-45deg, #f59e0b, #f59e0b 14px, #090c10 14px, #090c10 28px); margin: -36px -44px 28px -44px; }
+    .c2-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+    .c2-title { font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; text-transform: uppercase; line-height: 1.05; letter-spacing: -0.02em; }
+    .c2-title span { color: #f59e0b; text-shadow: 0 0 28px rgba(245,158,11,0.45); }
+    .c2-product-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .c2-card { background: #11161f; border: 1px solid #262f3f; border-radius: 12px; padding: 18px; position: relative; overflow: hidden; transition: all 0.3s ease; }
+    .c2-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b); background-size: 200% 200%; animation: borderBeam 3s ease infinite; }
+    .c2-card:hover { transform: translateY(-6px); border-color: #f59e0b; box-shadow: 0 0 30px rgba(245, 158, 11, 0.2); }
+    .c2-card img { width: 100%; height: 135px; object-fit: contain; background: #fff; border-radius: 8px; padding: 8px; margin-bottom: 12px; }
+
+    .c3 { background: #0b0f19; padding: 36px 44px; color: #f8fafc; }
+    .c3-bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 185px; gap: 16px; margin-top: 20px; }
+    .c3-tile { background: radial-gradient(circle at top left, rgba(255,255,255,0.07), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 22px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .c3-tile:hover { border-color: rgba(56, 189, 248, 0.6); transform: scale(1.015); box-shadow: 0 20px 40px rgba(0,0,0,0.45); }
+    .c3-span-2 { grid-column: span 2; }
+    .c3-tile img { position: absolute; right: 14px; bottom: 14px; width: 110px; height: 110px; object-fit: contain; background: #fff; border-radius: 14px; padding: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: transform 0.35s ease; }
+    .c3-tile:hover img { transform: scale(1.08) rotate(-3deg); }
+
+    .c4 { background: #f8fafc; color: #0f172a; padding: 28px 36px; }
+    .c4-topbar { background: #1e293b; color: #fff; padding: 12px 20px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; border-bottom: 4px solid #eab308; margin-bottom: 20px; }
+    .c4-layout { display: grid; grid-template-columns: 240px 1fr; gap: 20px; }
+    .c4-sidebar { background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px; font-size: 12px; }
+    .c4-sidebar-item { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; font-weight: 600; color: #334155; display: flex; justify-content: space-between; }
+    .c4-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #cbd5e1; font-size: 12.5px; }
+    .c4-table th { background: #f1f5f9; text-align: left; padding: 10px 12px; border-bottom: 2px solid #cbd5e1; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; color: #475569; }
+    .c4-table td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
+    .c4-table tr:hover { background: #fef9c3; }
+
+    .c5 { display: grid; grid-template-columns: 1fr 1fr; min-height: 540px; }
+    .c5-left { background: linear-gradient(145deg, #082f49 0%, #0369a1 100%); padding: 44px; display: flex; flex-direction: column; justify-content: space-between; }
+    .c5-right { background: linear-gradient(145deg, #18181b 0%, #451a03 100%); padding: 44px; display: flex; flex-direction: column; justify-content: space-between; border-left: 2px solid rgba(255,255,255,0.15); }
+
+    .c6 { background-color: #0a192f; background-image: linear-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.12) 1px, transparent 1px), linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; padding: 36px 44px; font-family: 'JetBrains Mono', monospace; color: #e0f2fe; }
+    .c6-card { border: 1px dashed #38bdf8; background: rgba(2, 132, 199, 0.12); padding: 20px; }
+
+    .c7 { background: radial-gradient(ellipse at top, #1e1b4b, #090d16 70%); padding: 36px 0; overflow: hidden; }
+    .c7-marquee { display: flex; width: 200%; gap: 20px; animation: marqueeLeft 18s linear infinite; margin-top: 28px; }
+    .c7-item { width: 280px; flex-shrink: 0; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 18px; padding: 18px; backdrop-filter: blur(12px); }
+    .c7-item img { width: 100%; height: 140px; object-fit: contain; background: #fff; border-radius: 12px; padding: 8px; margin-bottom: 12px; }
+
+    .c8 { background: #ffffff; color: #0f172a; padding: 32px 44px; }
+    .c8-search-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); border-radius: 20px; padding: 36px; color: #fff; margin-bottom: 24px; }
+
+    .c9 { background: #fafaf9; color: #1c1917; padding: 40px 48px; }
+    .c9-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid #1c1917; border-left: 2px solid #1c1917; margin-top: 24px; }
+    .c9-cell { border-right: 2px solid #1c1917; border-bottom: 2px solid #1c1917; padding: 24px; transition: background 0.25s; }
+    .c9-cell:hover { background: #fef3c7; }
+
+    .c10 { background: #060b16; color: #fff; padding: 36px 44px; position: relative; overflow: hidden; }
+    .c10-glow { position: absolute; width: 600px; height: 300px; background: radial-gradient(circle, rgba(245,158,11,0.18), rgba(225,29,72,0.12), transparent 70%); top: -60px; left: 25%; filter: blur(40px); pointer-events: none; }
+
+    /* ==============================================================
+       NEW HEAVY-ANIMATION CONCEPTS 11 TO 20
+       ============================================================== */
+
+    /* CONCEPT 11: HUD CYBER SCANNER */
+    .c11 {
+      background: #020617;
+      padding: 40px 48px;
+      position: relative;
+      overflow: hidden;
+      font-family: 'JetBrains Mono', monospace;
+      color: #38bdf8;
+    }
+    .c11-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(rgba(6, 182, 212, 0.15) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .c11-scanner-box {
+      position: relative;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #06b6d4;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 0 40px rgba(6, 182, 212, 0.2), inset 0 0 20px rgba(6, 182, 212, 0.08);
+      overflow: hidden;
+    }
+    .c11-laser-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #06b6d4, #f59e0b, #06b6d4, transparent);
+      box-shadow: 0 0 15px #06b6d4, 0 0 25px #06b6d4;
+      animation: scanLaser 3s ease-in-out infinite alternate;
+      z-index: 10;
+    }
+    @keyframes scanLaser {
+      0% { top: 4%; opacity: 0.9; }
+      100% { top: 96%; opacity: 0.9; }
+    }
+    .c11-reticle {
+      position: absolute;
+      width: 60px; height: 60px;
+      border: 2px dashed #06b6d4;
+      border-radius: 50%;
+      top: 35%; left: 45%;
+      animation: spinSlow 10s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes spinSlow { 100% { transform: rotate(360deg); } }
+
+    /* CONCEPT 12: 3D EXPLODED LAYER BREAKDOWN */
+    .c12 {
+      background: radial-gradient(ellipse at center, #0f172a 0%, #020617 100%);
+      padding: 40px 48px;
+      perspective: 1200px;
+    }
+    .c12-stage {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .c12-explode-container {
+      position: relative;
+      height: 380px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .c12-explode-container:hover {
+      transform: rotateY(-18deg) rotateX(12deg);
+    }
+    .c12-layer {
+      position: absolute;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .c12-explode-container.exploded-active .layer-base, .c12-explode-container:hover .layer-base {
+      transform: translateZ(-80px) translateY(30px);
+      background: rgba(245, 158, 11, 0.12);
+      border-color: #f59e0b;
+    }
+    .c12-explode-container.exploded-active .layer-mid, .c12-explode-container:hover .layer-mid {
+      transform: translateZ(0px);
+      background: rgba(6, 182, 212, 0.15);
+      border-color: #06b6d4;
+    }
+    .c12-explode-container.exploded-active .layer-top, .c12-explode-container:hover .layer-top {
+      transform: translateZ(90px) translateY(-30px);
+      background: rgba(255,255,255,0.9);
+      border-color: #fff;
+    }
+
+    /* CONCEPT 13: KINETIC TYPOGRAPHY & HIGH-VOLTAGE */
+    .c13 {
+      background: #000;
+      padding: 40px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .c13-marquee-giant {
+      white-space: nowrap;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 88px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      display: flex;
+      gap: 40px;
+      animation: marqueeLeft 14s linear infinite;
+    }
+    .c13-stroke {
+      -webkit-text-stroke: 1.5px #f59e0b;
+      color: transparent;
+      transition: all 0.3s;
+    }
+    .c13-stroke:hover {
+      color: #f59e0b;
+      text-shadow: 0 0 40px #f59e0b;
+    }
+    .c13-sparkle {
+      animation: flickerText 2.5s infinite;
+    }
+    @keyframes flickerText {
+      0%, 19.999%, 22%, 62.999%, 64%, 100% { opacity: 1; text-shadow: 0 0 25px #f59e0b; }
+      20%, 21.999%, 63%, 63.999% { opacity: 0.3; text-shadow: none; }
+    }
+
+    /* CONCEPT 14: SPECULAR 3D GLASS TILT */
+    .c14 {
+      background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #030712 100%);
+      padding: 44px;
+      position: relative;
+    }
+    .c14-tilt-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(20px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+    .c14-tilt-card:hover {
+      transform: perspective(800px) rotateX(-6deg) rotateY(6deg) translateY(-8px);
+      box-shadow: 0 30px 60px -15px rgba(124, 58, 237, 0.4);
+      border-color: #a855f7;
+    }
+
+    /* CONCEPT 15: CLEAN-ROOM LIQUID LAB FLOW */
+    .c15 {
+      background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #022c22 100%);
+      padding: 40px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .c15-bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.4), transparent 70%);
+      animation: floatBubbles 8s infinite ease-in-out;
+    }
+    @keyframes floatBubbles {
+      0% { transform: translateY(120px) scale(0.6); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-120px) scale(1.2); opacity: 0; }
+    }
+
+    /* CONCEPT 16: FACTORY ASSEMBLY RUNWAY */
+    .c16 {
+      background: #090d16;
+      padding: 36px 0;
+      overflow: hidden;
+      position: relative;
+      border-top: 4px solid #f59e0b;
+      border-bottom: 4px solid #f59e0b;
+    }
+    .c16-treadmill {
+      display: flex;
+      gap: 24px;
+      width: 250%;
+      animation: marqueeLeft 22s linear infinite;
+    }
+    .c16-treadmill:hover { animation-play-state: paused; }
+
+    /* CONCEPT 17: NEON PLASMA CORE REACTOR */
+    .c17 {
+      background: #000;
+      padding: 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .c17-reactor {
+      position: relative;
+      border-radius: 24px;
+      padding: 3px;
+      background: conic-gradient(from 0deg, #f59e0b, #06b6d4, #ec4899, #f59e0b);
+      animation: spinReactor 6s linear infinite;
+    }
+    @keyframes spinReactor {
+      100% { transform: rotate(360deg); }
+    }
+    .c17-inner {
+      background: #0a0f1d;
+      border-radius: 22px;
+      padding: 32px;
+      color: #fff;
+    }
+
+    /* CONCEPT 18: INTERACTIVE TENDER CALCULATOR WIDGET */
+    .c18 {
+      background: #0f172a;
+      padding: 40px 48px;
+      color: #fff;
+    }
+    .c18-calculator-box {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .c18-sector-pill {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .c18-sector-pill.active {
+      background: #f59e0b;
+      color: #090d16;
+      border-color: #f59e0b;
+    }
+
+    /* CONCEPT 19: ARCHITECTURAL DUAL-CURTAIN */
+    .c19 {
+      background: #18181b;
+      padding: 40px 48px;
+    }
+    .c19-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .c19-panel {
+      position: relative;
+      height: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .c19-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .c19-panel:hover img {
+      transform: scale(1.08);
+    }
+    .c19-curtain-text {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    /* CONCEPT 20: 3D MATRIX CUBE CONSOLE */
+    .c20 {
+      background: #030712;
+      padding: 44px;
+      perspective: 1200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cube-container {
+      width: 220px;
+      height: 220px;
+      position: relative;
+      margin: 40px auto;
+      transform-style: preserve-3d;
+      animation: rotateCube 14s infinite linear;
+    }
+    .cube-face {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 2px solid #38bdf8;
+      background: rgba(14, 165, 233, 0.12);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+    }
+    .face-front  { transform: translateZ(110px); }
+    .face-back   { transform: rotateY(180deg) translateZ(110px); }
+    .face-right  { transform: rotateY(90deg) translateZ(110px); }
+    .face-left   { transform: rotateY(-90deg) translateZ(110px); }
+    .face-top    { transform: rotateX(90deg) translateZ(110px); }
+    .face-bottom { transform: rotateX(-90deg) translateZ(110px); }
+    @keyframes rotateCube {
+      0%   { transform: rotateX(0deg) rotateY(0deg); }
+      100% { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    /* ==============================================================
+       CONCEPT 21: LIQUID MERCURY / FLUID WAVE SHADER CANVAS
+       ============================================================== */
+    .c21 {
+      position: relative;
+      background: #020617;
+      padding: 48px;
+      overflow: hidden;
+      min-height: 480px;
+    }
+    .c21-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    .c21-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      pointer-events: none;
+    }
+    .c21-content * {
+      pointer-events: auto;
+    }
+    .c21-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 0 20px rgba(56, 189, 248, 0.08);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .c21-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+    }
+    .c21-bubble {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: rgba(56, 189, 248, 0.6);
+      border-radius: 50%;
+      animation: bubbleRise 4s infinite ease-in;
+    }
+    @keyframes bubbleRise {
+      0% { transform: translateY(60px) scale(0.6); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-30px) scale(1.2); opacity: 0; }
+    }
+
+    /* ==============================================================
+       CONCEPT 22: CYBERNETIC TELEMETRY / TARGET LOCK HUD
+       ============================================================== */
+    .c22 {
+      background: #050811;
+      padding: 44px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    .c22-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .c22-telemetry-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      background: rgba(6, 78, 59, 0.25);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 11.5px;
+      color: #86efac;
+      margin-bottom: 28px;
+    }
+    .c22-card {
+      position: relative;
+      background: rgba(9, 20, 24, 0.8);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 14px;
+      padding: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .c22-reticle {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 48px;
+      height: 48px;
+      border: 2px dashed #22c55e;
+      border-radius: 50%;
+      animation: rotateReticle 8s infinite linear;
+    }
+    @keyframes rotateReticle {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .c22-lock-bracket {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-color: #22c55e;
+      border-style: solid;
+      pointer-events: none;
+    }
+    .c22-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+    .c22-tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+    .c22-bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+    .c22-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+    .c22-card.locked {
+      border-color: #22c55e;
+      box-shadow: 0 0 25px rgba(34, 197, 94, 0.35);
+    }
+
+    /* ==============================================================
+       CONCEPT 23: MAGNETIC FLUID ELASTIC SPRING DOCK
+       ============================================================== */
+    .c23 {
+      background: #09090b;
+      padding: 44px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .c23-track {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 24px 8px 32px 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .c23-track::-webkit-scrollbar { height: 6px; }
+    .c23-track::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 99px; }
+    .c23-card {
+      flex: 0 0 280px;
+      scroll-snap-align: center;
+      background: #18181b;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 20px;
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+      cursor: pointer;
+    }
+    .c23-card:hover, .c23-card.active-dock {
+      transform: scale(1.05) translateY(-6px);
+      border-color: #f59e0b;
+      box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.3);
+    }
+    .c23-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+
+    /* ==============================================================
+       CONCEPT 24: DUAL-SPECTRUM THERMAL FLIR & SONAR CLEANROOM
+       ============================================================== */
+    .c24 {
+      background: #0b0f19;
+      padding: 44px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.5s ease;
+    }
+    .c24.thermal-active {
+      background: #10061a;
+    }
+    .c24-toggle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .c24-toggle-btn {
+      display: inline-flex;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 99px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .c24-mode-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .c24-mode-btn.active {
+      background: #0284c7;
+      color: #fff;
+    }
+    .c24.thermal-active .c24-mode-btn.active {
+      background: linear-gradient(135deg, #ef4444, #f59e0b);
+      color: #fff;
+    }
+    .c24-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .c24-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: filter 0.5s ease;
+    }
+    .c24.thermal-active .c24-card img {
+      filter: contrast(190%) hue-rotate(190deg) saturate(300%);
+    }
+    .c24-thermal-tag {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      background: rgba(0,0,0,0.8);
+      border: 1px solid #ef4444;
+      color: #fca5a5;
+      font-family: monospace;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      display: none;
+    }
+    .c24.thermal-active .c24-thermal-tag {
+      display: block;
+      animation: pulseHeat 1.8s infinite alternate;
+    }
+    @keyframes pulseHeat {
+      from { border-color: #ef4444; color: #fca5a5; }
+      to { border-color: #f59e0b; color: #fef08a; }
+    }
+
+    /* ==============================================================
+       CONCEPT 25: AWWWARDS CINEMATIC KINETIC CURTAIN & COUNTER
+       ============================================================== */
+    .c25 {
+      background: #030712;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .c25-title {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .c25-milestones {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .c25-stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .c25-stat:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: #f59e0b;
+      transform: translateY(-2px);
+    }
+    .c25-stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: #f59e0b;
+      margin-bottom: 4px;
+      font-family: monospace;
+    }
+    .c25-stat-label {
+      font-size: 11px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .c25-curtain-card {
+      position: relative;
+      background: #0f172a;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 250px;
+    }
+    .c25-curtain-shutter {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2;
+    }
+    .c25-curtain-card:hover .c25-curtain-shutter,
+    .c25-curtain-card.curtain-open .c25-curtain-shutter {
+      transform: translateY(-100%);
+    }
+    .c25-curtain-reveal {
+      position: absolute;
+      inset: 0;
+      background: #020617;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px;
+      z-index: 1;
+    }
+
+    /* ==============================================================
+       FULL MOBILE & TABLET RESPONSIVE ENGINE (320px to 860px)
+       ============================================================== */
+    @media (max-width: 860px) {
+      body {
+        overflow-x: clip !important;
+        width: 100% !important;
+      }
+      .top-switcher {
+        padding: 10px 14px !important;
+        gap: 8px !important;
+      }
+      .top-switcher-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+      }
+      .top-switcher h1 {
+        font-size: 13.5px !important;
+      }
+      .concept-wrapper {
+        padding: 0 12px !important;
+        margin: 24px auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        scroll-margin-top: 150px !important;
+      }
+      .concept-badge-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+      }
+      .concept-title-group {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+      .concept-name {
+        font-size: 18.5px !important;
+        line-height: 1.25 !important;
+      }
+      .concept-ref {
+        font-size: 11.5px !important;
+      }
+      .concept-stage {
+        border-radius: 16px !important;
+        min-height: auto !important;
+        width: 100% !important;
+      }
+
+      /* Concept 01 */
+      .c1 { padding: 22px 16px !important; }
+      .c1-nav {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        padding: 12px 14px !important;
+      }
+      .c1-nav > div:nth-child(2) { display: none !important; }
+      .c1-nav button { width: 100% !important; }
+      .c1-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c1-title { font-size: 26px !important; }
+      .c1-cards { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .c1 > div:first-child { display: flex; flex-direction: column; gap: 10px; }
+      .c1 > div:first-child button { width: 100% !important; }
+
+      /* Concept 02 */
+      .c2 { padding: 22px 16px !important; }
+      .c2-hazard-bar { margin: -22px -16px 16px -16px !important; }
+      .c2-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c2-title { font-size: 28px !important; }
+      .c2-product-row { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .c2 button { width: 100% !important; }
+
+      /* Concept 03 */
+      .c3 { padding: 22px 16px !important; }
+      .c3-bento {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto !important;
+        gap: 12px !important;
+      }
+      .c3-span-2 { grid-column: span 1 !important; }
+      .c3-tile { min-height: 140px !important; padding: 18px !important; }
+      .c3-tile img { width: 75px !important; height: 75px !important; right: 12px !important; bottom: 12px !important; }
+
+      /* Concept 04 */
+      .c4 { padding: 16px 12px !important; }
+      .c4-topbar {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: stretch !important;
+      }
+      .c4-topbar > div:nth-child(2) { width: 100% !important; }
+      .c4-layout { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .c4-table-wrapper {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      }
+      .c4-table { width: 680px !important; }
+
+      /* Concept 05 */
+      .c5 { grid-template-columns: 1fr !important; }
+      .c5-left, .c5-right { padding: 26px 18px !important; }
+      .c5-right { border-left: none !important; border-top: 2px solid rgba(255,255,255,0.15) !important; }
+      .c5-left h3, .c5-right h3 { font-size: 26px !important; }
+      .c5-left button, .c5-right button { width: 100% !important; }
+
+      /* Concept 06 */
+      .c6 { padding: 22px 16px !important; }
+      .c6 > div:first-child { flex-direction: column !important; gap: 6px !important; font-size: 11px !important; }
+      .c6 > div:nth-child(2) { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c6 h3 { font-size: 24px !important; }
+
+      /* Concept 07 */
+      .c7 { padding: 24px 0 !important; }
+      .c7 h3 { font-size: 24px !important; padding: 0 16px !important; }
+      .c7-item { width: 220px !important; }
+
+      /* Concept 08 */
+      .c8 { padding: 20px 14px !important; }
+      .c8-search-hero { padding: 20px 16px !important; }
+      .c8-search-hero h3 { font-size: 22px !important; }
+      .c8-search-hero > div:last-child {
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: stretch !important;
+      }
+      .c8-search-hero > div:last-child button { width: 100% !important; }
+      .c8 > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+      /* Concept 09 */
+      .c9 { padding: 22px 16px !important; }
+      .c9 > div:first-child { flex-direction: column !important; gap: 6px !important; }
+      .c9 h3 { font-size: 26px !important; }
+      .c9-grid { grid-template-columns: 1fr !important; }
+      .c9-cell { border-right: none !important; }
+
+      /* Concept 10 */
+      .c10 { padding: 22px 16px !important; }
+      .c10 > div:last-child { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c10 h3 { font-size: 26px !important; }
+
+      /* Concept 11 */
+      .c11 { padding: 20px 14px !important; }
+      .c11 > div:first-child { flex-direction: column !important; gap: 6px !important; font-size: 10.5px !important; }
+      .c11 > div:nth-child(2) { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c11 h3 { font-size: 24px !important; }
+      .c11 button { width: 100% !important; }
+
+      /* Concept 12 */
+      .c12 { padding: 20px 14px !important; }
+      .c12-stage { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c12 h3 { font-size: 24px !important; }
+      .c12-explode-container {
+        width: 100% !important;
+        max-width: 270px !important;
+        height: 290px !important;
+        margin: 0 auto !important;
+      }
+      .c12-layer {
+        width: 230px !important;
+        height: 180px !important;
+        padding: 10px !important;
+      }
+
+      /* Concept 13 */
+      .c13 { padding: 22px 0 !important; }
+      .c13-marquee-giant { font-size: 38px !important; gap: 18px !important; }
+
+      /* Concept 14 */
+      .c14 { padding: 20px 14px !important; }
+      .c14 h3 { font-size: 24px !important; }
+      .c14 > div:last-child { grid-template-columns: 1fr !important; gap: 14px !important; }
+
+      /* Concept 15 */
+      .c15 { padding: 20px 14px !important; }
+      .c15 > div:last-child { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c15 h3 { font-size: 24px !important; }
+      .c15 button { width: 100% !important; }
+
+      /* Concept 16 */
+      .c16 { padding: 20px 0 !important; }
+      .c16-treadmill { width: 450% !important; }
+
+      /* Concept 17 */
+      .c17 { padding: 20px 14px !important; }
+      .c17 > div { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c17 h3 { font-size: 24px !important; }
+
+      /* Concept 18 */
+      .c18 { padding: 20px 14px !important; }
+      .c18-calculator-box { grid-template-columns: 1fr !important; gap: 20px !important; padding: 16px !important; }
+      #calcTier { font-size: 22px !important; }
+
+      /* Concept 19 */
+      .c19 { padding: 20px 14px !important; }
+      .c19-split { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .c19-panel { height: 260px !important; }
+
+      /* Concept 20 */
+      .c20 { padding: 20px 14px !important; }
+      .c20 > div { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c20 h3 { font-size: 24px !important; }
+      .cube-container { width: 170px !important; height: 170px !important; margin: 24px auto !important; }
+      .cube-face { width: 170px !important; height: 170px !important; padding: 10px !important; }
+      .face-front  { transform: translateZ(85px) !important; }
+      .face-back   { transform: rotateY(180deg) translateZ(85px) !important; }
+      .face-right  { transform: rotateY(90deg) translateZ(85px) !important; }
+      .face-left   { transform: rotateY(-90deg) translateZ(85px) !important; }
+      .face-top    { transform: rotateX(90deg) translateZ(85px) !important; }
+      .face-bottom { transform: rotateX(-90deg) translateZ(85px) !important; }
+
+      /* Concept 21 Mobile */
+      .c21 { padding: 20px 14px !important; }
+      .c21-content { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .c21 h3 { font-size: 24px !important; }
+
+      /* Concept 22 Mobile */
+      .c22 { padding: 20px 14px !important; }
+      .c22-telemetry-strip { font-size: 10px !important; gap: 8px !important; }
+      .c22 > div:last-child { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .c22 h3 { font-size: 24px !important; }
+
+      /* Concept 23 Mobile */
+      .c23 { padding: 20px 14px !important; }
+      .c23-card { flex: 0 0 240px !important; }
+
+      /* Concept 24 Mobile */
+      .c24 { padding: 20px 14px !important; }
+      .c24-toggle-bar { flex-direction: column !important; align-items: flex-start !important; }
+      .c24 > div:last-child { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .c24 h3 { font-size: 24px !important; }
+
+      /* Concept 25 Mobile */
+      .c25 { padding: 20px 14px !important; }
+      .c25-title { font-size: 26px !important; }
+      .c25-milestones { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+      .c25-stat-num { font-size: 20px !important; }
+      .c25 > div:last-child { grid-template-columns: 1fr !important; gap: 14px !important; }
+
+      .concept-wrapper {
+        scroll-margin-top: 180px !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- STICKY SWITCHER HEADER -->
+  <header class="top-switcher">
+    <div class="top-switcher-header">
+      <h1>
+        M/S Eshayat Enterprise <span>25 Live Design & Animation Concepts</span>
+      </h1>
+      <span style="font-size:12px;color:#94a3b8;font-weight:600;">
+        Scroll to view all or click pills to jump directly
+      </span>
+    </div>
+    <div class="nav-sections">
+      <div class="nav-track">
+        <span class="nav-track-label">PART 1: CORE PORTALS (01–10)</span>
+        <div class="nav-pills" style="display:flex;gap:6px;">
+          <a href="#concept-1">01 Sartorius Lab</a>
+          <a href="#concept-2">02 Hilti Rugged</a>
+          <a href="#concept-3">03 Bento Grid</a>
+          <a href="#concept-4">04 McMaster Matrix</a>
+          <a href="#concept-5">05 Split Portal</a>
+          <a href="#concept-6">06 Blueprint CAD</a>
+          <a href="#concept-7">07 3D Marquee</a>
+          <a href="#concept-8">08 Thermo Portal</a>
+          <a href="#concept-9">09 Swiss Editorial</a>
+          <a href="#concept-10">10 Flagship Hybrid</a>
+        </div>
+      </div>
+      <div class="nav-track">
+        <span class="nav-track-label" style="color:#06b6d4;">PART 2: HIGH-MOTION & 3D INTERACTIVE (11–20)</span>
+        <div class="nav-pills" style="display:flex;gap:6px;">
+          <a href="#concept-11" style="border-color:#06b6d4;color:#67e8f9;">11 HUD Laser Scanner</a>
+          <a href="#concept-12" style="border-color:#06b6d4;color:#67e8f9;">12 3D Exploded Layers</a>
+          <a href="#concept-13" style="border-color:#06b6d4;color:#67e8f9;">13 Kinetic Typography</a>
+          <a href="#concept-14" style="border-color:#06b6d4;color:#67e8f9;">14 Specular 3D Tilt</a>
+          <a href="#concept-15" style="border-color:#06b6d4;color:#67e8f9;">15 Liquid Lab Vortex</a>
+          <a href="#concept-16" style="border-color:#06b6d4;color:#67e8f9;">16 Factory Conveyor</a>
+          <a href="#concept-17" style="border-color:#06b6d4;color:#67e8f9;">17 Plasma Core Reactor</a>
+          <a href="#concept-18" style="border-color:#06b6d4;color:#67e8f9;">18 Tender BOQ Calculator</a>
+          <a href="#concept-19" style="border-color:#06b6d4;color:#67e8f9;">19 Parallax Storyteller</a>
+          <a href="#concept-20" style="border-color:#06b6d4;color:#67e8f9;">20 3D Matrix Cube</a>
+        </div>
+      </div>
+      <div class="nav-track">
+        <span class="nav-track-label" style="color:#ec4899;">PART 3: FLUID MOTION & KINETIC (21–25)</span>
+        <div class="nav-pills" style="display:flex;gap:6px;">
+          <a href="#concept-21" style="border-color:#ec4899;color:#f472b6;">21 Liquid Waves</a>
+          <a href="#concept-22" style="border-color:#ec4899;color:#f472b6;">22 Target Lock HUD</a>
+          <a href="#concept-23" style="border-color:#ec4899;color:#f472b6;">23 Magnetic Spring Dock</a>
+          <a href="#concept-24" style="border-color:#ec4899;color:#f472b6;">24 Thermal Sonar FLIR</a>
+          <a href="#concept-25" style="border-color:#ec4899;color:#f472b6;">25 Cinematic Curtain</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONCEPT 1 -->
+  <section id="concept-1" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 01</span>
+        <h2 class="concept-name">Sartorius Clean-Room & Clinical Glassmorphism</h2>
+      </div>
+      <div class="concept-ref">Inspired by <a href="https://www.sartorius.com" target="_blank">Sartorius.com</a> • Floating Glass Cards + Pulse Orb Animation</div>
+    </div>
+    <div class="concept-stage c1">
+      <div class="c1-orb"></div>
+      <div class="c1-nav">
+        <div style="display:flex;align-items:center;gap:10px;font-weight:800;color:#0c4a6e;">
+          <img src="/images/brand/emblem.png" style="width:34px;height:34px;border-radius:8px;" />
+          M/S ESHAYAT ENTERPRISE
+        </div>
+        <div style="display:flex;gap:22px;font-size:13px;font-weight:600;color:#334155;">
+          <span>Lab Glassware</span>
+          <span>Clinical & Hospital</span>
+          <span>PPE & Safety</span>
+          <span>Tender Enlistment</span>
+        </div>
+        <button style="background:#0284c7;color:#fff;border:none;padding:9px 18px;border-radius:99px;font-weight:700;font-size:12px;">Request Tender Quote →</button>
+      </div>
+      <div class="c1-grid">
+        <div>
+          <div class="c1-pill">● ENLISTED HOSPITAL & LAB SUPPLIER • DHAKA</div>
+          <h3 class="c1-title">Precision Laboratory, Clinical & Safety Supply Solutions.</h3>
+          <p style="color:#475569;font-size:15px;line-height:1.6;margin-bottom:24px;">
+            Certified Schott Duran borosilicate glassware, Class-A volumetric instruments, ICU hospital beds, and industrial PPE—backed by 20+ global import brands.
+          </p>
+          <div style="display:flex;gap:12px;">
+            <button style="background:#0c4a6e;color:#fff;border:none;padding:14px 24px;border-radius:14px;font-weight:700;">Explore 6 Supply Divisions</button>
+            <button style="background:rgba(255,255,255,0.9);color:#0284c7;border:1px solid #bae6fd;padding:14px 24px;border-radius:14px;font-weight:700;">WhatsApp Direct: 01862-679456</button>
+          </div>
+        </div>
+        <div class="c1-cards">
+          <div class="c1-card">
+            <img src="/images/products/reagent-bottle.jpg" alt="Reagent Bottle" />
+            <div style="font-size:11px;font-weight:700;color:#0284c7;">ISO 4796 • BOROSILICATE 3.3</div>
+            <div style="font-weight:800;font-size:14px;margin:4px 0;">Schott Duran Reagent Bottles</div>
+            <div style="font-size:12px;color:#64748b;">30mL – 2000mL • Clear & Amber</div>
+          </div>
+          <div class="c1-card">
+            <img src="/images/products/hospital-patient-bed.jpg" alt="Hospital Bed" />
+            <div style="font-size:11px;font-weight:700;color:#0284c7;">HOSPITAL TENDER ENLISTED</div>
+            <div style="font-weight:800;font-size:14px;margin:4px 0;">Hospital ICU Beds & Trolleys</div>
+            <div style="font-size:12px;color:#64748b;">Multi-Brand Tender Sourcing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 2 -->
+  <section id="concept-2" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 02</span>
+        <h2 class="concept-name">Hilti / Safety Jogger Rugged Industrial Dark</h2>
+      </div>
+      <div class="concept-ref">Inspired by <a href="https://www.safetyjogger.com" target="_blank">SafetyJogger.com</a> & <a href="https://www.hilti.com" target="_blank">Hilti.com</a> • Animated Hazard Beam</div>
+    </div>
+    <div class="concept-stage c2">
+      <div class="c2-hazard-bar"></div>
+      <div class="c2-grid">
+        <div>
+          <div style="display:inline-block;background:#f59e0b;color:#090c10;font-weight:800;font-size:11px;padding:4px 10px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">
+            Total Industrial & Plant Safety Wholesale
+          </div>
+          <h3 class="c2-title">Built For Zero Compromise <span>Safety & Lab</span> Tenders.</h3>
+          <p style="color:#94a3b8;font-size:15px;line-height:1.6;margin:18px 0 26px;">
+            We supply 20+ brands of S3 steel-toe safety footwear, 1000V electrical gloves, full-body harnesses, and certified laboratory equipment across Bangladesh.
+          </p>
+          <div style="display:flex;gap:14px;">
+            <button style="background:#f59e0b;color:#090c10;border:none;padding:14px 26px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border-radius:6px;">Get Bulk Tender Rate</button>
+            <button style="background:#16a34a;color:#fff;border:none;padding:14px 26px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;border-radius:6px;">WhatsApp Sales Desk</button>
+          </div>
+        </div>
+        <div class="c2-product-row">
+          <div class="c2-card">
+            <img src="/images/products/safety-shoes-runner.jpg" alt="Safety Shoes" />
+            <span style="font-size:10px;color:#f59e0b;font-weight:700;text-transform:uppercase;">20+ Brands Available</span>
+            <h4 style="font-size:15px;font-weight:800;margin:4px 0;">Industrial Steel-Toe Safety Shoes</h4>
+            <p style="font-size:12px;color:#94a3b8;">Safety Jogger, Vaultex, Tiger & Custom Indents</p>
+          </div>
+          <div class="c2-card">
+            <img src="/images/products/electrical-gloves-1000v.jpg" alt="Electrical Gloves" />
+            <span style="font-size:10px;color:#f59e0b;font-weight:700;text-transform:uppercase;">EN 60903 • 1000V Rated</span>
+            <h4 style="font-size:15px;font-weight:800;margin:4px 0;">High-Voltage Insulating Gloves</h4>
+            <p style="font-size:12px;color:#94a3b8;">Arc-flash & dielectric tested for power plants</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 3 -->
+  <section id="concept-3" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 03</span>
+        <h2 class="concept-name">Apple / Linear Interactive Bento Grid</h2>
+      </div>
+      <div class="concept-ref">Inspired by <a href="https://linear.app" target="_blank">Linear.app</a> & Modern Framer B2B • Asymmetric Bento Cards</div>
+    </div>
+    <div class="concept-stage c3">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;">
+        <div>
+          <span style="color:#38bdf8;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">6 Specialized Supply Divisions</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:30px;font-weight:800;">Everything Your Lab, Hospital or Factory Needs—In One Grid.</h3>
+        </div>
+        <span style="font-size:12px;color:#94a3b8;">Hover any division tile to preview →</span>
+      </div>
+      <div class="c3-bento">
+        <div class="c3-tile c3-span-2" style="background:linear-gradient(135deg, rgba(2,132,199,0.22), rgba(15,23,42,0.8));">
+          <div>
+            <span style="font-size:11px;color:#38bdf8;font-weight:700;">DIVISION 01</span>
+            <h4 style="font-size:20px;font-weight:800;margin-top:4px;">Lab Glassware & Scientific Instruments</h4>
+            <p style="font-size:12.5px;color:#94a3b8;max-width:65%;margin-top:6px;">Schott Duran bottles, Class A pipettes, micropipettes & peristaltic pumps.</p>
+          </div>
+          <span style="font-size:12px;font-weight:700;color:#38bdf8;">Explore 8 Core Lines →</span>
+          <img src="/images/products/reagent-bottle.jpg" alt="Lab" />
+        </div>
+        <div class="c3-tile" style="background:linear-gradient(135deg, rgba(16,185,129,0.2), rgba(15,23,42,0.8));">
+          <div>
+            <span style="font-size:11px;color:#34d399;font-weight:700;">DIVISION 03</span>
+            <h4 style="font-size:17px;font-weight:800;margin-top:4px;">PPE & Safety Footwear</h4>
+          </div>
+          <span style="font-size:11px;color:#a7f3d0;">20+ Brands →</span>
+          <img src="/images/products/safety-shoes-runner.jpg" alt="PPE" style="width:85px;height:85px;" />
+        </div>
+        <div class="c3-tile" style="background:linear-gradient(135deg, rgba(245,158,11,0.2), rgba(15,23,42,0.8));">
+          <div>
+            <span style="font-size:11px;color:#fbbf24;font-weight:700;">DIVISION 06</span>
+            <h4 style="font-size:17px;font-weight:800;margin-top:4px;">Hospital Beds & Enlistment</h4>
+          </div>
+          <span style="font-size:11px;color:#fde68a;">Tender Ready →</span>
+          <img src="/images/products/hospital-patient-bed.jpg" alt="Hospital" style="width:85px;height:85px;" />
+        </div>
+        <div class="c3-tile">
+          <div>
+            <span style="font-size:11px;color:#818cf8;font-weight:700;">DIVISION 02</span>
+            <h4 style="font-size:16px;font-weight:800;margin-top:4px;">Lab Consumables & Vials</h4>
+          </div>
+          <img src="/images/products/petri-dishes-bkmam.jpg" alt="Petri" style="width:80px;height:80px;" />
+        </div>
+        <div class="c3-tile">
+          <div>
+            <span style="font-size:11px;color:#fb923c;font-weight:700;">DIVISION 04</span>
+            <h4 style="font-size:16px;font-weight:800;margin-top:4px;">Industrial Fire & Fall Arrest</h4>
+          </div>
+          <img src="/images/products/full-body-safety-harness.jpg" alt="Harness" style="width:80px;height:80px;" />
+        </div>
+        <div class="c3-tile c3-span-2" style="background:linear-gradient(135deg, rgba(225,29,72,0.2), rgba(15,23,42,0.8));">
+          <div>
+            <span style="font-size:11px;color:#fda4af;font-weight:700;">DIVISION 05 • MRO & POWER</span>
+            <h4 style="font-size:20px;font-weight:800;margin-top:4px;">SAFT Lithium PLC Batteries & MRO Hardware</h4>
+            <p style="font-size:12.5px;color:#94a3b8;max-width:65%;margin-top:6px;">Original SAFT LS 17500 3.6V batteries, stainless hardware & industrial maintenance.</p>
+          </div>
+          <span style="font-size:12px;font-weight:700;color:#fda4af;">Request MRO Quote →</span>
+          <img src="/images/products/lithium-battery.jpg" alt="Saft" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 4 -->
+  <section id="concept-4" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 04</span>
+        <h2 class="concept-name">McMaster-Carr High-Speed Engineer's Specification Matrix</h2>
+      </div>
+      <div class="concept-ref">Inspired by <a href="https://www.mcmaster.com" target="_blank">McMaster.com</a> • Zero-Friction High-Density Table</div>
+    </div>
+    <div class="concept-stage c4">
+      <div class="c4-topbar">
+        <div style="font-weight:800;font-size:15px;letter-spacing:-0.01em;">M/S ESHAYAT ENTERPRISE — TECHNICAL PROCUREMENT MATRIX</div>
+        <div style="background:#fff;color:#0f172a;padding:6px 14px;border-radius:6px;font-size:12px;width:360px;font-weight:600;">
+          🔍 Search Part #, ISO Standard, Volume or Brand...
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#facc15;">HOTLINE: 01862-679456</div>
+      </div>
+      <div class="c4-layout">
+        <div class="c4-sidebar">
+          <div style="font-weight:800;text-transform:uppercase;font-size:11px;color:#64748b;margin-bottom:8px;">All 6 Supply Divisions</div>
+          <div class="c4-sidebar-item" style="background:#fef9c3;color:#854d0e;"><span>1. Lab Glassware</span><span>[08]</span></div>
+          <div class="c4-sidebar-item"><span>2. Lab Consumables</span><span>[04]</span></div>
+          <div class="c4-sidebar-item"><span>3. PPE & Footwear</span><span>[06]</span></div>
+          <div class="c4-sidebar-item"><span>4. Industrial Safety</span><span>[02]</span></div>
+          <div class="c4-sidebar-item"><span>5. MRO & Batteries</span><span>[02]</span></div>
+          <div class="c4-sidebar-item"><span>6. Hospital & Tender</span><span>[02]</span></div>
+        </div>
+        <div>
+          <div class="c4-table-wrapper">
+          <table class="c4-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Item / Technical Description</th>
+                <th>Model / Range</th>
+                <th>Compliance</th>
+                <th>Availability</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="/images/products/reagent-bottle.jpg" style="width:44px;height:44px;object-fit:contain;border:1px solid #e2e8f0;border-radius:4px;" /></td>
+                <td><strong>Schott Duran Borosilicate Reagent Bottle</strong><br/><span style="color:#64748b;font-size:11px;">Clear & Amber, GL45 PP Screw Cap</span></td>
+                <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;">30mL – 2000mL</td>
+                <td><span style="background:#e0f2fe;color:#0369a1;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:700;">ISO 4796</span></td>
+                <td style="color:#15803d;font-weight:700;">● In Stock</td>
+                <td><button style="background:#eab308;border:none;padding:6px 10px;border-radius:4px;font-weight:700;font-size:11px;">+ Quote List</button></td>
+              </tr>
+              <tr>
+                <td><img src="/images/products/volumetric-pipettes-class-a.jpg" style="width:44px;height:44px;object-fit:contain;border:1px solid #e2e8f0;border-radius:4px;" /></td>
+                <td><strong>Class A Volumetric Transfer Pipettes</strong><br/><span style="color:#64748b;font-size:11px;">TD Calibrated Borosilicate Glass</span></td>
+                <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;">5mL – 50mL</td>
+                <td><span style="background:#e0f2fe;color:#0369a1;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:700;">Class A</span></td>
+                <td style="color:#15803d;font-weight:700;">● In Stock</td>
+                <td><button style="background:#eab308;border:none;padding:6px 10px;border-radius:4px;font-weight:700;font-size:11px;">+ Quote List</button></td>
+              </tr>
+              <tr>
+                <td><img src="/images/products/safety-shoes-runner.jpg" style="width:44px;height:44px;object-fit:contain;border:1px solid #e2e8f0;border-radius:4px;" /></td>
+                <td><strong>Industrial S3 Steel-Toe Safety Shoes</strong><br/><span style="color:#64748b;font-size:11px;">20+ Brands Sourced for Factory Tenders</span></td>
+                <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;">EU 38 – 46</td>
+                <td><span style="background:#fef3c7;color:#92400e;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:700;">EN ISO 20345</span></td>
+                <td style="color:#15803d;font-weight:700;">● Bulk Ready</td>
+                <td><button style="background:#eab308;border:none;padding:6px 10px;border-radius:4px;font-weight:700;font-size:11px;">+ Quote List</button></td>
+              </tr>
+              <tr>
+                <td><img src="/images/products/hospital-patient-bed.jpg" style="width:44px;height:44px;object-fit:contain;border:1px solid #e2e8f0;border-radius:4px;" /></td>
+                <td><strong>Hospital ICU Patient Bed & SS Trolley</strong><br/><span style="color:#64748b;font-size:11px;">Manual & Electric Fowler / Enlisted Vendor</span></td>
+                <td style="font-family:'JetBrains Mono',monospace;font-size:11.5px;">Custom BOQ</td>
+                <td><span style="background:#dcfce7;color:#166534;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:700;">CE / ISO 13485</span></td>
+                <td style="color:#0369a1;font-weight:700;">● Tender Supply</td>
+                <td><button style="background:#eab308;border:none;padding:6px 10px;border-radius:4px;font-weight:700;font-size:11px;">+ Quote List</button></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 5 -->
+  <section id="concept-5" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 05</span>
+        <h2 class="concept-name">Split-Screen Dual-World Portal (Clinical vs. Industrial)</h2>
+      </div>
+      <div class="concept-ref">Inspired by Awwwards Dual-Path Portals • Interactive 50/50 Split</div>
+    </div>
+    <div class="concept-stage c5">
+      <div class="c5-left">
+        <div>
+          <span style="background:rgba(56,189,248,0.2);color:#7dd3fc;padding:5px 12px;border-radius:99px;font-size:11px;font-weight:700;">PATHWAY A • SCIENTIFIC & MEDICAL</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;margin-top:16px;line-height:1.15;">Hospitals, Pathology Labs & Pharma QC</h3>
+          <p style="color:#bae6fd;font-size:14px;margin-top:12px;line-height:1.6;">
+            Vendor enlistment for Hospital Patient Beds, Borosilicate Glassware, Micropipettes, Sterile Petri Dishes & Autoclave Sterilization Reels.
+          </p>
+        </div>
+        <div style="display:flex;gap:14px;align-items:center;margin:24px 0;">
+          <img src="/images/products/reagent-bottle.jpg" style="width:95px;height:95px;object-fit:contain;background:#fff;border-radius:14px;padding:6px;" />
+          <img src="/images/products/hospital-patient-bed.jpg" style="width:95px;height:95px;object-fit:contain;background:#fff;border-radius:14px;padding:6px;" />
+          <img src="/images/products/petri-dishes-bkmam.jpg" style="width:95px;height:95px;object-fit:contain;background:#fff;border-radius:14px;padding:6px;" />
+        </div>
+        <button style="background:#38bdf8;color:#082f49;border:none;padding:14px 22px;border-radius:12px;font-weight:800;width:fit-content;">Enter Lab & Hospital Catalog →</button>
+      </div>
+      <div class="c5-right">
+        <div>
+          <span style="background:rgba(245,158,11,0.2);color:#fcd34d;padding:5px 12px;border-radius:99px;font-size:11px;font-weight:700;">PATHWAY B • HEAVY INDUSTRY & MRO</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;margin-top:16px;line-height:1.15;">Factories, Power Plants & EPC Safety</h3>
+          <p style="color:#fde68a;font-size:14px;margin-top:12px;line-height:1.6;">
+            Wholesale multi-brand Safety Footwear, 1000V Electrical Gloves, Full-Body Harnesses, Respirators & SAFT PLC Lithium Batteries.
+          </p>
+        </div>
+        <div style="display:flex;gap:14px;align-items:center;margin:24px 0;">
+          <img src="/images/products/safety-shoes-runner.jpg" style="width:95px;height:95px;object-fit:contain;background:#fff;border-radius:14px;padding:6px;" />
+          <img src="/images/products/electrical-gloves-1000v.jpg" style="width:95px;height:95px;object-fit:contain;background:#fff;border-radius:14px;padding:6px;" />
+          <img src="/images/products/lithium-battery.jpg" style="width:95px;height:95px;object-fit:contain;background:#fff;border-radius:14px;padding:6px;" />
+        </div>
+        <button style="background:#f59e0b;color:#090d16;border:none;padding:14px 22px;border-radius:12px;font-weight:800;width:fit-content;">Enter PPE & Industrial Catalog →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 6 -->
+  <section id="concept-6" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 06</span>
+        <h2 class="concept-name">Blueprint & CAD Technical Schematic UI</h2>
+      </div>
+      <div class="concept-ref">Inspired by Festo & Engineering Portals • Monospace Architectural Grid</div>
+    </div>
+    <div class="concept-stage c6">
+      <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(56,189,248,0.3);padding-bottom:14px;margin-bottom:28px;font-size:12px;">
+        <span>DOC_REF: ESHAYAT-2026-REV4 // DHAKA-1216</span>
+        <span>TOLERANCE: CLASS-A // ISO-4796 // EN-20345</span>
+        <span style="color:#38bdf8;">[STATUS: ENLISTED VENDOR ACTIVE]</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;">
+        <div>
+          <div style="color:#38bdf8;font-size:12px;margin-bottom:8px;">// SPECIFICATION-FIRST WHOLESALE ARCHITECTURE</div>
+          <h3 style="font-size:34px;font-weight:800;line-height:1.15;margin-bottom:16px;">ENGINEERED FOR TECHNICAL PROCUREMENT.</h3>
+          <p style="font-size:13.5px;color:#94a3b8;line-height:1.7;margin-bottom:24px;">
+            Every item in our 6 divisions is indexed by ISO certification, voltage rating, volumetric tolerance, and material grade for rapid tender BOQ matching.
+          </p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:12px;">
+            <div style="border:1px solid rgba(56,189,248,0.35);padding:12px;">
+              <div style="color:#38bdf8;">BOROSILICATE 3.3</div>
+              <div style="font-weight:700;margin-top:4px;">Thermal Shock 140°C</div>
+            </div>
+            <div style="border:1px solid rgba(56,189,248,0.35);padding:12px;">
+              <div style="color:#38bdf8;">DIELECTRIC PPE</div>
+              <div style="font-weight:700;margin-top:4px;">1000V Tested Class 0</div>
+            </div>
+          </div>
+        </div>
+        <div class="c6-card">
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#38bdf8;margin-bottom:10px;">
+            <span>CAD_SPEC: QIUJING-200UL</span>
+            <span>ACCURACY: ±0.6%</span>
+          </div>
+          <div style="display:flex;gap:18px;align-items:center;">
+            <img src="/images/products/micropipette.jpg" style="width:150px;height:150px;object-fit:contain;background:#fff;padding:8px;" />
+            <div>
+              <h4 style="font-size:17px;font-weight:700;margin-bottom:8px;">Adjustable Digital Micropipette</h4>
+              <div style="font-size:12px;color:#bae6fd;line-height:1.8;">
+                • Volume: 20–200 µL<br/>
+                • Calibration: ISO 8655<br/>
+                • Autoclavable Lower Cone<br/>
+                • Wholesale Rate on Inquiry
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 7 -->
+  <section id="concept-7" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 07</span>
+        <h2 class="concept-name">Interactive 3D Showroom & Infinite Live Marquee</h2>
+      </div>
+      <div class="concept-ref">Inspired by Framer Motion Showcases • Continuous Product Ticker</div>
+    </div>
+    <div class="concept-stage c7">
+      <div style="text-align:center;max-width:760px;margin:0 auto;padding:0 20px;">
+        <span style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:#fbbf24;padding:5px 14px;border-radius:99px;font-size:11px;font-weight:700;">LIVE CONTINUOUS PRODUCT SHOWCASE</span>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;margin-top:14px;">20+ Imported Brands Moving Across Bangladesh</h3>
+        <p style="color:#94a3b8;font-size:14px;margin-top:8px;">Interactive 3D cards glide across the screen—pause on hover to inspect specs.</p>
+      </div>
+      <div class="c7-marquee">
+        <div class="c7-item">
+          <img src="/images/products/reagent-bottle.jpg" />
+          <div style="font-size:11px;color:#fbbf24;font-weight:700;">SCHOTT DURAN</div>
+          <div style="font-weight:700;font-size:14px;margin-top:2px;">Borosilicate Reagent Bottles</div>
+        </div>
+        <div class="c7-item">
+          <img src="/images/products/safety-shoes-runner.jpg" />
+          <div style="font-size:11px;color:#fbbf24;font-weight:700;">RUNNER® & 20+ BRANDS</div>
+          <div style="font-weight:700;font-size:14px;margin-top:2px;">S3 Steel-Toe Safety Footwear</div>
+        </div>
+        <div class="c7-item">
+          <img src="/images/products/peristaltic-pump.jpg" />
+          <div style="font-size:11px;color:#fbbf24;font-weight:700;">BT600FC / CF3000</div>
+          <div style="font-weight:700;font-size:14px;margin-top:2px;">Touch-Screen Peristaltic Pump</div>
+        </div>
+        <div class="c7-item">
+          <img src="/images/products/hospital-patient-bed.jpg" />
+          <div style="font-size:11px;color:#fbbf24;font-weight:700;">HOSPITAL ENLISTMENT</div>
+          <div style="font-weight:700;font-size:14px;margin-top:2px;">ICU Patient Beds & Furniture</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 8 -->
+  <section id="concept-8" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 08</span>
+        <h2 class="concept-name">Thermo Fisher Scientific Enterprise Search Portal</h2>
+      </div>
+      <div class="concept-ref">Inspired by <a href="https://www.thermofisher.com" target="_blank">ThermoFisher.com</a> • Spotlight Search Engine</div>
+    </div>
+    <div class="concept-stage c8">
+      <div class="c8-search-hero">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+          <span style="font-weight:800;font-size:16px;">M/S ESHAYAT SCIENTIFIC & INDUSTRIAL PORTAL</span>
+          <span style="font-size:12px;background:rgba(255,255,255,0.15);padding:4px 12px;border-radius:99px;">Press Ctrl+K for Instant SKU Search</span>
+        </div>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:30px;font-weight:800;margin-bottom:16px;">Search Across 6 Supply Divisions & 20+ Partner Brands</h3>
+        <div style="background:#fff;border-radius:12px;padding:8px 8px 8px 18px;display:flex;align-items:center;justify-content:space-between;color:#0f172a;">
+          <span style="color:#64748b;font-size:14px;">Search "Schott Duran 500mL", "Safety Shoes", "Hospital Bed", "1000V Gloves"...</span>
+          <button style="background:#dc2626;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:700;">Search Catalogue</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+        <div style="border:1px solid #e2e8f0;border-radius:14px;padding:18px;background:#f8fafc;">
+          <div style="font-size:11px;font-weight:800;color:#dc2626;">SECTOR 01</div>
+          <h4 style="font-size:16px;font-weight:800;margin:6px 0;">Hospitals & Clinics</h4>
+          <p style="font-size:12px;color:#64748b;">Patient beds, surgical PPE, autoclave reels & pathology glassware.</p>
+        </div>
+        <div style="border:1px solid #e2e8f0;border-radius:14px;padding:18px;background:#f8fafc;">
+          <div style="font-size:11px;font-weight:800;color:#0284c7;">SECTOR 02</div>
+          <h4 style="font-size:16px;font-weight:800;margin:6px 0;">Pharma & QC Labs</h4>
+          <p style="font-size:12px;color:#64748b;">Class A volumetric pipettes, HPLC vials, pumps & cleanroom boots.</p>
+        </div>
+        <div style="border:1px solid #e2e8f0;border-radius:14px;padding:18px;background:#f8fafc;">
+          <div style="font-size:11px;font-weight:800;color:#d97706;">SECTOR 03</div>
+          <h4 style="font-size:16px;font-weight:800;margin:6px 0;">Power & Heavy Industry</h4>
+          <p style="font-size:12px;color:#64748b;">1000V electrical gloves, safety shoes, harnesses & SAFT batteries.</p>
+        </div>
+        <div style="border:1px solid #e2e8f0;border-radius:14px;padding:18px;background:#f8fafc;">
+          <div style="font-size:11px;font-weight:800;color:#16a34a;">SECTOR 04</div>
+          <h4 style="font-size:16px;font-weight:800;margin:6px 0;">Universities & Research</h4>
+          <p style="font-size:12px;color:#64748b;">Borosilicate glassware suites, micropipettes & lab consumables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 9 -->
+  <section id="concept-9" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 09</span>
+        <h2 class="concept-name">Editorial Swiss Grid & Corporate Tender Brochure</h2>
+      </div>
+      <div class="concept-ref">Inspired by Swiss Typographic Grid • High-Trust Institutional Aesthetic</div>
+    </div>
+    <div class="concept-stage c9">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:4px solid #1c1917;padding-bottom:18px;">
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;letter-spacing:-0.03em;">M/S ESHAYAT ENTERPRISE</h3>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;">EST. DHAKA // VENDOR ENLISTMENT PORTFOLIO</span>
+      </div>
+      <div class="c9-grid">
+        <div class="c9-cell">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:800;color:#d97706;">01</div>
+          <h4 style="font-size:18px;font-weight:800;margin:8px 0;">Direct Importer & Multi-Brand Indenting</h4>
+          <p style="font-size:13px;color:#57534e;line-height:1.6;">Beyond our online sample catalog, we source 20+ partner brands to guarantee the lowest competitive rate in tenders.</p>
+        </div>
+        <div class="c9-cell">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:800;color:#dc2626;">02</div>
+          <h4 style="font-size:18px;font-weight:800;margin:8px 0;">Hospital & Diagnostic Enlistment</h4>
+          <p style="font-size:13px;color:#57534e;line-height:1.6;">Enlisted supplier for clinical furniture, ICU patient beds, pathology glassware, and sterile consumables across Bangladesh.</p>
+        </div>
+        <div class="c9-cell">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:800;color:#0284c7;">03</div>
+          <h4 style="font-size:18px;font-weight:800;margin:8px 0;">Rapid Quotation Turnaround</h4>
+          <p style="font-size:13px;color:#57534e;line-height:1.6;">Direct WhatsApp & Outlook tender desk managed by Efaz Alam (Business Manager) for same-day wholesale rate submission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 10 -->
+  <section id="concept-10" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num">DESIGN 10</span>
+        <h2 class="concept-name">The "Eshayat 2.0 Flagship Hybrid" (Recommended Blend)</h2>
+      </div>
+      <div class="concept-ref">Combines Spotlight Search + Bento Divisions + View Switcher + 3D Product Cards</div>
+    </div>
+    <div class="concept-stage c10">
+      <div class="c10-glow"></div>
+      <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center;position:relative;z-index:2;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:#fbbf24;padding:6px 14px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:16px;">
+            ★ FLAGSHIP B2B CATALOGUE & TENDER ENGINE
+          </div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:800;line-height:1.12;margin-bottom:16px;">
+            Modern Animated B2B Experience Meets Instant Procurement Speed.
+          </h3>
+          <p style="color:#94a3b8;font-size:14.5px;line-height:1.65;margin-bottom:22px;">
+            Blends the visual prestige of <strong>Sartorius</strong>, the rugged authority of <strong>Safety Jogger</strong>, the interactive <strong>Bento Grid</strong>, and a 1-click toggle to <strong>McMaster-Carr Table View</strong>.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;">✨ Scroll Reveal & 3D Card Tilt</span>
+            <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;">⚡ Card Grid ↔ Fast Spec Table Toggle</span>
+            <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;">🔍 Live Spotlight Search</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px;backdrop-filter:blur(12px);">
+            <img src="/images/products/reagent-bottle.jpg" style="width:100%;height:115px;object-fit:contain;background:#fff;border-radius:10px;padding:6px;margin-bottom:10px;" />
+            <div style="font-size:10px;color:#38bdf8;font-weight:700;">LAB & SCIENTIFIC</div>
+            <div style="font-size:14px;font-weight:800;">Schott Duran Glassware</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(245,158,11,0.4);border-radius:16px;padding:16px;backdrop-filter:blur(12px);">
+            <img src="/images/products/safety-shoes-runner.jpg" style="width:100%;height:115px;object-fit:contain;background:#fff;border-radius:10px;padding:6px;margin-bottom:10px;" />
+            <div style="font-size:10px;color:#fbbf24;font-weight:700;">20+ BRANDS PPE</div>
+            <div style="font-size:14px;font-weight:800;">Safety Footwear & Gear</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       NEW CONCEPTS 11 TO 20 (HEAVY-MOTION & HIGH-TECH)
+       ============================================================== -->
+
+  <!-- CONCEPT 11 -->
+  <section id="concept-11" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 11</span>
+        <h2 class="concept-name">Cyber-Industrial Hologram & X-Ray Spec Scanner</h2>
+      </div>
+      <div class="concept-ref">Continuous Laser Beam Scanline + Rotating Targeting Reticle + Telemetry HUD</div>
+    </div>
+    <div class="concept-stage c11">
+      <div class="c11-grid-bg"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;border-bottom:1px solid rgba(6,182,212,0.3);padding-bottom:12px;position:relative;z-index:2;">
+        <div><span>SYSTEM: OPTICAL_ANALYSIS_V4</span> • <span style="color:#f59e0b;">TARGET_LOCK: ACTIVE</span></div>
+        <div style="display:flex;gap:18px;">
+          <span>COORD: 23°47'N 90°22'E</span>
+          <span style="color:#22c55e;">SIGNAL: 100% OK</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;position:relative;z-index:2;">
+        <div>
+          <div style="display:inline-block;border:1px solid #06b6d4;padding:4px 10px;font-size:11px;background:rgba(6,182,212,0.1);margin-bottom:14px;">
+            [HUD LASER TELEMETRY ENGINE]
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;line-height:1.1;color:#fff;margin-bottom:16px;">
+            DEEP-SCAN CERTIFIED SPECIFICATIONS.
+          </h3>
+          <p style="color:#94a3b8;font-size:14px;line-height:1.7;margin-bottom:24px;">
+            Move beyond static PDFs. Every product is scanned in real time for impact ratings (200J Steel-Toe), dielectric thresholds (1000V Insulated), and volumetric accuracy.
+          </p>
+          <div style="display:flex;gap:12px;">
+            <button style="background:#06b6d4;color:#020617;font-family:'JetBrains Mono',monospace;font-weight:800;border:none;padding:12px 22px;border-radius:6px;">TRIGGER SCAN →</button>
+            <button style="background:transparent;border:1px solid #06b6d4;color:#06b6d4;font-family:'JetBrains Mono',monospace;font-weight:700;padding:12px 22px;border-radius:6px;">EXPORT BOQ</button>
+          </div>
+        </div>
+        <div class="c11-scanner-box">
+          <div class="c11-laser-line"></div>
+          <div class="c11-reticle"></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:14px;">
+            <span>SCAN_TARGET: PROD-RUNNER-S3</span>
+            <span style="color:#f59e0b;">EN ISO 20345:2011</span>
+          </div>
+          <img src="/images/products/safety-shoes-runner.jpg" style="width:100%;height:180px;object-fit:contain;background:#fff;border-radius:8px;padding:12px;" />
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-top:14px;color:#94a3b8;">
+            <span>TOE: 200J STEEL</span>
+            <span>MIDSOLE: KEVLAR</span>
+            <span style="color:#22c55e;">STATUS: VERIFIED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 12 -->
+  <section id="concept-12" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 12</span>
+        <h2 class="concept-name">Apple-Style 3D Exploded-Layer Breakdown</h2>
+      </div>
+      <div class="concept-ref">Hover the right-hand shoe card to see its 3D internal layers slide apart in space</div>
+    </div>
+    <div class="concept-stage c12">
+      <div class="c12-stage">
+        <div>
+          <span style="color:#f59e0b;font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;">Interactive Component Dissection</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;line-height:1.15;margin:14px 0;">
+            See Every Layer Of Protection Before You Procure.
+          </h3>
+          <p style="color:#94a3b8;font-size:14.5px;line-height:1.65;margin-bottom:24px;">
+            Industrial and hospital buyers don't just buy a finished shell—they buy the engineering inside. Hover the 3D card on the right to inspect the impact-resistant steel cap, puncture-proof Kevlar midsole, and oil-proof PU tread.
+          </p>
+          <div style="display:flex;gap:12px;font-size:13px;">
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:10px 16px;border-radius:10px;">
+              <span style="color:#f59e0b;font-weight:700;">Layer 1:</span> 200J Hardened Steel Cap
+            </div>
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:10px 16px;border-radius:10px;">
+              <span style="color:#06b6d4;font-weight:700;">Layer 2:</span> Ballistic Kevlar Midsole
+            </div>
+          </div>
+        </div>
+        <div class="c12-explode-container" onclick="this.classList.toggle('exploded-active')" title="Tap to explode layers">
+          <div class="c12-layer layer-base" style="width:300px;height:240px;top:40px;left:40px;">
+            <span style="font-size:11px;font-weight:700;color:#f59e0b;">OUTSOLE LAYER</span>
+            <div style="font-size:13px;font-weight:700;margin-top:4px;">Dual-Density Anti-Slip PU Tread</div>
+          </div>
+          <div class="c12-layer layer-mid" style="width:300px;height:240px;top:20px;left:20px;">
+            <span style="font-size:11px;font-weight:700;color:#06b6d4;">MIDSOLE LAYER</span>
+            <div style="font-size:13px;font-weight:700;margin-top:4px;">Puncture-Proof Steel / Kevlar Barrier</div>
+          </div>
+          <div class="c12-layer layer-top" style="width:300px;height:240px;top:0;left:0;">
+            <img src="/images/products/safety-shoes-runner.jpg" style="width:100%;height:150px;object-fit:contain;" />
+            <div style="font-size:13px;font-weight:800;color:#090d16;text-align:center;margin-top:8px;">
+              Runner® S3 (Hover To Dissect In 3D)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 13 -->
+  <section id="concept-13" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 13</span>
+        <h2 class="concept-name">Kinetic Typography & High-Voltage Speed-Marquee</h2>
+      </div>
+      <div class="concept-ref">Brutalist Industrial Streetwear & Heavy Plant Motion • Outlined Stroke Glide</div>
+    </div>
+    <div class="concept-stage c13">
+      <div class="c13-marquee-giant">
+        <span>INDUSTRIAL SAFETY</span>
+        <span class="c13-stroke">20+ BRANDS</span>
+        <span class="c13-sparkle" style="color:#f59e0b;">1000V DIELECTRIC</span>
+        <span class="c13-stroke">LAB PRECISION</span>
+        <span>HOSPITAL ENLISTMENT</span>
+      </div>
+      <div class="c13-marquee-giant" style="animation-direction:reverse;margin-top:14px;">
+        <span class="c13-stroke">SCHOTT DURAN</span>
+        <span>BOROSILICATE 3.3</span>
+        <span class="c13-stroke">S3 SAFETY FOOTWEAR</span>
+        <span style="color:#22c55e;">DHAKA-1216</span>
+        <span class="c13-stroke">DIRECT IMPORTER</span>
+      </div>
+      <div style="max-width:800px;margin:30px auto 10px;text-align:center;padding:0 24px;">
+        <p style="color:#94a3b8;font-size:15px;line-height:1.6;">
+          Bold, unmistakable presence engineered for fast impact. High-contrast typography paired with real-time horizontal velocity makes your brand feel massive and unstoppable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 14 -->
+  <section id="concept-14" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 14</span>
+        <h2 class="concept-name">Specular 3D Glass Tilt (Physics Cursor Tracking)</h2>
+      </div>
+      <div class="concept-ref">Hover and move mouse over cards to experience 3D perspective physics & deep specular light</div>
+    </div>
+    <div class="concept-stage c14">
+      <div style="text-align:center;max-width:700px;margin:0 auto 32px;">
+        <span style="color:#c084fc;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">PHYSICS-POWERED MICRO-INTERACTIONS</span>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;color:#fff;margin-top:8px;">
+          Touch Every Product With Realistic Light.
+        </h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:24px;">
+        <div class="c14-tilt-card">
+          <img src="/images/products/reagent-bottle.jpg" style="width:100%;height:150px;object-fit:contain;background:#fff;border-radius:14px;padding:8px;margin-bottom:16px;" />
+          <span style="font-size:11px;font-weight:700;color:#38bdf8;">DIVISION 01</span>
+          <h4 style="font-size:18px;font-weight:800;color:#fff;margin:4px 0;">Borosilicate Reagent Bottles</h4>
+          <p style="font-size:12.5px;color:#cbd5e1;line-height:1.6;">Schott Duran GL45 clear and amber bottles with leak-proof pouring rings.</p>
+        </div>
+        <div class="c14-tilt-card" style="border-color:rgba(245,158,11,0.3);">
+          <img src="/images/products/safety-shoes-runner.jpg" style="width:100%;height:150px;object-fit:contain;background:#fff;border-radius:14px;padding:8px;margin-bottom:16px;" />
+          <span style="font-size:11px;font-weight:700;color:#f59e0b;">DIVISION 03</span>
+          <h4 style="font-size:18px;font-weight:800;color:#fff;margin:4px 0;">S3 Steel-Toe Safety Shoes</h4>
+          <p style="font-size:12.5px;color:#cbd5e1;line-height:1.6;">20+ brands stocked for factory, construction, and power plant tenders.</p>
+        </div>
+        <div class="c14-tilt-card" style="border-color:rgba(34,197,94,0.3);">
+          <img src="/images/products/hospital-patient-bed.jpg" style="width:100%;height:150px;object-fit:contain;background:#fff;border-radius:14px;padding:8px;margin-bottom:16px;" />
+          <span style="font-size:11px;font-weight:700;color:#4ade80;">DIVISION 06</span>
+          <h4 style="font-size:18px;font-weight:800;color:#fff;margin:4px 0;">Hospital ICU Patient Beds</h4>
+          <p style="font-size:12.5px;color:#cbd5e1;line-height:1.6;">Enlisted supplier of clinical furniture, trolleys, and ward supplies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 15 -->
+  <section id="concept-15" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 15</span>
+        <h2 class="concept-name">Clean-Room Particle Vortex & Liquid Laboratory Flow</h2>
+      </div>
+      <div class="concept-ref">Fluid biopharma gradient motion + floating micro-particles + clinical green aesthetic</div>
+    </div>
+    <div class="concept-stage c15">
+      <div class="c15-bubble" style="width:160px;height:160px;top:20%;left:15%;"></div>
+      <div class="c15-bubble" style="width:240px;height:240px;bottom:10%;right:15%;animation-delay:3s;"></div>
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;z-index:2;">
+        <div>
+          <span style="background:rgba(52,211,153,0.2);color:#6ee7b7;padding:5px 14px;border-radius:99px;font-size:11px;font-weight:700;">
+            PHARMACEUTICAL QC & CLEANROOM STERILE FLOW
+          </span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;color:#fff;line-height:1.15;margin:16px 0;">
+            Zero Contamination. Certified Purity Standards.
+          </h3>
+          <p style="color:#d1fae5;font-size:14.5px;line-height:1.65;margin-bottom:24px;">
+            Engineered for pharmaceutical quality control, microbiology labs, and sterile clinical facilities across Bangladesh. Every pipette, autosampler vial, and Petri dish meets strict ASTM, ISO, and CE standards.
+          </p>
+          <div style="display:flex;gap:14px;">
+            <button style="background:#10b981;color:#022c22;border:none;padding:14px 24px;border-radius:12px;font-weight:800;">Inspect Cleanroom Consumables</button>
+            <button style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:14px 24px;border-radius:12px;font-weight:700;">WhatsApp Tender Desk</button>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);border:1px solid rgba(52,211,153,0.3);border-radius:20px;padding:24px;">
+          <img src="/images/products/petri-dishes-bkmam.jpg" style="width:100%;height:180px;object-fit:contain;background:#fff;border-radius:12px;padding:12px;margin-bottom:14px;" />
+          <div style="font-size:11px;color:#6ee7b7;font-weight:700;">BKMAM® STERILE CULTURE DISHES</div>
+          <div style="font-size:16px;font-weight:800;color:#fff;margin:4px 0;">55mm – 150mm Polystyrene Petri Dishes</div>
+          <div style="font-size:12px;color:#a7f3d0;">EO / Gamma Sterilized • DNase/RNase Free</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 16 -->
+  <section id="concept-16" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 16</span>
+        <h2 class="concept-name">Factory Conveyor Belt Assembly Runway</h2>
+      </div>
+      <div class="concept-ref">Continuous automated assembly conveyor belt • Hover anywhere to pause and inspect</div>
+    </div>
+    <div class="concept-stage c16">
+      <div style="padding:0 36px 18px;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <span style="color:#f59e0b;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;">AUTOMATED CONVEYOR SHOWROOM</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:800;color:#fff;">Products Moving In Continuous Batch Supply</h3>
+        </div>
+        <span style="font-size:12px;color:#94a3b8;">[HOVER TO PAUSE CONVEYOR]</span>
+      </div>
+      <div class="c16-treadmill">
+        <div style="width:260px;flex-shrink:0;background:#111827;border:1px solid #374151;border-radius:12px;padding:14px;">
+          <img src="/images/products/safety-shoes-runner.jpg" style="width:100%;height:120px;object-fit:contain;background:#fff;border-radius:8px;padding:6px;margin-bottom:8px;" />
+          <div style="font-size:10px;color:#f59e0b;font-weight:700;">BATCH 01</div>
+          <div style="font-weight:700;font-size:13px;color:#fff;">Runner® S3 Safety Shoes</div>
+        </div>
+        <div style="width:260px;flex-shrink:0;background:#111827;border:1px solid #374151;border-radius:12px;padding:14px;">
+          <img src="/images/products/electrical-gloves-1000v.jpg" style="width:100%;height:120px;object-fit:contain;background:#fff;border-radius:8px;padding:6px;margin-bottom:8px;" />
+          <div style="font-size:10px;color:#f59e0b;font-weight:700;">BATCH 02</div>
+          <div style="font-weight:700;font-size:13px;color:#fff;">1000V Insulating Gloves</div>
+        </div>
+        <div style="width:260px;flex-shrink:0;background:#111827;border:1px solid #374151;border-radius:12px;padding:14px;">
+          <img src="/images/products/reagent-bottle.jpg" style="width:100%;height:120px;object-fit:contain;background:#fff;border-radius:8px;padding:6px;margin-bottom:8px;" />
+          <div style="font-size:10px;color:#f59e0b;font-weight:700;">BATCH 03</div>
+          <div style="font-weight:700;font-size:13px;color:#fff;">Schott Duran Reagent Bottles</div>
+        </div>
+        <div style="width:260px;flex-shrink:0;background:#111827;border:1px solid #374151;border-radius:12px;padding:14px;">
+          <img src="/images/products/lithium-battery.jpg" style="width:100%;height:120px;object-fit:contain;background:#fff;border-radius:8px;padding:6px;margin-bottom:8px;" />
+          <div style="font-size:10px;color:#f59e0b;font-weight:700;">BATCH 04</div>
+          <div style="font-weight:700;font-size:13px;color:#fff;">SAFT LS 17500 PLC Batteries</div>
+        </div>
+        <div style="width:260px;flex-shrink:0;background:#111827;border:1px solid #374151;border-radius:12px;padding:14px;">
+          <img src="/images/products/hospital-patient-bed.jpg" style="width:100%;height:120px;object-fit:contain;background:#fff;border-radius:8px;padding:6px;margin-bottom:8px;" />
+          <div style="font-size:10px;color:#f59e0b;font-weight:700;">BATCH 05</div>
+          <div style="font-weight:700;font-size:13px;color:#fff;">Hospital ICU Patient Beds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 17 -->
+  <section id="concept-17" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 17</span>
+        <h2 class="concept-name">Dark Glass Neomorphism & Neon Plasma Reactor</h2>
+      </div>
+      <div class="concept-ref">Continuous rotating conic-gradient plasma ring + cyber-laboratory atmosphere</div>
+    </div>
+    <div class="concept-stage c17">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+        <div>
+          <span style="color:#ec4899;font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;">NEXT-GEN SCIENTIFIC VISUAL ENGINE</span>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:800;color:#fff;line-height:1.15;margin:14px 0;">
+            Precision Engineered For Bangladesh's Largest Enterprises.
+          </h3>
+          <p style="color:#94a3b8;font-size:15px;line-height:1.65;margin-bottom:24px;">
+            High-contrast dark-mode interface built to dazzle technical directors and procurement officers alike. Combines futuristic aesthetics with instant quotation conversion.
+          </p>
+          <button style="background:linear-gradient(135deg, #f59e0b, #ec4899);color:#fff;border:none;padding:14px 28px;border-radius:12px;font-weight:800;font-size:14px;">Explore High-Tech Catalog →</button>
+        </div>
+        <div class="c17-reactor">
+          <div class="c17-inner">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+              <span style="font-size:11px;font-weight:800;color:#06b6d4;">PLASMA ENGINE ACTIVE</span>
+              <span style="font-size:11px;color:#f59e0b;">CORE TEMP: NORMAL</span>
+            </div>
+            <img src="/images/products/peristaltic-pump.jpg" style="width:100%;height:170px;object-fit:contain;background:#fff;border-radius:14px;padding:10px;margin-bottom:14px;" />
+            <h4 style="font-size:18px;font-weight:800;">BT600FC / CF3000 Peristaltic Pump</h4>
+            <p style="font-size:12.5px;color:#94a3b8;margin-top:4px;">Touch-screen fluid transfer system for pharma dosing & chemical batching.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 18 -->
+  <section id="concept-18" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 18</span>
+        <h2 class="concept-name">Interactive Tender Quotation Calculator & BOQ Simulator</h2>
+      </div>
+      <div class="concept-ref">Buyers can click their sector and slide quantity to see estimated savings and 1-click WhatsApp quote</div>
+    </div>
+    <div class="concept-stage c18">
+      <div class="c18-calculator-box">
+        <div>
+          <span style="color:#f59e0b;font-weight:800;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;">STEP 1: SELECT YOUR INSTITUTION TYPE</span>
+          <div style="display:flex;gap:10px;margin:12px 0 24px;flex-wrap:wrap;">
+            <div class="c18-sector-pill active" onclick="updateCalc(this, 'Hospital / Clinic')">🏥 Hospital & Clinic</div>
+            <div class="c18-sector-pill" onclick="updateCalc(this, 'Pharma QC Lab')">🧪 Pharma & QC Lab</div>
+            <div class="c18-sector-pill" onclick="updateCalc(this, 'Factory Plant')">🏭 Factory & Plant</div>
+          </div>
+          <span style="color:#f59e0b;font-weight:800;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;">STEP 2: ESTIMATED BATCH QUANTITY</span>
+          <div style="margin-top:12px;">
+            <input type="range" min="10" max="1000" value="100" id="calcSlider" oninput="onSlide(this.value)" style="width:100%;accent-color:#f59e0b;cursor:pointer;" />
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#94a3b8;margin-top:6px;">
+              <span>10 Pcs (Pilot)</span>
+              <span id="sliderVal" style="color:#f59e0b;font-weight:800;font-size:15px;">100 Units</span>
+              <span>1,000+ Units (Tender)</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:#090d16;border:1px solid #334155;border-radius:16px;padding:24px;text-align:center;">
+          <span style="font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;">ESTIMATED WHOLESALE BENEFIT</span>
+          <div style="font-size:36px;font-weight:900;color:#22c55e;margin:10px 0;" id="calcTier">TIER A: TENDER PRICING</div>
+          <p style="font-size:13px;color:#cbd5e1;line-height:1.6;margin-bottom:18px;" id="calcDesc">
+            Direct importer wholesale rate with physical sample submission for your procurement committee in Dhaka.
+          </p>
+          <a id="calcWaBtn" href="https://wa.me/8801862679456?text=Hi%2C%20I%20need%20a%20tender%20quotation%20for%20100%20units%20(Hospital)" target="_blank" style="display:inline-block;background:#16a34a;color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:800;font-size:13px;">
+            Send WhatsApp RFQ with This Estimate →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 19 -->
+  <section id="concept-19" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 19</span>
+        <h2 class="concept-name">Architectural Parallax Storyteller Panels</h2>
+      </div>
+      <div class="concept-ref">Inspired by European High-End Editorial Portals (Leica / Aesop / Siemens)</div>
+    </div>
+    <div class="concept-stage c19">
+      <div class="c19-split">
+        <div class="c19-panel">
+          <img src="/images/products/reagent-bottle.jpg" style="background:#fff;object-fit:contain;padding:24px;" />
+          <div class="c19-curtain-text">
+            <span style="color:#38bdf8;font-size:11px;font-weight:800;">CLARITY & PRECISION</span>
+            <h4 style="font-size:24px;font-weight:800;color:#fff;margin:6px 0;">Borosilicate 3.3 Lab Science</h4>
+            <p style="font-size:13px;color:#cbd5e1;">Thermal shock resistance up to 140°C. Trusted across clinical diagnostic centers and university research.</p>
+          </div>
+        </div>
+        <div class="c19-panel">
+          <img src="/images/products/safety-shoes-runner.jpg" style="background:#fff;object-fit:contain;padding:24px;" />
+          <div class="c19-curtain-text">
+            <span style="color:#f59e0b;font-size:11px;font-weight:800;">UNCOMPROMISING SHIELD</span>
+            <h4 style="font-size:24px;font-weight:800;color:#fff;margin:6px 0;">200-Joule Impact Armor</h4>
+            <p style="font-size:13px;color:#cbd5e1;">Protecting industrial workforce personnel across heavy construction, steel mills, and EPC infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 20 -->
+  <section id="concept-20" class="concept-wrapper" style="margin-bottom:90px;">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num motion-tag">DESIGN 20</span>
+        <h2 class="concept-name">The Cyber-Lab 3D Matrix Cube & Holographic Console</h2>
+      </div>
+      <div class="concept-ref">Interactive rotating 3D CSS cube showing all 6 divisions on its 6 faces</div>
+    </div>
+    <div class="concept-stage c20">
+      <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;">
+        <div>
+          <span style="background:rgba(56,189,248,0.2);color:#38bdf8;padding:5px 12px;border-radius:99px;font-size:11px;font-weight:700;">
+            THE ULTIMATE 3D MATRIX SHOWCASE
+          </span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#fff;line-height:1.15;margin:16px 0;">
+            6 Divisions. 1 Holographic Cube In 3D Space.
+          </h3>
+          <p style="color:#94a3b8;font-size:14.5px;line-height:1.65;margin-bottom:24px;">
+            The cube continuously rotates in full 3D coordinates. Each face showcases one of M/S Eshayat Enterprise's 6 official supply divisions.
+          </p>
+          <div style="display:flex;gap:12px;">
+            <button onclick="pauseCube()" style="background:#38bdf8;color:#030712;border:none;padding:12px 22px;border-radius:8px;font-weight:800;font-size:12px;cursor:pointer;">
+              Pause / Play Rotation
+            </button>
+            <button onclick="speedCube()" style="background:transparent;border:1px solid #38bdf8;color:#38bdf8;padding:12px 22px;border-radius:8px;font-weight:800;font-size:12px;cursor:pointer;">
+              Speed Up Rotation
+            </button>
+          </div>
+        </div>
+        <div>
+          <div class="cube-container" id="matrixCube">
+            <div class="cube-face face-front">
+              <span style="font-size:10px;color:#38bdf8;font-weight:800;">DIV 01</span>
+              <strong style="font-size:13px;color:#fff;margin:4px 0;">Lab Glassware</strong>
+              <span style="font-size:11px;color:#cbd5e1;">Schott Duran</span>
+            </div>
+            <div class="cube-face face-back">
+              <span style="font-size:10px;color:#34d399;font-weight:800;">DIV 02</span>
+              <strong style="font-size:13px;color:#fff;margin:4px 0;">Consumables</strong>
+              <span style="font-size:11px;color:#cbd5e1;">Petri & Vials</span>
+            </div>
+            <div class="cube-face face-right">
+              <span style="font-size:10px;color:#f59e0b;font-weight:800;">DIV 03</span>
+              <strong style="font-size:13px;color:#fff;margin:4px 0;">PPE & Shoes</strong>
+              <span style="font-size:11px;color:#cbd5e1;">20+ Brands</span>
+            </div>
+            <div class="cube-face face-left">
+              <span style="font-size:10px;color:#f97316;font-weight:800;">DIV 04</span>
+              <strong style="font-size:13px;color:#fff;margin:4px 0;">Industrial Safety</strong>
+              <span style="font-size:11px;color:#cbd5e1;">1000V & Harness</span>
+            </div>
+            <div class="cube-face face-top">
+              <span style="font-size:10px;color:#ec4899;font-weight:800;">DIV 05</span>
+              <strong style="font-size:13px;color:#fff;margin:4px 0;">MRO & Batteries</strong>
+              <span style="font-size:11px;color:#cbd5e1;">SAFT Lithium</span>
+            </div>
+            <div class="cube-face face-bottom">
+              <span style="font-size:10px;color:#a855f7;font-weight:800;">DIV 06</span>
+              <strong style="font-size:13px;color:#fff;margin:4px 0;">Hospital Beds</strong>
+              <span style="font-size:11px;color:#cbd5e1;">Tender Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- CONCEPT 21 -->
+  <section id="concept-21" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num" style="border-color:#ec4899;color:#f472b6;">DESIGN 21</span>
+        <h2 class="concept-name">Liquid Mercury / Dynamic Fluid Wave Shader</h2>
+      </div>
+      <div class="concept-ref">Harmonic Fluid Wave Physics • Real-time Interactive Touch Ripple Canvas</div>
+    </div>
+    <div class="concept-stage c21" id="c21Stage">
+      <canvas id="c21Canvas" class="c21-canvas"></canvas>
+      <div class="c21-content">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(6,182,212,0.18);border:1px solid #06b6d4;color:#67e8f9;padding:5px 12px;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:0.06em;margin-bottom:16px;">
+            ● HYDRO-DYNAMIC LABORATORY SOLVENTS
+          </div>
+          <h3 style="font-size:32px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:14px;">
+            High-Purity Laboratory Reagents & Solvents in Fluid Motion.
+          </h3>
+          <p style="color:#94a3b8;font-size:14.5px;line-height:1.6;margin-bottom:20px;">
+            Supplying HPLC-grade Acetonitrile, Reagent Ethanol 99.9%, and Volumetric Standard Solutions with certified Certificates of Analysis (COA) for pharma QA/QC laboratories.
+          </p>
+          <div style="font-size:12px;color:#38bdf8;font-weight:700;margin-bottom:20px;">
+            👆 Touch or drag anywhere on the wave surface to stimulate fluid currents
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="https://wa.me/8801862679456?text=Hi%20Efaz%2C%20please%20send%20COA%20for%20laboratory%20reagents" target="_blank" style="text-decoration:none;background:#06b6d4;color:#04131f;font-weight:800;padding:12px 22px;border-radius:12px;font-size:13px;display:inline-flex;align-items:center;gap:6px;">
+              Request Reagents COA Datasheet →
+            </a>
+          </div>
+        </div>
+        <div style="display:grid;gap:16px;">
+          <div class="c21-card" style="position:relative;">
+            <div class="c21-bubble" style="left:30px;"></div>
+            <div class="c21-bubble" style="right:40px;animation-delay:1.5s;"></div>
+            <div style="display:flex;gap:14px;align-items:center;">
+              <img src="/images/products/reagent-bottle.jpg" alt="Reagent" style="width:68px;height:68px;object-fit:cover;border-radius:12px;" />
+              <div>
+                <span style="font-size:10.5px;color:#38bdf8;font-weight:800;">ISO 4796 • CERTIFIED</span>
+                <h4 style="font-size:15px;color:#fff;margin:3px 0;">Schott Duran Reagent Bottles</h4>
+                <p style="font-size:12px;color:#94a3b8;">Amber & Clear • GL45 Autoclavable Screw Cap</p>
+              </div>
+            </div>
+          </div>
+          <div class="c21-card">
+            <div style="display:flex;gap:14px;align-items:center;">
+              <img src="/images/products/microscope.jpg" alt="Microscope" style="width:68px;height:68px;object-fit:cover;border-radius:12px;" />
+              <div>
+                <span style="font-size:10.5px;color:#a855f7;font-weight:800;">DGDA APPROVED IMPORT</span>
+                <h4 style="font-size:15px;color:#fff;margin:3px 0;">Digital Laboratory Microscope</h4>
+                <p style="font-size:12px;color:#94a3b8;">1600X Achromatic Optics • USB Telemetry Sensor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 22 -->
+  <section id="concept-22" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num" style="border-color:#22c55e;color:#86efac;">DESIGN 22</span>
+        <h2 class="concept-name">Cybernetic Telemetry / Laser Target Lock HUD</h2>
+      </div>
+      <div class="concept-ref">Defense-Grade Calibration Telemetry • Interactive Reticle Lock & Azimuth Sweep</div>
+    </div>
+    <div class="concept-stage c22" id="c22Stage">
+      <div class="c22-grid-bg"></div>
+      <div class="c22-telemetry-strip" id="c22Telemetry">
+        <span>STATUS: <strong id="hudStatus" style="color:#22c55e;">TARGET_SEARCHING...</strong></span>
+        <span>SPECTROMETRY: <strong>NIST_TRACEABLE (ISO 9001)</strong></span>
+        <span>QC_TOLERANCE: <strong>±0.001mm</strong></span>
+        <span>LATENCY: <strong>8ms</strong></span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div class="c22-card" id="targetCard1">
+          <div class="c22-lock-bracket c22-tl"></div>
+          <div class="c22-lock-bracket c22-tr"></div>
+          <div class="c22-lock-bracket c22-bl"></div>
+          <div class="c22-lock-bracket c22-br"></div>
+          <div class="c22-reticle"></div>
+          <img src="/images/products/safety-shoes.jpg" alt="Safety Shoes" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:12px;" />
+          <div style="font-family:monospace;font-size:11px;color:#22c55e;">TARGET_ID: [ESHAYAT-PPE-S3]</div>
+          <h4 style="font-size:16px;color:#fff;margin:4px 0;">Safety Jogger Industrial Heavy Boot</h4>
+          <p style="font-size:12px;color:#94a3b8;line-height:1.5;">200J Impact Steel Toe Cap • Anti-Perforation Kevlar Midsole • SRC Slip Resistant</p>
+        </div>
+        <div class="c22-card" id="targetCard2">
+          <div class="c22-lock-bracket c22-tl"></div>
+          <div class="c22-lock-bracket c22-tr"></div>
+          <div class="c22-lock-bracket c22-bl"></div>
+          <div class="c22-lock-bracket c22-br"></div>
+          <div class="c22-reticle"></div>
+          <img src="/images/products/first-aid-kit.jpg" alt="First Aid" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:12px;" />
+          <div style="font-family:monospace;font-size:11px;color:#22c55e;">TARGET_ID: [ESHAYAT-MED-BOX]</div>
+          <h4 style="font-size:16px;color:#fff;margin:4px 0;">Industrial First Aid Emergency Station</h4>
+          <p style="font-size:12px;color:#94a3b8;line-height:1.5;">Wall-Mount Heavy ABS Cabinet • 120-Piece DGDA Trauma Kit for Manufacturing Plants</p>
+        </div>
+      </div>
+      <div style="margin-top:20px;text-align:center;">
+        <button onclick="engageTargetLock()" id="lockBtn" style="background:rgba(34,197,94,0.15);border:1px solid #22c55e;color:#86efac;padding:12px 24px;border-radius:99px;font-family:monospace;font-size:12.5px;font-weight:700;cursor:pointer;transition:all 0.2s;">
+          🎯 CLICK / TAP TO ENGAGE TARGET LOCK
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 23 -->
+  <section id="concept-23" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num" style="border-color:#f59e0b;color:#fcd34d;">DESIGN 23</span>
+        <h2 class="concept-name">Magnetic Fluid Elastic Spring Dock</h2>
+      </div>
+      <div class="concept-ref">iOS & VisionOS Spring Physics • Elastic Dynamic Magnification Carousel</div>
+    </div>
+    <div class="concept-stage c23">
+      <div style="text-align:center;margin-bottom:16px;">
+        <span style="font-size:12px;color:#94a3b8;font-weight:600;">
+          👆 Swipe horizontally or tap cards — spring physics smoothly focus active hardware
+        </span>
+      </div>
+      <div class="c23-track" id="c23Track">
+        <div class="c23-card active-dock" onclick="focusDock(this)">
+          <img src="/images/products/safety-shoes.jpg" alt="Safety Shoes" />
+          <span style="font-size:10px;color:#f59e0b;font-weight:800;">HEAVY INDUSTRIAL</span>
+          <h4 style="font-size:15px;color:#fff;margin:4px 0;">Safety Jogger Titan S3</h4>
+          <p style="font-size:12px;color:#94a3b8;margin-bottom:12px;">Enlisted for power plants, oil refineries & construction.</p>
+          <button style="width:100%;background:#f59e0b;color:#090d16;border:none;padding:8px;border-radius:8px;font-weight:700;font-size:11.5px;cursor:pointer;">Instant RFQ →</button>
+        </div>
+        <div class="c23-card" onclick="focusDock(this)">
+          <img src="/images/products/reagent-bottle.jpg" alt="Reagent Bottle" />
+          <span style="font-size:10px;color:#38bdf8;font-weight:800;">LAB BOROSILICATE</span>
+          <h4 style="font-size:15px;color:#fff;margin:4px 0;">Schott Duran Bottles</h4>
+          <p style="font-size:12px;color:#94a3b8;margin-bottom:12px;">ISO 4796 Certified Amber & Clear Laboratory Media.</p>
+          <button style="width:100%;background:#38bdf8;color:#090d16;border:none;padding:8px;border-radius:8px;font-weight:700;font-size:11.5px;cursor:pointer;">Instant RFQ →</button>
+        </div>
+        <div class="c23-card" onclick="focusDock(this)">
+          <img src="/images/products/microscope.jpg" alt="Microscope" />
+          <span style="font-size:10px;color:#a855f7;font-weight:800;">DIAGNOSTIC CLINICAL</span>
+          <h4 style="font-size:15px;color:#fff;margin:4px 0;">Digital HD Microscope</h4>
+          <p style="font-size:12px;color:#94a3b8;margin-bottom:12px;">1600X Magnification with high-precision optical sensors.</p>
+          <button style="width:100%;background:#a855f7;color:#fff;border:none;padding:8px;border-radius:8px;font-weight:700;font-size:11.5px;cursor:pointer;">Instant RFQ →</button>
+        </div>
+        <div class="c23-card" onclick="focusDock(this)">
+          <img src="/images/products/hospital-patient-bed.jpg" alt="Hospital Bed" />
+          <span style="font-size:10px;color:#10b981;font-weight:800;">INSTITUTIONAL TENDER</span>
+          <h4 style="font-size:15px;color:#fff;margin:4px 0;">ICU Patient Bed Setup</h4>
+          <p style="font-size:12px;color:#94a3b8;margin-bottom:12px;">Electric multi-function hospital beds for clinical tenders.</p>
+          <button style="width:100%;background:#10b981;color:#090d16;border:none;padding:8px;border-radius:8px;font-weight:700;font-size:11.5px;cursor:pointer;">Instant RFQ →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 24 -->
+  <section id="concept-24" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num" style="border-color:#ef4444;color:#fca5a5;">DESIGN 24</span>
+        <h2 class="concept-name">Dual-Spectrum Thermal FLIR & Sonar Inspector</h2>
+      </div>
+      <div class="concept-ref">Cleanroom & Autoclave Diagnostics • Interactive Optical vs. Thermal Mode</div>
+    </div>
+    <div class="concept-stage c24" id="c24Stage">
+      <div class="c24-toggle-bar">
+        <div>
+          <span style="font-size:11px;font-family:monospace;color:#94a3b8;">SPECTRUM_INSPECTION_MODE:</span>
+          <h3 style="font-size:24px;color:#fff;font-weight:800;margin-top:2px;">Thermal Cycle Quality Verification</h3>
+        </div>
+        <div class="c24-toggle-btn">
+          <button class="c24-mode-btn active" id="btnOptical" onclick="setSpectrum('optical')">📸 OPTICAL HD 4K</button>
+          <button class="c24-mode-btn" id="btnThermal" onclick="setSpectrum('thermal')">🔥 THERMAL FLIR INFRARED</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div class="c24-card">
+          <div class="c24-thermal-tag">● T_PEAK: 134.8°C [STERILIZING]</div>
+          <img src="/images/products/hospital-patient-bed.jpg" alt="Autoclave" />
+          <div style="margin-top:14px;">
+            <span style="font-size:10.5px;color:#38bdf8;font-weight:800;">EQUIPMENT QC 01</span>
+            <h4 style="font-size:16px;color:#fff;margin:4px 0;">Autoclave Steam Sterilizer 50L</h4>
+            <p style="font-size:12px;color:#94a3b8;">High-pressure chamber with microcomputer automatic temperature control.</p>
+          </div>
+        </div>
+        <div class="c24-card">
+          <div class="c24-thermal-tag">● T_BEARING: 28.4°C [NOMINAL]</div>
+          <img src="/images/products/microscope.jpg" alt="Centrifuge" />
+          <div style="margin-top:14px;">
+            <span style="font-size:10.5px;color:#a855f7;font-weight:800;">EQUIPMENT QC 02</span>
+            <h4 style="font-size:16px;color:#fff;margin:4px 0;">High-Speed Laboratory Centrifuge</h4>
+            <p style="font-size:12px;color:#94a3b8;">Brushless DC induction motor with zero friction overheating protection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT 25 -->
+  <section id="concept-25" class="concept-wrapper">
+    <div class="concept-badge-header">
+      <div class="concept-title-group">
+        <span class="concept-num" style="border-color:#f59e0b;color:#fcd34d;">DESIGN 25</span>
+        <h2 class="concept-name">Awwwards Cinematic Kinetic Curtain & Milestone Counter</h2>
+      </div>
+      <div class="concept-ref">Ultra-Luxury Agency Motion • Split-Flap Live Milestone Counters & Curtain Drawers</div>
+    </div>
+    <div class="concept-stage c25">
+      <h3 class="c25-title">Pioneering Healthcare & Industrial Supplies Across Bangladesh.</h3>
+      <p style="color:#94a3b8;font-size:15px;max-width:700px;line-height:1.6;">
+        From government health directorates to national pharmaceutical manufacturing plants, M/S Eshayat Enterprise delivers uncompromising certified quality.
+      </p>
+
+      <div class="c25-milestones">
+        <div class="c25-stat">
+          <div class="c25-stat-num">৳ 18.5M+</div>
+          <div class="c25-stat-label">Tenders Fulfilled</div>
+        </div>
+        <div class="c25-stat">
+          <div class="c25-stat-num">450+</div>
+          <div class="c25-stat-label">Institutional Clients</div>
+        </div>
+        <div class="c25-stat">
+          <div class="c25-stat-num">48h</div>
+          <div class="c25-stat-label">Dhaka Metro Dispatch</div>
+        </div>
+        <div class="c25-stat">
+          <div class="c25-stat-num">100%</div>
+          <div class="c25-stat-label">DGDA & ISO Compliance</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;">
+        <div class="c25-curtain-card" onclick="this.classList.toggle('curtain-open')">
+          <div class="c25-curtain-shutter">
+            <span style="font-size:24px;margin-bottom:8px;">🏥</span>
+            <h4 style="font-size:17px;color:#fff;font-weight:800;">Hospital Tender Procurement Suite</h4>
+            <p style="font-size:12px;color:#94a3b8;margin-top:6px;">👆 Hover or Tap to Lift Curtain & View BOQ Specs</p>
+          </div>
+          <div class="c25-curtain-reveal">
+            <span style="font-size:11px;color:#f59e0b;font-weight:800;">INSTITUTIONAL SUITE</span>
+            <h4 style="font-size:16px;color:#fff;margin:6px 0;">ICU Patient Care & Diagnostic Hardware</h4>
+            <p style="font-size:12px;color:#cbd5e1;line-height:1.5;margin-bottom:14px;">Complete hospital ward setups with formal tender bid documentation and authorized distributor warranties.</p>
+            <a href="https://wa.me/8801862679456?text=Hi%20Efaz%2C%20please%20send%20Hospital%20Tender%20BOQ%20package" target="_blank" style="text-decoration:none;background:#f59e0b;color:#090d16;font-weight:800;font-size:12px;padding:8px 14px;border-radius:8px;text-align:center;">Request Hospital Tender BOQ →</a>
+          </div>
+        </div>
+
+        <div class="c25-curtain-card" onclick="this.classList.toggle('curtain-open')">
+          <div class="c25-curtain-shutter">
+            <span style="font-size:24px;margin-bottom:8px;">🦺</span>
+            <h4 style="font-size:17px;color:#fff;font-weight:800;">Turnkey Factory Plant Safety Contract</h4>
+            <p style="font-size:12px;color:#94a3b8;margin-top:6px;">👆 Hover or Tap to Lift Curtain & View PPE Specs</p>
+          </div>
+          <div class="c25-curtain-reveal">
+            <span style="font-size:11px;color:#38bdf8;font-weight:800;">INDUSTRIAL SUITE</span>
+            <h4 style="font-size:16px;color:#fff;margin:6px 0;">Safety Footwear, High-Voltage & Spill Control</h4>
+            <p style="font-size:12px;color:#cbd5e1;line-height:1.5;margin-bottom:14px;">Direct importer supply for industrial manufacturing plants, EPZ export units, and textile processing facilities.</p>
+            <a href="https://wa.me/8801862679456?text=Hi%20Efaz%2C%20please%20send%20Factory%20Safety%20wholesale%20contract" target="_blank" style="text-decoration:none;background:#38bdf8;color:#090d16;font-weight:800;font-size:12px;padding:8px 14px;border-radius:8px;text-align:center;">Request Industrial Safety Contract →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Simulator Script -->
+  <script>
+    let currentSector = "Hospital / Clinic";
+    function updateCalc(el, sector) {
+      document.querySelectorAll('.c18-sector-pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      currentSector = sector;
+      recalc();
+    }
+    function onSlide(val) {
+      document.getElementById('sliderVal').innerText = val + " Units";
+      recalc();
+    }
+    function recalc() {
+      const val = parseInt(document.getElementById('calcSlider').value);
+      const tierEl = document.getElementById('calcTier');
+      const descEl = document.getElementById('calcDesc');
+      const btn = document.getElementById('calcWaBtn');
+
+      let tierText = "TIER A: TENDER PRICING";
+      let descText = "Direct importer wholesale rate with physical sample submission for your procurement committee in Dhaka.";
+
+      if (val < 50) {
+        tierText = "TIER C: PILOT / TRIAL BATCH";
+        descText = "Immediate delivery from Mirpur warehouse for trial inspection before bulk contract.";
+      } else if (val < 300) {
+        tierText = "TIER B: WHOLESALE VOLUME";
+        descText = "Tiered discount with scheduled delivery and technical compliance datasheet included.";
+      } else {
+        tierText = "TIER A+: INSTITUTIONAL TENDER";
+        descText = "Maximum factory-direct discount with formal tender BOQ submission and deferred LC support.";
+      }
+
+      tierEl.innerText = tierText;
+      descEl.innerText = descText;
+      btn.href = `https://wa.me/8801862679456?text=Hi%20Efaz%20Alam%2C%20I%20would%20like%20a%20wholesale%20quotation%20for%20${val}%20units%20for%20our%20${encodeURIComponent(currentSector)}`;
+    }
+
+    // Matrix Cube Control
+    let cubePaused = false;
+    let cubeSpeed = false;
+    function pauseCube() {
+      const c = document.getElementById('matrixCube');
+      cubePaused = !cubePaused;
+      c.style.animationPlayState = cubePaused ? 'paused' : 'running';
+    }
+    function speedCube() {
+      const c = document.getElementById('matrixCube');
+      cubeSpeed = !cubeSpeed;
+      c.style.animationDuration = cubeSpeed ? '4s' : '14s';
+    }
+
+    // CONCEPT 21: Fluid Wave Canvas Simulator
+    const canvas = document.getElementById('c21Canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w, h;
+      let waveStep = 0;
+      let rippleForce = 0;
+
+      function resizeC21() {
+        w = canvas.width = canvas.parentElement.offsetWidth;
+        h = canvas.height = canvas.parentElement.offsetHeight;
+      }
+      resizeC21();
+      window.addEventListener('resize', resizeC21);
+
+      function drawWaves() {
+        ctx.clearRect(0, 0, w, h);
+        waveStep += 0.025;
+        if (rippleForce > 0) rippleForce *= 0.96;
+
+        // Wave Layer 1
+        ctx.beginPath();
+        ctx.moveTo(0, h);
+        for (let x = 0; x <= w; x += 15) {
+          const y = h * 0.75 + Math.sin(x * 0.008 + waveStep) * (24 + rippleForce * 18) + Math.cos(x * 0.015 + waveStep * 0.8) * 12;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(w, h);
+        ctx.closePath();
+        const grad1 = ctx.createLinearGradient(0, 0, w, h);
+        grad1.addColorStop(0, 'rgba(6, 182, 212, 0.16)');
+        grad1.addColorStop(1, 'rgba(14, 165, 233, 0.06)');
+        ctx.fillStyle = grad1;
+        ctx.fill();
+
+        // Wave Layer 2
+        ctx.beginPath();
+        ctx.moveTo(0, h);
+        for (let x = 0; x <= w; x += 15) {
+          const y = h * 0.82 + Math.cos(x * 0.007 - waveStep * 1.2) * (28 + rippleForce * 15) + Math.sin(x * 0.012 + waveStep) * 10;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(w, h);
+        ctx.closePath();
+        const grad2 = ctx.createLinearGradient(0, 0, w, h);
+        grad2.addColorStop(0, 'rgba(139, 92, 246, 0.14)');
+        grad2.addColorStop(1, 'rgba(6, 182, 212, 0.08)');
+        ctx.fillStyle = grad2;
+        ctx.fill();
+
+        requestAnimationFrame(drawWaves);
+      }
+      requestAnimationFrame(drawWaves);
+
+      canvas.parentElement.addEventListener('pointermove', () => { rippleForce = Math.min(rippleForce + 0.8, 3.5); }, { passive: true });
+      canvas.parentElement.addEventListener('touchmove', () => { rippleForce = Math.min(rippleForce + 1.2, 4.0); }, { passive: true });
+    }
+
+    // CONCEPT 22: Target Lock Logic
+    let isLocked = false;
+    function engageTargetLock() {
+      isLocked = !isLocked;
+      const c1 = document.getElementById('targetCard1');
+      const c2 = document.getElementById('targetCard2');
+      const status = document.getElementById('hudStatus');
+      const btn = document.getElementById('lockBtn');
+      if (isLocked) {
+        c1.classList.add('locked');
+        c2.classList.add('locked');
+        status.innerText = 'TARGET_LOCKED // CALIBRATION_VERIFIED';
+        status.style.color = '#4ade80';
+        btn.innerText = '🔓 CLICK TO RELEASE TARGET LOCK';
+        btn.style.background = 'rgba(34,197,94,0.3)';
+      } else {
+        c1.classList.remove('locked');
+        c2.classList.remove('locked');
+        status.innerText = 'TARGET_SEARCHING...';
+        status.style.color = '#22c55e';
+        btn.innerText = '🎯 CLICK / TAP TO ENGAGE TARGET LOCK';
+        btn.style.background = 'rgba(34,197,94,0.15)';
+      }
+    }
+
+    // CONCEPT 23: Dock Focus
+    function focusDock(card) {
+      document.querySelectorAll('.c23-card').forEach(c => c.classList.remove('active-dock'));
+      card.classList.add('active-dock');
+      card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+
+    // CONCEPT 24: Dual-Spectrum Mode Switcher
+    function setSpectrum(mode) {
+      const stage = document.getElementById('c24Stage');
+      const bOpt = document.getElementById('btnOptical');
+      const bTherm = document.getElementById('btnThermal');
+      if (mode === 'thermal') {
+        stage.classList.add('thermal-active');
+        bTherm.classList.add('active');
+        bOpt.classList.remove('active');
+      } else {
+        stage.classList.remove('thermal-active');
+        bOpt.classList.add('active');
+        bTherm.classList.remove('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
+</html>

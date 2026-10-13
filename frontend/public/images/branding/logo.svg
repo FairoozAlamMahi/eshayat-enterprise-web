@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#0d2461" stroke-width="7" />
+  <!-- Left mirrored E: vertical bar at x=44, bars extending left to x=22 -->
+  <path d="M 44 26 L 44 74 M 44 26 L 22 26 M 44 50 L 26 50 M 44 74 L 22 74" fill="none" stroke="#0d2461" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right regular E: vertical bar at x=56, bars extending right to x=78 -->
+  <path d="M 56 26 L 56 74 M 56 26 L 78 26 M 56 50 L 74 50 M 56 74 L 78 74" fill="none" stroke="#0d2461" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
