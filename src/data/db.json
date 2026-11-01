@@ -323,7 +323,7 @@
       "featured": true,
       "createdAt": "2026-10-01T10:30:00Z",
       "views": 18,
-      "whatsappClicks": 5
+      "whatsappClicks": 6
     },
     {
       "id": "prod-sterile-petri-dishes-bkmam",
@@ -1406,6 +1406,220 @@
       "path": "/",
       "lang": "en",
       "device": "desktop",
+      "id": "evt-1792003469147-f4fw",
+      "timestamp": "2026-10-14T18:44:29.147Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997190792-0o9l",
+      "timestamp": "2026-10-14T16:59:50.792Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "mro-items",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997064111-amm0",
+      "timestamp": "2026-10-14T16:57:44.111Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "industrial-safety",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997045760-834h",
+      "timestamp": "2026-10-14T16:57:25.760Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "ppe-products",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997036895-beb3",
+      "timestamp": "2026-10-14T16:57:16.895Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "lab-consumables",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997029710-uhl7",
+      "timestamp": "2026-10-14T16:57:09.710Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "lab-glassware",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997023739-5dbl",
+      "timestamp": "2026-10-14T16:57:03.739Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/products",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997018630-91gf",
+      "timestamp": "2026-10-14T16:56:58.630Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/products",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791997014994-uo3u",
+      "timestamp": "2026-10-14T16:56:54.994Z"
+    },
+    {
+      "type": "pdf_download",
+      "path": "/catalog-print",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996844724-1zvt",
+      "timestamp": "2026-10-14T16:54:04.724Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/catalog-print",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996839312-dtgv",
+      "timestamp": "2026-10-14T16:53:59.312Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "general-supply",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996805923-he4u",
+      "timestamp": "2026-10-14T16:53:25.923Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "mro-items",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996801933-cshx",
+      "timestamp": "2026-10-14T16:53:21.933Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "industrial-safety",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996793210-4lzj",
+      "timestamp": "2026-10-14T16:53:13.210Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "ppe-products",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996766910-1i34",
+      "timestamp": "2026-10-14T16:52:46.910Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "lab-consumables",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996752782-20ls",
+      "timestamp": "2026-10-14T16:52:32.782Z"
+    },
+    {
+      "type": "division_filter",
+      "path": "/products",
+      "divisionId": "lab-glassware",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996738396-3u6e",
+      "timestamp": "2026-10-14T16:52:18.396Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/products",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996722664-lfa5",
+      "timestamp": "2026-10-14T16:52:02.664Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/admin",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996717335-tqpq",
+      "timestamp": "2026-10-14T16:51:57.335Z"
+    },
+    {
+      "type": "whatsapp_click",
+      "path": "/",
+      "productId": "prod-autosampler-vials-2ml",
+      "productTitle": "2mL HPLC/GC Autosampler Vials with Screw Cap & Septa",
+      "divisionId": "lab-consumables",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996682507-boy2",
+      "timestamp": "2026-10-14T16:51:22.508Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996675350-weuo",
+      "timestamp": "2026-10-14T16:51:15.350Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/admin",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996574722-lj8o",
+      "timestamp": "2026-10-14T16:49:34.722Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/products",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996554441-ehew",
+      "timestamp": "2026-10-14T16:49:14.441Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996525511-m6fa",
+      "timestamp": "2026-10-14T16:48:45.511Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/",
+      "lang": "en",
+      "device": "mobile",
+      "id": "evt-1791996514229-mfqz",
+      "timestamp": "2026-10-14T16:48:34.229Z"
+    },
+    {
+      "type": "pageview",
+      "path": "/",
+      "lang": "en",
+      "device": "desktop",
       "id": "evt-1791879599631-z8uw",
       "timestamp": "2026-10-13T08:19:59.631Z"
     },
@@ -1954,15 +2168,15 @@
     }
   ],
   "counters": {
-    "totalPageviews": 184,
-    "mobileVisits": 121,
-    "desktopVisits": 63,
-    "enViews": 129,
+    "totalPageviews": 196,
+    "mobileVisits": 132,
+    "desktopVisits": 64,
+    "enViews": 141,
     "bnViews": 57,
-    "whatsappClicks": 37,
+    "whatsappClicks": 38,
     "callClicksLine1": 19,
     "callClicksLine2": 14,
     "rfqSubmissions": 2,
-    "pdfDownloads": 11
+    "pdfDownloads": 12
   }
 }

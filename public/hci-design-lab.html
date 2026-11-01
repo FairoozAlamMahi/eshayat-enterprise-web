@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>M/S Eshayat Enterprise — Master HCI Design Lab & Mobile Design Systems</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       HCI DESIGN ENGINE: CSS VARIABLES & THEMES
+       ========================================================================== */
+    :root {
+      --bg: #090d16;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.9);
+      --border: rgba(255, 255, 255, 0.1);
+      --border-focus: #0284c7;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #0284c7;
+      --accent-glow: rgba(2, 132, 199, 0.25);
+      --brand-amber: #f59e0b;
+      --brand-green: #10b981;
+      --brand-cyan: #06b6d4;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --spring-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* THEME: CLINICAL WHITE (Swiss Precision) */
+    body.theme-swiss {
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --border: #e2e8f0;
+      --border-focus: #0c4a6e;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --accent: #0c4a6e;
+      --accent-glow: rgba(12, 74, 110, 0.12);
+    }
+
+    /* THEME: DARK INDUSTRIAL (High-Visibility Safety) */
+    body.theme-industrial {
+      --bg: #050811;
+      --bg-card: #0b1120;
+      --bg-card-hover: #131c31;
+      --border: #1e293b;
+      --border-focus: #f59e0b;
+      --text: #ffffff;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --accent-glow: rgba(245, 158, 11, 0.3);
+    }
+
+    /* THEME: EDITORIAL TRAVERTINE (Institutional Luxury) */
+    body.theme-editorial {
+      --bg: #f5f3ef;
+      --bg-card: #ffffff;
+      --bg-card-hover: #eae6df;
+      --border: #dcd6cc;
+      --border-focus: #14532d;
+      --text: #1c1917;
+      --text-muted: #57534e;
+      --accent: #14532d;
+      --accent-glow: rgba(20, 83, 45, 0.15);
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLING
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+      padding-bottom: 120px; /* Room for thumb dock */
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font-family: inherit; }
+
+    /* ==========================================================================
+       STICKY TOP NAV / SYSTEM BAR
+       ========================================================================== */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      transition: all 0.3s ease;
+    }
+    body.theme-swiss .top-nav, body.theme-editorial .top-nav {
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .top-nav-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #fff;
+      padding: 2px;
+    }
+    .brand-text h1 {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .top-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 99px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s var(--spring);
+    }
+    .pill-btn:hover, .pill-btn:active {
+      transform: scale(0.96);
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .pill-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* THEME SELECTOR */
+    .theme-selector {
+      display: flex;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .theme-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .theme-tab.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    /* ==========================================================================
+       HERO: HCI PHILOSOPHY & SYSTEM DISCOVERY
+       ========================================================================== */
+    .hero-section {
+      max-width: 1360px;
+      margin: 24px auto 32px auto;
+      padding: 0 16px;
+    }
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 5vw, 44px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(2, 132, 199, 0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: clamp(24px, 4.5vw, 42px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+    .hero-desc {
+      font-size: clamp(14px, 2vw, 16px);
+      color: var(--text-muted);
+      max-width: 760px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* QUICK SYSTEM JUMP TRACK */
+    .system-nav-track {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .system-nav-track::-webkit-scrollbar { height: 4px; }
+    .system-nav-track::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+    .system-jump-pill {
+      flex: 0 0 auto;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s var(--spring);
+    }
+    .system-jump-pill:hover, .system-jump-pill:active {
+      background: var(--bg-card-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .pill-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent);
+      background: rgba(2, 132, 199, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ==========================================================================
+       SEARCH & QUICK FILTER BAR (Familiar & Direct)
+       ========================================================================== */
+    .search-filter-section {
+      max-width: 1360px;
+      margin: 0 auto 36px auto;
+      padding: 0 16px;
+    }
+    .search-container {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 14px 18px 14px 44px;
+      border-radius: var(--radius-md);
+      font-size: 14.5px;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .search-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-top: 6px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      z-index: 50;
+      display: none;
+      overflow: hidden;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .search-item {
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      transition: background 0.15s;
+    }
+    .search-item:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .filter-chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .filter-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-chip.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SECTION CONTAINER & HCI CARDS
+       ========================================================================== */
+    .hci-section {
+      max-width: 1360px;
+      margin: 44px auto;
+      padding: 0 16px;
+      scroll-margin-top: 90px;
+    }
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+    .section-title {
+      font-size: clamp(20px, 3.5vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .section-hci-principle {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       SYSTEM 01: SWISS PRECISION & CLINICAL MINIMALISM
+       ========================================================================== */
+    .swiss-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .swiss-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s var(--spring);
+      position: relative;
+    }
+    .swiss-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .swiss-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .swiss-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .swiss-card p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .swiss-specs {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 18px;
+      padding: 8px 10px;
+      background: rgba(0,0,0,0.15);
+      border-radius: 6px;
+    }
+    .swiss-specs div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ==========================================================================
+       SYSTEM 02: MAGIC UI BENTO MODULAR GRID
+       ========================================================================== */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s var(--spring), border-color 0.3s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .bento-col-8 { grid-column: span 8; }
+    .bento-col-4 { grid-column: span 4; }
+    .bento-col-6 { grid-column: span 6; }
+    .bento-col-12 { grid-column: span 12; }
+
+    /* Animated border beam effect */
+    .border-beam {
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      pointer-events: none;
+      border: 1.5px solid transparent;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent) border-box;
+      background-size: 200% 100%;
+      animation: beamRun 4s infinite linear;
+    }
+    @keyframes beamRun {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ==========================================================================
+       SYSTEM 03: TACTILE SPRING & PHYSICAL MANIPULATION
+       ========================================================================== */
+    .spring-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 12px 4px 20px 4px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .spring-card {
+      flex: 0 0 clamp(260px, 70vw, 320px);
+      scroll-snap-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.35s var(--spring-bouncy), box-shadow 0.35s ease, border-color 0.2s ease;
+      user-select: none;
+    }
+    .spring-card:hover, .spring-card:active {
+      transform: scale(1.03) translateY(-6px);
+      border-color: var(--brand-amber);
+      box-shadow: 0 20px 35px -10px rgba(245, 158, 11, 0.25);
+    }
+    .spring-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+
+    /* ==========================================================================
+       SYSTEM 04: DARK INDUSTRIAL TELEMETRY HUD
+       ========================================================================== */
+    .hud-box {
+      background: #040812;
+      border: 1px solid #10b981;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hud-telemetry-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 8px 14px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .hud-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .hud-item {
+      background: rgba(6, 16, 26, 0.85);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 12px;
+      padding: 18px;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .hud-item:hover {
+      border-color: #34d399;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+    }
+    .hud-beacon {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulseBeacon 1.8s infinite ease-in-out;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    @keyframes pulseBeacon {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    /* ==========================================================================
+       SYSTEM 05: HIGH-DENSITY PROCUREMENT MATRIX (McMaster Style)
+       ========================================================================== */
+    .matrix-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .matrix-table th {
+      background: rgba(0,0,0,0.25);
+      padding: 12px 14px;
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .matrix-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .matrix-table tr:hover td {
+      background: var(--bg-card-hover);
+    }
+    .batch-counter {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .batch-btn {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: background 0.15s;
+    }
+    .batch-btn:hover { background: var(--accent); color: #fff; }
+    .batch-num {
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       SYSTEM 06: PROGRESSIVE DISCLOSURE & BOTTOM SHEET DRAWER
+       ========================================================================== */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-sheet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0f172a;
+      border-top: 1px solid var(--border);
+      border-radius: 24px 24px 0 0;
+      padding: 24px 20px 40px 20px;
+      max-height: 80vh;
+      overflow-y: auto;
+      z-index: 201;
+      transform: translateY(100%);
+      transition: transform 0.35s var(--spring);
+      box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
+    }
+    .drawer-handle {
+      width: 44px;
+      height: 5px;
+      background: #334155;
+      border-radius: 99px;
+      margin: 0 auto 20px auto;
+    }
+    .drawer-active .drawer-overlay {
+      display: block;
+      opacity: 1;
+    }
+    .drawer-active .drawer-sheet {
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       SYSTEM 07: EDITORIAL INSTITUTIONAL TRUST BROCHURE
+       ========================================================================== */
+    .editorial-box {
+      background: #ffffff;
+      color: #1c1917;
+      border: 1px solid #e7e5e4;
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 5vw, 44px);
+    }
+    .editorial-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #14532d;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .editorial-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #0f172a;
+    }
+    .editorial-split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .editorial-pillar {
+      border-left: 2px solid #14532d;
+      padding-left: 16px;
+    }
+
+    /* ==========================================================================
+       SYSTEM 08: MICRO-INTERACTION & STATE FEEDBACK WIDGETS
+       ========================================================================== */
+    .calc-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: clamp(20px, 4vw, 32px);
+    }
+    .slider-range {
+      width: 100%;
+      height: 8px;
+      border-radius: 99px;
+      outline: none;
+      background: #334155;
+      margin: 16px 0;
+      cursor: pointer;
+      accent-color: var(--accent);
+    }
+    .tier-badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--brand-amber);
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--brand-amber);
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+
+    /* ==========================================================================
+       SYSTEM 10: FITTS'S LAW MOBILE THUMB DOCK (Lower 40% Ergonomics)
+       ========================================================================== */
+    .thumb-dock {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 24px);
+      max-width: 520px;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      box-shadow: 0 20px 45px -10px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.08);
+      z-index: 99;
+    }
+    .dock-btn {
+      flex: 1;
+      height: 48px; /* 48px touch target for Fitts's law */
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.18s var(--spring);
+      text-decoration: none;
+    }
+    .dock-btn:active {
+      transform: scale(0.95);
+    }
+    .dock-wa {
+      background: #25d366;
+      color: #062b14;
+      font-weight: 800;
+    }
+    .dock-call {
+      background: #0284c7;
+      color: #fff;
+    }
+    .dock-basket {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+    .dock-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #f59e0b;
+      color: #000;
+      font-size: 10px;
+      font-weight: 900;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS (Mobile <= 860px)
+       ========================================================================== */
+    @media (max-width: 860px) {
+      .bento-col-8, .bento-col-4, .bento-col-6 {
+        grid-column: span 12 !important;
+      }
+      .top-nav {
+        padding: 8px 12px;
+      }
+      .theme-tab span { display: none; }
+      .hero-card {
+        padding: 20px 16px;
+      }
+      .swiss-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY TOP NAV -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand-group">
+        <img src="/images/brand/emblem.png" alt="M/S Eshayat Enterprise Emblem" class="brand-logo" />
+        <div class="brand-text">
+          <h1 id="brandTitle">M/S ESHAYAT ENTERPRISE</h1>
+          <div class="brand-tagline" id="brandTagline">Master HCI Design Lab • 10 Interactive Systems</div>
+        </div>
+      </div>
+
+      <div class="top-controls">
+        <!-- THEME SELECTOR -->
+        <div class="theme-selector">
+          <button class="theme-tab active" onclick="setTheme('default', this)">🌙 <span>Dark Lab</span></button>
+          <button class="theme-tab" onclick="setTheme('theme-swiss', this)">⚪ <span>Swiss Clean</span></button>
+          <button class="theme-tab" onclick="setTheme('theme-industrial', this)">🟡 <span>Industrial</span></button>
+          <button class="theme-tab" onclick="setTheme('theme-editorial', this)">📜 <span>Editorial</span></button>
+        </div>
+
+        <!-- BILINGUAL TOGGLE -->
+        <button class="pill-btn" onclick="toggleLanguage()" id="langBtn">
+          🌐 <span id="langLabel">বাংলা</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-card">
+      <div class="hero-badge">
+        ✨ HUMAN-COMPUTER INTERACTION (HCI) LAB
+      </div>
+      <h2 class="hero-title" id="heroHeading">
+        Engineering Clarity, Trust & Procurement Velocity.
+      </h2>
+      <p class="hero-desc" id="heroSub">
+        Exploring 10 modern design systems synthesized from the Claude Design Skillstack—replacing heavy 3D gimmicks with ergonomic touch UX, instant scanability, and high-contrast B2B wholesale decision flows.
+      </p>
+
+      <!-- JUMP TRACK -->
+      <div class="system-nav-track">
+        <a href="#sys-1" class="system-jump-pill"><span class="pill-num">01</span> Swiss Precision</a>
+        <a href="#sys-2" class="system-jump-pill"><span class="pill-num">02</span> Bento Architecture</a>
+        <a href="#sys-3" class="system-jump-pill"><span class="pill-num">03</span> Tactile Springs</a>
+        <a href="#sys-4" class="system-jump-pill"><span class="pill-num">04</span> Dark Telemetry</a>
+        <a href="#sys-5" class="system-jump-pill"><span class="pill-num">05</span> Procurement Matrix</a>
+        <a href="#sys-6" class="system-jump-pill"><span class="pill-num">06</span> Bottom Drawer</a>
+        <a href="#sys-7" class="system-jump-pill"><span class="pill-num">07</span> Editorial Trust</a>
+        <a href="#sys-8" class="system-jump-pill"><span class="pill-num">08</span> State Feedback</a>
+        <a href="#sys-9" class="system-jump-pill"><span class="pill-num">09</span> Technical Spec</a>
+        <a href="#sys-10" class="system-jump-pill"><span class="pill-num">10</span> Fitts's Thumb Dock</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER SECTION -->
+  <section class="search-filter-section">
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="liveSearchInput" class="search-input" placeholder="Search 20+ import brands, ISO 4796 bottles, ICU beds, safety shoes..." oninput="handleSearch(this.value)" />
+      <div id="searchDropdown" class="search-dropdown"></div>
+    </div>
+    <div class="filter-chips">
+      <button class="filter-chip active" onclick="filterCategory('all', this)">All Divisions (6)</button>
+      <button class="filter-chip" onclick="filterCategory('lab-glassware', this)">🔬 Lab Glassware</button>
+      <button class="filter-chip" onclick="filterCategory('hospital', this)">🏥 Hospital & Clinic</button>
+      <button class="filter-chip" onclick="filterCategory('safety', this)">🦺 Industrial PPE</button>
+      <button class="filter-chip" onclick="filterCategory('reagents', this)">🧪 Chemical Reagents</button>
+      <button class="filter-chip" onclick="filterCategory('mro', this)">⚙️ MRO Equipment</button>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 01: SWISS PRECISION & CLINICAL MINIMALISM
+       ========================================================================= -->
+  <section id="sys-1" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 01 // BOLD MINIMALISM</span>
+        <h3 class="section-title">Swiss Precision & Clinical Hierarchy</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Cognitive Load Reduction & High Contrast Legibility</span>
+    </div>
+
+    <div class="swiss-grid">
+      <div class="swiss-card">
+        <div>
+          <span class="swiss-tag">BOROSILICATE 3.3 • ISO 4796</span>
+          <h3>Schott Duran Reagent Bottles (Clear & Amber)</h3>
+          <p>Thermal shock resistant GL45 bottles with autoclavable screw caps for pharmaceutical QA/QC laboratories.</p>
+          <div class="swiss-specs">
+            <div><span>CAPACITY RANGE:</span><strong>30mL – 2000mL</strong></div>
+            <div><span>TEMPERATURE RATING:</span><strong>-40°C to +140°C</strong></div>
+            <div><span>WAREHOUSE STATUS:</span><strong style="color:var(--brand-green);">In Stock (Dhaka)</strong></div>
+          </div>
+        </div>
+        <button class="pill-btn active" style="width:100%;justify-content:center;" onclick="addToBasket('Schott Duran Bottles 500mL')">
+          + Add to Quotation Basket
+        </button>
+      </div>
+
+      <div class="swiss-card">
+        <div>
+          <span class="swiss-tag">EN ISO 20345:2022 • S3 SRC</span>
+          <h3>Safety Jogger Heavy Industrial Work Boot</h3>
+          <p>Ballistic Kevlar midsole, 200J steel toe cap, and oil/acid resistant dual-density PU outsole.</p>
+          <div class="swiss-specs">
+            <div><span>TOE PROTECTION:</span><strong>200 Joules Steel</strong></div>
+            <div><span>PUNCTURE PROOF:</span><strong>1100N Kevlar</strong></div>
+            <div><span>SUPPLY TIERS:</span><strong>Carton / Container</strong></div>
+          </div>
+        </div>
+        <button class="pill-btn active" style="width:100%;justify-content:center;" onclick="addToBasket('Safety Jogger S3 Boot')">
+          + Add to Quotation Basket
+        </button>
+      </div>
+
+      <div class="swiss-card">
+        <div>
+          <span class="swiss-tag">DGDA ENLISTED • ISO 13485</span>
+          <h3>Electric ICU Hospital Patient Bed Setup</h3>
+          <p>Multi-function motorized ICU ward bed with CPR quick release, central braking, and nurse control panel.</p>
+          <div class="swiss-specs">
+            <div><span>ACTUATORS:</span><strong>4 Motor LINAK</strong></div>
+            <div><span>SAFE LOAD CAPACITY:</span><strong>250 kg</strong></div>
+            <div><span>TENDER PACKAGE:</span><strong>Turnkey BOQ Bid</strong></div>
+          </div>
+        </div>
+        <button class="pill-btn active" style="width:100%;justify-content:center;" onclick="addToBasket('Electric ICU Bed Setup')">
+          + Add to Quotation Basket
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 02: MAGIC UI BENTO MODULAR ARCHITECTURE
+       ========================================================================= -->
+  <section id="sys-2" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 02 // MAGIC UI ARCHITECTURE</span>
+        <h3 class="section-title">Modular Bento Pods with Border Beam</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Miller's Law (Information Chunking & Spatial Anchors)</span>
+    </div>
+
+    <div class="bento-grid">
+      <!-- BIG TILE 8 COL -->
+      <div class="bento-card bento-col-8">
+        <div class="border-beam"></div>
+        <div>
+          <span style="font-size:11px;font-family:var(--font-mono);color:var(--accent);font-weight:800;">● INSTITUTIONAL TENDER PORTAL</span>
+          <h3 style="font-size:24px;font-weight:800;margin:6px 0 10px 0;">DGDA & Ministry Certified Health Procurement</h3>
+          <p style="color:var(--text-muted);font-size:13.5px;max-width:580px;line-height:1.6;">
+            Providing comprehensive tender bidding documentation, physical pre-tender sample submissions, and deferred LC banking support for public and private healthcare directorates.
+          </p>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+          <a href="https://wa.me/8801862679456?text=Hi%20Efaz%2C%20please%20send%20institutional%20tender%20profile" target="_blank" class="pill-btn active">
+            Request Formal Tender Profile →
+          </a>
+          <button class="pill-btn" onclick="openSpecDrawer('DGDA Health Tender Suite')">
+            Inspect Tender Compliance
+          </button>
+        </div>
+      </div>
+
+      <!-- METRIC TILE 4 COL -->
+      <div class="bento-card bento-col-4">
+        <span style="font-size:11px;font-family:var(--font-mono);color:var(--brand-amber);font-weight:800;">ANNUAL CAPACITY</span>
+        <div style="font-size:38px;font-weight:900;font-family:var(--font-mono);color:var(--brand-amber);margin:8px 0;">৳ 18.5M+</div>
+        <p style="font-size:12px;color:var(--text-muted);">Successfully delivered tender shipments across 64 districts in Bangladesh.</p>
+      </div>
+
+      <!-- PRODUCT 6 COL -->
+      <div class="bento-card bento-col-6">
+        <div style="display:flex;gap:16px;align-items:center;">
+          <img src="/images/products/reagent-bottle.jpg" alt="Reagent Bottle" style="width:80px;height:80px;object-fit:cover;border-radius:12px;" />
+          <div>
+            <span style="font-size:10px;font-weight:800;color:var(--brand-cyan);">CHEMICAL BUFFER</span>
+            <h4 style="font-size:16px;font-weight:800;">Reagent Ethanol 99.9% Purity</h4>
+            <p style="font-size:12px;color:var(--text-muted);margin:4px 0 10px 0;">HPLC & Spectrophotometric Grade with Batch COA.</p>
+            <button class="pill-btn" onclick="addToBasket('Reagent Ethanol 99.9% 2.5L')">+ Quick Add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 6 COL -->
+      <div class="bento-card bento-col-6">
+        <div style="display:flex;gap:16px;align-items:center;">
+          <img src="/images/products/safety-shoes.jpg" alt="Safety Shoes" style="width:80px;height:80px;object-fit:cover;border-radius:12px;" />
+          <div>
+            <span style="font-size:10px;font-weight:800;color:var(--brand-green);">FACTORY PPE</span>
+            <h4 style="font-size:16px;font-weight:800;">Karam Full Body Fall Arrest Harness</h4>
+            <p style="font-size:12px;color:var(--text-muted);margin:4px 0 10px 0;">EN 361 Certified with Energy Absorbing Lanyard.</p>
+            <button class="pill-btn" onclick="addToBasket('Karam Safety Harness EN361')">+ Quick Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 03: TACTILE SPRING & VISIONOS PHYSICALITY
+       ========================================================================= -->
+  <section id="sys-3" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 03 // REACT SPRING & FRAMER MOTION</span>
+        <h3 class="section-title">Tactile Physicality & Direct Manipulation</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Norman's Affordances & Instant Elastic Touch Feedback</span>
+    </div>
+
+    <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">
+      👆 Swipe or tap cards on mobile — notice the spring-loaded mass and haptic-like scale reaction.
+    </div>
+
+    <div class="spring-track">
+      <div class="spring-card" onclick="triggerCardSpring(this)">
+        <img src="/images/products/safety-shoes.jpg" alt="Safety Shoes" />
+        <span style="font-size:10px;color:var(--brand-amber);font-weight:800;">HEAVY INDUSTRY</span>
+        <h4 style="font-size:15px;margin:4px 0;">Safety Jogger Titan S3</h4>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Enlisted for power plants, oil refineries & infrastructure.</p>
+        <button class="pill-btn active" style="width:100%;justify-content:center;" onclick="event.stopPropagation();addToBasket('Safety Jogger Titan S3')">Add to Quote</button>
+      </div>
+
+      <div class="spring-card" onclick="triggerCardSpring(this)">
+        <img src="/images/products/reagent-bottle.jpg" alt="Schott Duran" />
+        <span style="font-size:10px;color:var(--brand-cyan);font-weight:800;">LABORATORY</span>
+        <h4 style="font-size:15px;margin:4px 0;">Schott Duran GL45 1000mL</h4>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Chemical resistance Class 1 with white graduation scale.</p>
+        <button class="pill-btn active" style="width:100%;justify-content:center;" onclick="event.stopPropagation();addToBasket('Schott Duran GL45 1000mL')">Add to Quote</button>
+      </div>
+
+      <div class="spring-card" onclick="triggerCardSpring(this)">
+        <img src="/images/products/hospital-patient-bed.jpg" alt="Hospital Bed" />
+        <span style="font-size:10px;color:var(--brand-green);font-weight:800;">HEALTHCARE TENDER</span>
+        <h4 style="font-size:15px;margin:4px 0;">ICU Patient Care Bed</h4>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Electric positioning with backup battery & IV pole mount.</p>
+        <button class="pill-btn active" style="width:100%;justify-content:center;" onclick="event.stopPropagation();addToBasket('ICU Patient Bed Setup')">Add to Quote</button>
+      </div>
+
+      <div class="spring-card" onclick="triggerCardSpring(this)">
+        <img src="/images/products/microscope.jpg" alt="Microscope" />
+        <span style="font-size:10px;color:#a855f7;font-weight:800;">DIAGNOSTIC</span>
+        <h4 style="font-size:15px;margin:4px 0;">HD Digital Clinical Microscope</h4>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">1600X optical magnification with digital image telemetry.</p>
+        <button class="pill-btn active" style="width:100%;justify-content:center;" onclick="event.stopPropagation();addToBasket('HD Digital Microscope 1600X')">Add to Quote</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 04: DARK INDUSTRIAL TELEMETRY HUD
+       ========================================================================= -->
+  <section id="sys-4" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 04 // INDUSTRIAL DEPTH</span>
+        <h3 class="section-title">Dark Telemetry & Low-Glare Plant Readout</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Extreme Contrast Ratio (>12:1) & Night/Factory Ergonomics</span>
+    </div>
+
+    <div class="hud-box">
+      <div class="hud-telemetry-bar">
+        <div><span class="hud-beacon"></span> LIVE STATUS: <strong>MIRPUR WAREHOUSE READY</strong></div>
+        <div>CALIBRATION: <strong>NIST TRACEABLE</strong></div>
+        <div>DISPATCH LATENCY: <strong>24–48 HOURS</strong></div>
+      </div>
+
+      <div class="hud-grid">
+        <div class="hud-item">
+          <div style="font-family:var(--font-mono);font-size:10.5px;color:#34d399;">SKU: [ESHAYAT-GL-45]</div>
+          <h4 style="font-size:15.5px;margin:4px 0;">Amber Borosilicate 500mL Media Bottle</h4>
+          <p style="font-size:12px;color:#94a3b8;margin-bottom:12px;">Protects light-sensitive chemical standards from UV photodegradation.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;color:#34d399;font-weight:700;">● 450 Units in Stock</span>
+            <button class="pill-btn" onclick="addToBasket('Amber Bottle 500mL')">Add</button>
+          </div>
+        </div>
+
+        <div class="hud-item">
+          <div style="font-family:var(--font-mono);font-size:10.5px;color:#34d399;">SKU: [ESHAYAT-PPE-GLV]</div>
+          <h4 style="font-size:15.5px;margin:4px 0;">Electrical Insulated Rubber Gloves (1000V)</h4>
+          <p style="font-size:12px;color:#94a3b8;margin-bottom:12px;">Class 0 certified dielectric safety protection for high-voltage plant substations.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;color:#34d399;font-weight:700;">● 120 Pairs in Stock</span>
+            <button class="pill-btn" onclick="addToBasket('1000V Insulated Gloves')">Add</button>
+          </div>
+        </div>
+
+        <div class="hud-item">
+          <div style="font-family:var(--font-mono);font-size:10.5px;color:#34d399;">SKU: [ESHAYAT-MED-SHW]</div>
+          <h4 style="font-size:15.5px;margin:4px 0;">Emergency Drench Shower & Eyewash Station</h4>
+          <p style="font-size:12px;color:#94a3b8;margin-bottom:12px;">ANSI Z358.1 compliant floor-mounted emergency wash station for chemical plants.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;color:#34d399;font-weight:700;">● Tender Enlistment Ready</span>
+            <button class="pill-btn" onclick="addToBasket('Emergency Eyewash Station')">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 05: HIGH-DENSITY PROCUREMENT MATRIX (McMaster-Carr)
+       ========================================================================= -->
+  <section id="sys-5" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 05 // DECISION VELOCITY</span>
+        <h3 class="section-title">High-Density Procurement Specification Matrix</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Rapid SKU Comparison & Single-View Evaluation</span>
+    </div>
+
+    <div class="matrix-wrapper">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Product Specification</th>
+            <th>Standard / Rating</th>
+            <th>Brand Sourced</th>
+            <th>Packaging Tier</th>
+            <th>Batch Stepper</th>
+            <th>Procurement Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Schott Duran Reagent Bottle 250mL</strong><br/><span style="color:var(--text-muted);font-size:11px;">Clear Borosilicate GL45</span></td>
+            <td><span style="color:var(--brand-cyan);">ISO 4796</span></td>
+            <td>Schott Duran / Germany</td>
+            <td>Box of 10 Pcs</td>
+            <td>
+              <div class="batch-counter">
+                <button class="batch-btn" onclick="stepBatch(this, -10)">-</button>
+                <span class="batch-num">10</span>
+                <button class="batch-btn" onclick="stepBatch(this, 10)">+</button>
+              </div>
+            </td>
+            <td>
+              <button class="pill-btn active" onclick="addCustomBatch('Bottle 250mL', this)">Add to BOQ</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Safety Jogger Runner Safety Shoe</strong><br/><span style="color:var(--text-muted);font-size:11px;">Low-Cut Sport Style S1P</span></td>
+            <td><span style="color:var(--brand-amber);">EN ISO 20345</span></td>
+            <td>Safety Jogger / Belgium</td>
+            <td>Carton of 10 Pairs</td>
+            <td>
+              <div class="batch-counter">
+                <button class="batch-btn" onclick="stepBatch(this, -5)">-</button>
+                <span class="batch-num">20</span>
+                <button class="batch-btn" onclick="stepBatch(this, 5)">+</button>
+              </div>
+            </td>
+            <td>
+              <button class="pill-btn active" onclick="addCustomBatch('Runner Safety Shoe', this)">Add to BOQ</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Class-A Volumetric Flask 100mL</strong><br/><span style="color:var(--text-muted);font-size:11px;">Individual Batch Certificate</span></td>
+            <td><span style="color:var(--brand-green);">DIN EN ISO 1042</span></td>
+            <td>Glassco / Schott</td>
+            <td>Pack of 2 Pcs</td>
+            <td>
+              <div class="batch-counter">
+                <button class="batch-btn" onclick="stepBatch(this, -2)">-</button>
+                <span class="batch-num">12</span>
+                <button class="batch-btn" onclick="stepBatch(this, 2)">+</button>
+              </div>
+            </td>
+            <td>
+              <button class="pill-btn active" onclick="addCustomBatch('Volumetric Flask 100mL', this)">Add to BOQ</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 06: PROGRESSIVE DISCLOSURE & BOTTOM SHEET DRAWER
+       ========================================================================= -->
+  <section id="sys-6" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 06 // HICK'S LAW</span>
+        <h3 class="section-title">Progressive Disclosure Trays (Mobile Bottom Sheet)</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Zero Page-Reload Context Preservation & Shallow Hierarchy</span>
+    </div>
+
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;">
+      <h4 style="font-size:18px;margin-bottom:8px;">Deep Technical Verification Without Clutter</h4>
+      <p style="color:var(--text-muted);font-size:13.5px;margin-bottom:16px;">
+        Tap below on mobile or desktop to test a native bottom-sheet slide up. Procurement committees get instant access to chemical compatibility, test certificates, and tender bid forms without leaving their scroll position.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="pill-btn active" onclick="openSpecDrawer('Schott Duran Borosilicate 3.3 Technical Compliance')">
+          📄 View Schott Duran Compliance Certificate
+        </button>
+        <button class="pill-btn" onclick="openSpecDrawer('Safety Jogger EN ISO 20345 Test Laboratory Results')">
+          🛡️ View PPE Ballistic Test Report
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 07: EDITORIAL INSTITUTIONAL TRUST BROCHURE
+       ========================================================================= -->
+  <section id="sys-7" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 07 // EDITORIAL BROCHURE</span>
+        <h3 class="section-title">Corporate Gravitas & Institutional Tender Trust</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Aesthetic-Usability Effect & Established Market Credibility</span>
+    </div>
+
+    <div class="editorial-box">
+      <div class="editorial-badge">DIRECT IMPORTER & INSTITUTIONAL CONTRACTOR</div>
+      <h3 class="editorial-headline">
+        Trusted by Bangladesh's Foremost Laboratories, Hospitals & Industrial Complexes.
+      </h3>
+      <p style="font-size:15px;line-height:1.7;color:#44403c;max-width:800px;">
+        With a physical logistics warehouse in Mirpur, Dhaka and direct procurement channels across Germany, Belgium, India, and China, M/S Eshayat Enterprise delivers uncompromising compliance with government Directorate General of Drug Administration (DGDA) tender standards.
+      </p>
+
+      <div class="editorial-split">
+        <div class="editorial-pillar">
+          <h4 style="font-size:16px;font-weight:700;color:#1c1917;margin-bottom:4px;">Direct Factory Importer</h4>
+          <p style="font-size:13px;color:#57534e;">Eliminating secondary middlemen margins to guarantee genuine factory-sealed glassware and safety gear.</p>
+        </div>
+        <div class="editorial-pillar">
+          <h4 style="font-size:16px;font-weight:700;color:#1c1917;margin-bottom:4px;">Formal Tender Bid Support</h4>
+          <p style="font-size:13px;color:#57534e;">Physical sample submission, performance bank guarantee alignment, and deferred letter of credit (LC) terms.</p>
+        </div>
+        <div class="editorial-pillar">
+          <h4 style="font-size:16px;font-weight:700;color:#1c1917;margin-bottom:4px;">Fast Metro Dhaka Fulfillment</h4>
+          <p style="font-size:13px;color:#57534e;">Emergency hospital consumable dispatch within 24 to 48 hours directly from our Mirpur inventory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 08: STATE MACHINE FEEDBACK & BOQ CALCULATOR
+       ========================================================================= -->
+  <section id="sys-8" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 08 // REAL-TIME FEEDBACK</span>
+        <h3 class="section-title">Interactive Batch Pricing & Tier Simulator</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Continuous Visual Response & Zero Uncertainty Loops</span>
+    </div>
+
+    <div class="calc-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div>
+          <span style="font-size:11px;font-family:var(--font-mono);color:var(--accent);font-weight:800;">SELECT PROCUREMENT VOLUME:</span>
+          <div style="font-size:26px;font-weight:900;margin-top:2px;" id="volumeDisplay">100 Units / Sets</div>
+        </div>
+        <div class="tier-badge-live" id="tierDisplay">
+          🏷️ TIER B: WHOLESALE VOLUME DISCOUNT
+        </div>
+      </div>
+
+      <input type="range" min="10" max="1000" step="10" value="100" class="slider-range" id="volumeSlider" oninput="updateCalculator(this.value)" />
+
+      <p style="font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:20px;" id="tierDesc">
+        Includes volume discount, formal invoice documentation, and sample verification for tender evaluation committees.
+      </p>
+
+      <a id="calcWaLink" href="https://wa.me/8801862679456?text=Hi%20Efaz%2C%20I%20need%20a%20wholesale%20quotation%20for%20100%20units" target="_blank" class="pill-btn active" style="font-size:13.5px;padding:12px 24px;">
+        💬 Generate Formatted WhatsApp Quotation for 100 Units →
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 09: TECHNICAL SCHEMATIC CALLOUT PIN
+       ========================================================================= -->
+  <section id="sys-9" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 09 // ZERO AMBIGUITY</span>
+        <h3 class="section-title">Schematic Component Mapping</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Direct Associative Mapping (Eliminates Procurement Specification Errors)</span>
+    </div>
+
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;align-items:center;">
+      <div>
+        <img src="/images/products/safety-shoes.jpg" alt="Safety Shoes Schematic" style="width:100%;border-radius:14px;border:1px solid var(--border);" />
+      </div>
+      <div>
+        <span style="font-size:11px;font-family:var(--font-mono);color:var(--brand-amber);font-weight:800;">SAFETY JOGGER CAD BREAKDOWN</span>
+        <h4 style="font-size:20px;font-weight:800;margin:6px 0 16px 0;">Triple-Layer Ballistic Footwear Construction</h4>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="background:rgba(0,0,0,0.2);padding:10px 14px;border-radius:8px;border-left:3px solid var(--brand-amber);">
+            <strong style="font-size:13px;color:#fff;">1. 200J Impact Steel Cap</strong>
+            <p style="font-size:12px;color:var(--text-muted);">Protects against falling industrial weights and crushing hazards.</p>
+          </div>
+          <div style="background:rgba(0,0,0,0.2);padding:10px 14px;border-radius:8px;border-left:3px solid var(--brand-cyan);">
+            <strong style="font-size:13px;color:#fff;">2. Ballistic Anti-Perforation Midsole</strong>
+            <p style="font-size:12px;color:var(--text-muted);">Zero sole penetration from nails, sharp scrap metal or rebar spikes.</p>
+          </div>
+          <div style="background:rgba(0,0,0,0.2);padding:10px 14px;border-radius:8px;border-left:3px solid var(--brand-green);">
+            <strong style="font-size:13px;color:#fff;">3. Dual-Density Antistatic PU Outsole</strong>
+            <p style="font-size:12px;color:var(--text-muted);">SRC rated slip resistance on ceramic tile with soap solution and steel with glycerol.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SYSTEM 10: FITTS'S LAW MOBILE THUMB DOCK (Lower 40% Ergonomics)
+       ========================================================================= -->
+  <section id="sys-10" class="hci-section">
+    <div class="section-header">
+      <div class="section-meta">
+        <span class="section-num">SYSTEM 10 // MOBILE ERGONOMICS</span>
+        <h3 class="section-title">Fitts's Law Mobile Thumb Zone Dock</h3>
+      </div>
+      <span class="section-hci-principle">HCI: Lower 40% One-Handed Natural Thumb Reach (Fitts's Law Target Size >= 48px)</span>
+    </div>
+
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;">
+      <h4 style="font-size:18px;margin-bottom:8px;">Look at the bottom of your screen!</h4>
+      <p style="color:var(--text-muted);font-size:13.5px;line-height:1.6;margin-bottom:16px;">
+        On all modern smartphones, 75% of one-handed taps occur in the lower third of the display. Our floating thumb dock anchors your 3 most critical business actions directly at your fingertips:
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:12px;font-size:13px;">
+        <div style="background:rgba(0,0,0,0.2);padding:12px;border-radius:10px;">
+          <strong style="color:#25d366;">1. Direct WhatsApp RFQ</strong>
+          <p style="color:var(--text-muted);font-size:12px;margin-top:2px;">Pre-fills selected products into a message to Efaz Alam.</p>
+        </div>
+        <div style="background:rgba(0,0,0,0.2);padding:12px;border-radius:10px;">
+          <strong style="color:var(--brand-cyan);">2. Dual Telephone Lines</strong>
+          <p style="color:var(--text-muted);font-size:12px;margin-top:2px;">Instant 1-tap call picker for 01862-679456 or 01715-027964.</p>
+        </div>
+        <div style="background:rgba(0,0,0,0.2);padding:12px;border-radius:10px;">
+          <strong style="color:var(--brand-amber);">3. Live Quotation Basket</strong>
+          <p style="color:var(--text-muted);font-size:12px;margin-top:2px;">Tracks selected items and generates formal procurement bids.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM SHEET TECHNICAL DRAWER -->
+  <div id="drawerOverlay" class="drawer-overlay" onclick="closeSpecDrawer()"></div>
+  <div id="drawerSheet" class="drawer-sheet">
+    <div class="drawer-handle"></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+      <div>
+        <span style="font-size:11px;font-family:var(--font-mono);color:var(--accent);font-weight:800;">OFFICIAL SPECIFICATION TRAY</span>
+        <h3 id="drawerTitle" style="font-size:20px;font-weight:800;margin-top:4px;">Technical Compliance Sheet</h3>
+      </div>
+      <button onclick="closeSpecDrawer()" style="background:rgba(255,255,255,0.1);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-weight:800;">✕</button>
+    </div>
+    <div id="drawerContent" style="font-size:13.5px;color:var(--text-muted);line-height:1.7;">
+      <!-- Content populated dynamically -->
+    </div>
+    <div style="margin-top:24px;display:flex;gap:12px;">
+      <a id="drawerWaBtn" href="https://wa.me/8801862679456" target="_blank" class="pill-btn active" style="flex:1;justify-content:center;padding:12px;">
+        💬 Ask Efaz About This Certification on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- FLOATING FITTS'S LAW THUMB DOCK -->
+  <nav class="thumb-dock">
+    <a href="https://wa.me/8801862679456?text=Hi%20Efaz%20Alam%2C%20I%20am%20browsing%20the%20M%2FS%20Eshayat%20Enterprise%20catalog" target="_blank" class="dock-btn dock-wa">
+      <span>💬</span> WhatsApp
+    </a>
+    <a href="tel:01862679456" class="dock-btn dock-call">
+      <span>📞</span> Call Direct
+    </a>
+    <button class="dock-btn dock-basket" onclick="viewBasketAlert()">
+      <span>📋</span> Quote <span class="dock-badge" id="basketBadge">0</span>
+    </button>
+  </nav>
+
+  <!-- =========================================================================
+       INTERACTIVE JAVASCRIPT LOGIC
+       ========================================================================= -->
+  <script>
+    // 1. Language Toggle
+    let currentLang = 'en';
+    const translations = {
+      en: {
+        brandTagline: 'Master HCI Design Lab • 10 Interactive Systems',
+        heroHeading: 'Engineering Clarity, Trust & Procurement Velocity.',
+        heroSub: 'Exploring 10 modern design systems synthesized from the Claude Design Skillstack—replacing heavy 3D gimmicks with ergonomic touch UX, instant scanability, and high-contrast B2B wholesale decision flows.',
+        langLabel: 'বাংলা'
+      },
+      bn: {
+        brandTagline: 'মাস্টার এইচসিআই ডিজাইন ল্যাব • ১০টি ইন্টারঅ্যাক্টিভ সিস্টেম',
+        heroHeading: 'স্পষ্টতা, নির্ভরযোগ্যতা এবং দ্রুত প্রকিউরমেন্ট সমাধান।',
+        heroSub: 'ক্লড ডিজাইন স্কিলস্ট্যাকের সমন্বয়ে নির্মিত ১০টি আধুনিক ডিজাইন সিস্টেম—ভারী ৩ডি ভিজুয়ালের বদলে মোবাইল বান্ধব টাচ ইউজার এক্সপেরিয়েন্স ও দ্রুত পাইকারি সাপ্লাই সিদ্ধান্ত নেওয়ার সক্ষমতা।',
+        langLabel: 'English'
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'bn' : 'en';
+      document.getElementById('brandTagline').innerText = translations[currentLang].brandTagline;
+      document.getElementById('heroHeading').innerText = translations[currentLang].heroHeading;
+      document.getElementById('heroSub').innerText = translations[currentLang].heroSub;
+      document.getElementById('langLabel').innerText = translations[currentLang].langLabel;
+    }
+
+    // 2. Theme Switcher
+    function setTheme(themeClass, el) {
+      document.body.className = themeClass === 'default' ? '' : themeClass;
+      document.querySelectorAll('.theme-tab').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    // 3. Quotation Basket Counter
+    let basket = [];
+    function addToBasket(itemTitle) {
+      basket.push(itemTitle);
+      document.getElementById('basketBadge').innerText = basket.length;
+
+      // Haptic bounce animation on badge
+      const badge = document.getElementById('basketBadge');
+      badge.style.transform = 'scale(1.4)';
+      setTimeout(() => { badge.style.transform = 'scale(1)'; }, 200);
+
+      // Temporary toast feedback
+      showNotification(`Added "${itemTitle}" to Quotation List!`);
+    }
+
+    function addCustomBatch(itemTitle, btn) {
+      const row = btn.closest('tr');
+      const qty = row.querySelector('.batch-num').innerText;
+      addToBasket(`${qty}x ${itemTitle}`);
+    }
+
+    function stepBatch(btn, delta) {
+      const numSpan = btn.parentElement.querySelector('.batch-num');
+      let val = parseInt(numSpan.innerText) + delta;
+      if (val < 1) val = 1;
+      numSpan.innerText = val;
+    }
+
+    function viewBasketAlert() {
+      if (basket.length === 0) {
+        alert("Your quote basket is currently empty. Tap '+ Add to Quotation Basket' on any product!");
+        return;
+      }
+      const itemsList = basket.join('%0A- ');
+      const waUrl = `https://wa.me/8801862679456?text=Hi%20Efaz%20Alam%2C%20I%20would%20like%20a%20wholesale%20quotation%20for%3A%0A- ${itemsList}`;
+      if (confirm(`You have ${basket.length} items in your list:\n\n- ${basket.join('\n- ')}\n\nWould you like to send this list to Efaz Alam on WhatsApp now?`)) {
+        window.open(waUrl, '_blank');
+      }
+    }
+
+    // 4. Batch Price Tier Simulator
+    function updateCalculator(val) {
+      document.getElementById('volumeDisplay').innerText = val + " Units / Sets";
+      const tierEl = document.getElementById('tierDisplay');
+      const descEl = document.getElementById('tierDesc');
+      const waLink = document.getElementById('calcWaLink');
+
+      let tierText = "🏷️ TIER B: WHOLESALE VOLUME DISCOUNT";
+      let descText = "Tiered discount with scheduled delivery and technical compliance datasheet included.";
+
+      if (val < 50) {
+        tierText = "🏷️ TIER C: PILOT / TRIAL BATCH";
+        descText = "Immediate delivery from Mirpur warehouse for trial inspection before bulk contract.";
+      } else if (val >= 300) {
+        tierText = "🏷️ TIER A+: INSTITUTIONAL TENDER DISCOUNT";
+        descText = "Direct importer wholesale rate with formal tender BOQ submission and physical sample presentation in Dhaka.";
+      }
+
+      tierEl.innerText = tierText;
+      descEl.innerText = descText;
+      waLink.href = `https://wa.me/8801862679456?text=Hi%20Efaz%20Alam%2C%20I%20need%20a%20wholesale%20quotation%20for%20${val}%20units`;
+      waLink.innerText = `💬 Generate Formatted WhatsApp Quotation for ${val} Units →`;
+    }
+
+    // 5. Drawer Sheet Logic
+    function openSpecDrawer(title) {
+      document.body.classList.add('drawer-active');
+      document.getElementById('drawerTitle').innerText = title;
+      document.getElementById('drawerContent').innerHTML = `
+        <div style="margin-bottom:12px;"><strong>Compliance Authority:</strong> DGDA / Bangladesh National Standards / ISO 9001:2015</div>
+        <div style="margin-bottom:12px;"><strong>Physical Sample Inspection:</strong> Available upon formal request for procurement committees in Dhaka Metro.</div>
+        <div style="margin-bottom:12px;"><strong>Documentation Included:</strong> Certificate of Analysis (COA), Batch Sterilization Record, Importer Bill of Entry, and Manufacturer Authorization Form (MAF).</div>
+        <div style="background:rgba(255,255,255,0.05);padding:10px 14px;border-radius:8px;border-left:3px solid var(--brand-green);">
+          ✔️ Meets all standard technical evaluation criteria for government & autonomous institutional healthcare tenders.
+        </div>
+      `;
+      document.getElementById('drawerWaBtn').href = `https://wa.me/8801862679456?text=Hi%20Efaz%2C%20please%20send%20full%20datasheet%20for%20${encodeURIComponent(title)}`;
+    }
+
+    function closeSpecDrawer() {
+      document.body.classList.remove('drawer-active');
+    }
+
+    // 6. Card Touch Spring
+    function triggerCardSpring(card) {
+      card.style.transform = 'scale(0.96)';
+      setTimeout(() => {
+        card.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+          card.style.transform = 'scale(1)';
+        }, 150);
+      }, 100);
+    }
+
+    // 7. Live Search Autocomplete
+    const searchCatalog = [
+      { name: "Schott Duran Borosilicate Reagent Bottles", div: "Lab Glassware" },
+      { name: "Safety Jogger Heavy Industrial Work Boot", div: "Industrial PPE" },
+      { name: "Electric ICU Hospital Patient Bed Setup", div: "Hospital" },
+      { name: "Reagent Grade Ethanol 99.9% Purity", div: "Chemical Reagents" },
+      { name: "Karam Full Body Fall Arrest Safety Harness", div: "Industrial PPE" },
+      { name: "Digital HD Clinical Laboratory Microscope", div: "Diagnostic" },
+      { name: "Electrical Insulated Rubber Gloves (1000V)", div: "Industrial PPE" },
+      { name: "Emergency Drench Shower & Eyewash Station", div: "Industrial Safety" },
+      { name: "Class-A Volumetric Flask with Batch Certificate", div: "Lab Glassware" },
+      { name: "Autoclavable Micropipettes Variable Volume", div: "Lab Equipment" }
+    ];
+
+    function handleSearch(query) {
+      const dropdown = document.getElementById('searchDropdown');
+      if (!query || query.trim().length === 0) {
+        dropdown.style.display = 'none';
+        return;
+      }
+      const q = query.toLowerCase();
+      const matches = searchCatalog.filter(i => i.name.toLowerCase().includes(q) || i.div.toLowerCase().includes(q));
+
+      if (matches.length === 0) {
+        dropdown.innerHTML = `<div style="padding:12px 16px;color:var(--text-muted);font-size:12.5px;">No matching items found. Direct custom sourcing available!</div>`;
+        dropdown.style.display = 'block';
+        return;
+      }
+
+      dropdown.innerHTML = matches.map(m => `
+        <div class="search-item" onclick="selectSearchItem('${m.name}')">
+          <span><strong>${highlightMatch(m.name, q)}</strong></span>
+          <span style="font-size:11px;color:var(--accent);font-family:var(--font-mono);">${m.div}</span>
+        </div>
+      `).join('');
+      dropdown.style.display = 'block';
+    }
+
+    function highlightMatch(text, query) {
+      const idx = text.toLowerCase().indexOf(query);
+      if (idx === -1) return text;
+      return text.substring(0, idx) + '<span style="background:var(--accent-glow);color:var(--accent);padding:0 2px;border-radius:2px;">' + text.substring(idx, idx + query.length) + '</span>' + text.substring(idx + query.length);
+    }
+
+    function selectSearchItem(name) {
+      document.getElementById('liveSearchInput').value = name;
+      document.getElementById('searchDropdown').style.display = 'none';
+      addToBasket(name);
+    }
+
+    // 8. Category Filter Chips
+    function filterCategory(cat, chip) {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      showNotification(`Filtered category: ${chip.innerText}`);
+    }
+
+    // 9. Toast Notification
+    function showNotification(msg) {
+      const existing = document.getElementById('toastNotice');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.id = 'toastNotice';
+      toast.style.position = 'fixed';
+      toast.style.top = '70px';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.background = 'rgba(15, 23, 42, 0.95)';
+      toast.style.color = '#fff';
+      toast.style.padding = '8px 18px';
+      toast.style.borderRadius = '99px';
+      toast.style.fontSize = '12px';
+      toast.style.fontWeight = '700';
+      toast.style.border = '1px solid rgba(255,255,255,0.2)';
+      toast.style.boxShadow = '0 10px 25px rgba(0,0,0,0.4)';
+      toast.style.zIndex = '999';
+      toast.style.pointerEvents = 'none';
+      toast.innerText = msg;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s';
+        setTimeout(() => toast.remove(), 300);
+      }, 2000);
+    }
+
+    // Close search dropdown on body click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.search-container')) {
+        const dd = document.getElementById('searchDropdown');
+        if (dd) dd.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

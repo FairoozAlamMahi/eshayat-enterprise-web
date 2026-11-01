@@ -35,3 +35,4 @@ _scraper_archive/mseshayatenterprise_data/.browser_profile/
 __pycache__/
 *.pyc
 scratch/
+tmp_skills/
