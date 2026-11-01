@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>M/S Eshayat Enterprise — 67 Design Styles Lookbook</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       DYNAMIC CSS VARIABLES (Controlled by the 67 Design Engine)
+       ========================================================================== */
+    :root {
+      --bg: #FFFFFF;
+      --surface: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --text: #111827;
+      --text-muted: #64748B;
+      --primary: #3B82F6;
+      --secondary: #8B5CF6;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-focus: #3B82F6;
+      --radius: 8px;
+      --font-display: 'Inter', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.35s ease, color 0.35s ease;
+      padding-bottom: 96px; /* Space for the lookbook footer */
+    }
+
+    /* ==========================================================================
+       SIMPLISTIC, ELEGANT HEADER
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: var(--transition);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-emblem {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius);
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .style-trigger-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .style-trigger-btn:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .style-color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: inline-block;
+    }
+
+    /* ==========================================================================
+       HERO: SERENE, SPACIOUS, ELEGANT
+       ========================================================================== */
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 84px) 20px clamp(32px, 6vw, 64px) 20px;
+      text-align: left;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5.5vw, 56px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 860px;
+      margin-bottom: 20px;
+      transition: font-family 0.25s ease;
+    }
+    .hero-desc {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: var(--text-muted);
+      max-width: 680px;
+      line-height: 1.65;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--btn-primary-text, #fff);
+      border: 1px solid var(--primary);
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 13px 24px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       METRICS STRIP (Refined Hairline)
+       ========================================================================== */
+    .metrics-strip {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+    .metric-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .metric-number {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .metric-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       CURATED PRODUCT CATALOG (Clean, Spacious Grid)
+       ========================================================================== */
+    .catalog-section {
+      max-width: 1200px;
+      margin: 64px auto 0 auto;
+      padding: 0 20px;
+    }
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .product-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .product-media {
+      width: 100%;
+      height: 200px;
+      border-radius: calc(var(--radius) - 2px);
+      overflow: hidden;
+      background: rgba(0,0,0,0.02);
+      margin-bottom: 16px;
+    }
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-media img {
+      transform: scale(1.04);
+    }
+    .product-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+    .product-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .product-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .product-status {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .btn-inquire {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-inquire:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* ==========================================================================
+       67 STYLE CURATOR DRAWER (Bottom Sheet / Modal)
+       ========================================================================== */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-radius: 20px 20px 0 0;
+      padding: 24px 20px 32px 20px;
+      max-height: 82vh;
+      overflow-y: auto;
+      z-index: 201;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.3);
+    }
+    .drawer-open .drawer-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .drawer-open .drawer-panel {
+      transform: translateY(0);
+    }
+
+    .drawer-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .drawer-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .drawer-close-btn {
+      background: rgba(0, 0, 0, 0.05);
+      border: none;
+      color: var(--text);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .drawer-search {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      outline: none;
+      margin-bottom: 14px;
+    }
+    .drawer-categories {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .drawer-cat-chip {
+      flex: 0 0 auto;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .drawer-cat-chip.active, .drawer-cat-chip:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .style-card-item {
+      background: rgba(0,0,0,0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: var(--transition);
+      text-align: left;
+    }
+    .style-card-item:hover, .style-card-item.active-style {
+      border-color: var(--primary);
+      background: rgba(0,0,0,0.05);
+      transform: translateY(-2px);
+    }
+    .style-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .style-item-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .style-swatches {
+      display: flex;
+      gap: 4px;
+    }
+    .swatch-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .style-item-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       LOOKBOOK BOTTOM BAR (Effortless Flipping through 67 Designs)
+       ========================================================================== */
+    .lookbook-bar {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 24px);
+      max-width: 600px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0,0,0,0.05);
+      border-radius: 99px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      z-index: 100;
+      transition: var(--transition);
+    }
+    .lookbook-nav-btn {
+      background: rgba(0, 0, 0, 0.05);
+      border: none;
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: var(--transition);
+    }
+    .lookbook-nav-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .lookbook-info {
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lookbook-info strong {
+      color: var(--primary);
+    }
+
+    @media (max-width: 640px) {
+      .hero-container {
+        padding: 36px 16px 28px 16px;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .metrics-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .lookbook-bar {
+        bottom: 8px;
+        padding: 6px 8px;
+      }
+      .lookbook-nav-btn span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIMPLISTIC SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand-wrap">
+        <img src="/images/brand/emblem.png" alt="Emblem" class="brand-emblem" />
+        <div>
+          <div class="brand-name">M/S ESHAYAT ENTERPRISE</div>
+          <div class="brand-sub">Laboratory, Clinical & Industrial Sourcing</div>
+        </div>
+      </a>
+
+      <div class="header-controls">
+        <button class="style-trigger-btn" onclick="openDrawer()">
+          <span class="style-color-dot" id="activeDot"></span>
+          <span id="activeStyleLabel">Style: Clean</span>
+          <span style="font-size:10px;opacity:0.6;">(67 Total ▾)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERENE HERO SECTION -->
+  <section class="hero-container">
+    <div class="hero-eyebrow">
+      ● ENLISTED INSTITUTIONAL SUPPLIER • DHAKA METRO
+    </div>
+    <h1 class="hero-title">
+      Precision Laboratory, Clinical & Industrial Safety Supply.
+    </h1>
+    <p class="hero-desc">
+      Direct importer for Bangladesh's leading healthcare directorates, pharmaceutical quality laboratories, and industrial power plants. Providing genuine Schott Duran glassware, ICU beds, and Safety Jogger PPE.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/8801862679456?text=Hi%20Efaz%20Alam%2C%20I%20would%20like%20to%20inquire%20about%20institutional%20wholesale%20supply" target="_blank" class="btn-primary">
+        Request Institutional Quote →
+      </a>
+      <a href="tel:01862679456" class="btn-secondary">
+        Call Efaz Alam: 01862-679456
+      </a>
+    </div>
+  </section>
+
+  <!-- REFINED METRICS STRIP -->
+  <section class="metrics-strip">
+    <div class="metric-cell">
+      <div class="metric-number">৳ 18.5M+</div>
+      <div class="metric-label">Tender Contracts Fulfilled</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-number">20+</div>
+      <div class="metric-label">Direct Global Import Brands</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-number">450+</div>
+      <div class="metric-label">Hospitals & Industrial Plants</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-number">24–48h</div>
+      <div class="metric-label">Metro Dhaka Dispatch</div>
+    </div>
+  </section>
+
+  <!-- CURATED PRODUCT SHOWCASE -->
+  <section class="catalog-section">
+    <div class="section-head">
+      <div>
+        <h2>Flagship Procurement Inventory</h2>
+        <p>Verified factory-direct specifications ready for tender sample submission.</p>
+      </div>
+    </div>
+
+    <div class="products-grid">
+      <!-- 1 -->
+      <div class="product-card">
+        <div class="product-media">
+          <img src="/images/products/reagent-bottle.jpg" alt="Schott Duran Bottles" />
+        </div>
+        <div>
+          <span class="product-tag">ISO 4796 • BOROSILICATE 3.3</span>
+          <h3 class="product-title">Schott Duran Reagent Media Bottles</h3>
+          <p class="product-desc">Clear & amber laboratory bottles with GL45 autoclavable screw caps, pouring rings, and volume graduations.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-status">30mL to 2000mL</span>
+          <a href="https://wa.me/8801862679456?text=Inquiry%20for%20Schott%20Duran%20Reagent%20Bottles" target="_blank" class="btn-inquire">Inquire RFQ</a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="product-card">
+        <div class="product-media">
+          <img src="/images/products/safety-shoes.jpg" alt="Safety Shoes" />
+        </div>
+        <div>
+          <span class="product-tag">EN ISO 20345:2022 • S3 SRC</span>
+          <h3 class="product-title">Safety Jogger Heavy Industrial Boot</h3>
+          <p class="product-desc">200J impact steel toe cap, ballistic Kevlar puncture-resistant midsole, and oil-proof antistatic PU tread.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-status">Sizes 38 – 46 EU</span>
+          <a href="https://wa.me/8801862679456?text=Inquiry%20for%20Safety%20Jogger%20Boots" target="_blank" class="btn-inquire">Inquire RFQ</a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="product-card">
+        <div class="product-media">
+          <img src="/images/products/hospital-patient-bed.jpg" alt="Hospital ICU Bed" />
+        </div>
+        <div>
+          <span class="product-tag">DGDA TENDER READY • ISO 13485</span>
+          <h3 class="product-title">Motorized Hospital ICU Patient Bed</h3>
+          <p class="product-desc">Four-motor electronic positioning, CPR quick release, central braking casters, and nurse attendant controls.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-status">Turnkey Bid Sourcing</span>
+          <a href="https://wa.me/8801862679456?text=Inquiry%20for%20Hospital%20ICU%20Patient%20Bed" target="_blank" class="btn-inquire">Inquire RFQ</a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="product-card">
+        <div class="product-media">
+          <img src="/images/products/microscope.jpg" alt="Digital Microscope" />
+        </div>
+        <div>
+          <span class="product-tag">CLINICAL DIAGNOSTIC • 1600X</span>
+          <h3 class="product-title">Digital HD Laboratory Microscope</h3>
+          <p class="product-desc">Achromatic optical lenses with high-resolution digital image telemetry sensor for pathology diagnostics.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-status">In Stock (Dhaka)</span>
+          <a href="https://wa.me/8801862679456?text=Inquiry%20for%20HD%20Digital%20Microscope" target="_blank" class="btn-inquire">Inquire RFQ</a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="product-card">
+        <div class="product-media">
+          <img src="/images/products/full-body-safety-harness.jpg" alt="Safety Harness" />
+        </div>
+        <div>
+          <span class="product-tag">EN 361 • FALL ARREST</span>
+          <h3 class="product-title">Karam Full Body Fall Arrest Harness</h3>
+          <p class="product-desc">High-tenacity polyester webbing with dorsal D-ring and energy-absorbing lanyard for construction and towers.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-status">Wholesale Cartons</span>
+          <a href="https://wa.me/8801862679456?text=Inquiry%20for%20Karam%20Safety%20Harness" target="_blank" class="btn-inquire">Inquire RFQ</a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="product-card">
+        <div class="product-media">
+          <img src="/images/products/electrical-gloves-1000v.jpg" alt="Electrical Gloves" />
+        </div>
+        <div>
+          <span class="product-tag">CLASS 0 • 1000V DIELECTRIC</span>
+          <h3 class="product-title">High-Voltage Insulated Safety Gloves</h3>
+          <p class="product-desc">Natural latex dielectric gloves certified for live electrical maintenance and substation safety.</p>
+        </div>
+        <div class="product-footer">
+          <span class="product-status">Certified Batch</span>
+          <a href="https://wa.me/8801862679456?text=Inquiry%20for%201000V%20Insulated%20Gloves" target="_blank" class="btn-inquire">Inquire RFQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 67 STYLE CURATOR DRAWER (Bottom Sheet Modal) -->
+  <div id="drawerBackdrop" class="drawer-backdrop" onclick="closeDrawer()"></div>
+  <div id="drawerPanel" class="drawer-panel">
+    <div class="drawer-top-bar">
+      <div>
+        <div class="drawer-title">Select from 67 Authentic Design Styles</div>
+        <div style="font-size:12px;color:var(--text-muted);">Extracted from bergside/awesome-design-skills with exact tokens & typography</div>
+      </div>
+      <button class="drawer-close-btn" onclick="closeDrawer()">✕</button>
+    </div>
+
+    <input type="text" id="styleSearch" class="drawer-search" placeholder="Search 67 styles (e.g. Minimal, Clean, Editorial, Shadcn, Retro, Brutalism)..." oninput="filterStyles(this.value)" />
+
+    <div class="drawer-categories" id="catChips">
+      <button class="drawer-cat-chip active" onclick="setCategoryFilter('All', this)">All (67)</button>
+      <button class="drawer-cat-chip" onclick="setCategoryFilter('Minimal & Clean', this)">Minimal & Clean (9)</button>
+      <button class="drawer-cat-chip" onclick="setCategoryFilter('Editorial & Premium', this)">Editorial & Premium (9)</button>
+      <button class="drawer-cat-chip" onclick="setCategoryFilter('Modern UI & System', this)">Modern UI (10)</button>
+      <button class="drawer-cat-chip" onclick="setCategoryFilter('Tactile & Depth', this)">Tactile & Depth (7)</button>
+      <button class="drawer-cat-chip" onclick="setCategoryFilter('Bold & Expressive', this)">Bold (10)</button>
+      <button class="drawer-cat-chip" onclick="setCategoryFilter('Futuristic & Cyber', this)">Futuristic (8)</button>
+      <button class="drawer-cat-chip" onclick="setCategoryFilter('Retro & Playful', this)">Retro (14)</button>
+    </div>
+
+    <div class="styles-grid" id="stylesList"></div>
+  </div>
+
+  <!-- LOOKBOOK BOTTOM FLIPPER -->
+  <nav class="lookbook-bar">
+    <button class="lookbook-nav-btn" onclick="prevStyle()">
+      ‹ <span>Prev Style</span>
+    </button>
+    <div class="lookbook-info" onclick="openDrawer()" style="cursor:pointer;" title="Click to view all 67 styles">
+      <span id="lookbookIndex">Style 1 of 67:</span> <strong id="lookbookName">Clean</strong>
+      <span style="font-size:10px;opacity:0.6;margin-left:4px;">(Click to switch)</span>
+    </div>
+    <button class="lookbook-nav-btn" onclick="nextStyle()">
+      <span>Next Style</span> ›
+    </button>
+  </nav>
+
+  <!-- =========================================================================
+       67 DESIGN SKILLS CLIENT ENGINE
+       ========================================================================= -->
+  <script>
+    const DESIGNS = {"agentic": {"name": "Agentic", "colors": {"primary": "#FF5701", "secondary": "#F6F6F1", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Playfair Display", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Playfair Display", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Conversational AI-first interface with minimal controls, clear outcomes, and delegated task flows for agentic workflows.", "slug": "agentic", "category": "Futuristic & Cyber"}, "ant": {"name": "Ant", "colors": {"primary": "#1677ff", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Plus Jakarta Sans", "fontSize": "2rem"}, "body-md": {"fontFamily": "Plus Jakarta Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Structured, enterprise-focused design system emphasizing clarity, consistency, and efficiency for data-dense web applications.", "slug": "ant", "category": "Modern UI & System"}, "artistic": {"name": "Artistic", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Limelight", "fontSize": "2.25rem"}, "body-md": {"fontFamily": "Limelight", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/18/24/30/36", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "High-contrast, expressive style with creative typography and bold color choices for visually striking interfaces.", "slug": "artistic", "category": "Bold & Expressive"}, "basic": {"name": "Basic", "colors": {"primary": "#A855F7", "secondary": "#0A1829", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#0A1829", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Oswald", "fontSize": "3rem"}, "body-md": {"fontFamily": "Nunito", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Print-inspired visual language for books, magazines, and reports with editorial grids and expressive typography.", "slug": "basic", "category": "Minimal & Clean"}, "bento": {"name": "Bento", "colors": {"primary": "#FAD4C0", "secondary": "#80A1C1", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFF5E6", "text": "#111827", "neutral": "#FFF5E6"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Modular grid layout with card-like blocks, clear hierarchy, soft spacing, and subtle visual contrast for organized, scannable interfaces.", "slug": "bento", "category": "Modern UI & System"}, "bold": {"name": "Bold", "colors": {"primary": "#0077BC", "secondary": "#009866", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#111111", "text": "#111827", "neutral": "#111111"}, "typography": {"h1": {"fontFamily": "Archivo Black", "fontSize": "3rem"}, "body-md": {"fontFamily": "Archivo Black", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Strong visual presence with heavyweight typography, high-contrast colors, and commanding layouts.", "slug": "bold", "category": "Bold & Expressive"}, "brutalism": {"name": "Brutalism", "colors": {"primary": "#DD614C", "secondary": "#DAA144", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Darker Grotesque", "fontSize": "3rem"}, "body-md": {"fontFamily": "Darker Grotesque", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Raw, anti-design aesthetic inspired by concrete architecture with unadorned elements, jarring layouts, and functional minimalism.", "slug": "brutalism", "category": "Bold & Expressive"}, "cafe": {"name": "Cafe", "colors": {"primary": "#5D4432", "secondary": "#E9E3DD", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#F9F7F5", "text": "#3E2B1E", "neutral": "#F9F7F5"}, "typography": {"h1": {"fontFamily": "Poppins", "fontSize": "3rem"}, "body-md": {"fontFamily": "Poppins", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "2px", "md": "4px", "sourceScale": "2/4/8/12/16/24/32/48"}, "overview": "Cozy cafe-inspired interface with warm tones, soft typography, and clean layouts for a relaxed browsing experience.", "slug": "cafe", "category": "Editorial & Premium"}, "claude": {"name": "Claude", "colors": {"primary": "#141413", "secondary": "#FAF9F6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Anthropic Sans", "fontSize": "2rem"}, "body-md": {"fontFamily": "Anthropic Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Research-journal aesthetic on warm stone with near-black ink, restrained earthy accents, and editorially strict contrast.", "slug": "claude", "category": "Modern UI & System"}, "claymorphism": {"name": "Claymorphism", "colors": {"primary": "#3B82F6", "secondary": "#FFFFFF", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#1C398E", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Poppins", "fontSize": "3rem"}, "body-md": {"fontFamily": "Montserrat", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Soft, rounded 3D-like shapes mimicking malleable clay with playful, puffy elements and colorful surfaces.", "slug": "claymorphism", "category": "Tactile & Depth"}, "clean": {"name": "Clean", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Poppins", "fontSize": "2rem"}, "body-md": {"fontFamily": "Roboto", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Inconsolata", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Simplicity-focused design with ample whitespace, legible typography, and a limited color palette to reduce visual clutter.", "slug": "clean", "category": "Minimal & Clean"}, "codex": {"name": "Codex", "colors": {"primary": "#000000", "secondary": "#FFFFFF", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Open Sans", "fontSize": "2rem"}, "body-md": {"fontFamily": "Open Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Radically minimal blank-canvas interface where black carries structure and typography drives hierarchy.", "slug": "codex", "category": "Modern UI & System"}, "colorful": {"name": "Colorful", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Vibrant, high-contrast palettes and gradients for engaging, memorable, and modern user experiences.", "slug": "colorful", "category": "Bold & Expressive"}, "contemporary": {"name": "Contemporary", "colors": {"primary": "#C800DF", "secondary": "#E60076", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Jost", "fontSize": "3rem"}, "body-md": {"fontFamily": "Jost", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Overpass Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "comfortable density mode"}, "overview": "Current-era minimalist design with bento grids, dark mode support, and high-performance accessible layouts.", "slug": "contemporary", "category": "Editorial & Premium"}, "corporate": {"name": "Corporate", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Poppins", "fontSize": "3rem"}, "body-md": {"fontFamily": "Open Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Professional, brand-aligned design with structured grids, minimalist layouts, and consistent enterprise patterns.", "slug": "corporate", "category": "Editorial & Premium"}, "cosmic": {"name": "Cosmic", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Audiowide", "fontSize": "2rem"}, "body-md": {"fontFamily": "Audiowide", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "400"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Futuristic sci-fi aesthetic with dark themes, vibrant neon accents, and immersive spatial elements.", "slug": "cosmic", "category": "Futuristic & Cyber"}, "creative": {"name": "Creative", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Bangers", "fontSize": "2rem"}, "body-md": {"fontFamily": "Bangers", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Playful, character-driven design with expressive typography and bold graphics for landing pages and creative projects.", "slug": "creative", "category": "Bold & Expressive"}, "dithered": {"name": "Dithered", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Space Grotesk", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Open Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Dot-pattern rendering technique that simulates shades with a limited palette for nostalgic, retro, high-contrast visuals.", "slug": "dithered", "category": "Retro & Playful"}, "doodle": {"name": "Doodle", "colors": {"primary": "#49B6E5", "secondary": "#263D5B", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Delius Swash Caps", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Delius Swash Caps", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Hand-drawn, sketch-like style with doodles, handwritten fonts, and imperfect lines for a playful, informal feel.", "slug": "doodle", "category": "Tactile & Depth"}, "dramatic": {"name": "Dramatic", "colors": {"primary": "#8B5CF6", "secondary": "#F43F5E", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#09090B", "text": "#FAFAFA", "neutral": "#09090B"}, "typography": {"h1": {"fontFamily": "Outfit", "fontSize": "2rem"}, "body-md": {"fontFamily": "Outfit", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "400, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "High-contrast, theatrical design with bold layouts, immersive visuals, and unconventional compositions that command attention.", "slug": "dramatic", "category": "Bold & Expressive"}, "editorial": {"name": "Editorial", "colors": {"primary": "#111111", "secondary": "#f1f1f1", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Gelasio", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Gelasio", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Ubuntu Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Magazine-inspired editorial layout with refined serif typography, structured grids, and elegant reading experiences.", "slug": "editorial", "category": "Editorial & Premium"}, "enterprise": {"name": "Enterprise", "colors": {"primary": "#0C5CAB", "secondary": "#0a4a8a", "success": "#10b981", "warning": "#f59e0b", "danger": "#ef4444", "surface": "#09090b", "text": "#fafafa", "neutral": "#09090b"}, "typography": {"h1": {"fontFamily": "IBM Plex Sans", "fontSize": "2rem"}, "body-md": {"fontFamily": "IBM Plex Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Sans", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Dark-themed cloud-platform aesthetic with modular grids, glass-like panels, and strong data hierarchy for productivity dashboards.", "slug": "enterprise", "category": "Editorial & Premium"}, "expressive": {"name": "Expressive", "colors": {"primary": "#db2777", "secondary": "#2563eb", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "IBM Plex Mono", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "IBM Plex Mono", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Vibrant, personality-driven design with bold colors, playful graphics, and dynamic layouts that balance creativity with structure.", "slug": "expressive", "category": "Bold & Expressive"}, "fantasy": {"name": "Fantasy", "colors": {"primary": "#0250CC", "secondary": "#FDC800", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "New Rocker", "fontSize": "2rem"}, "body-md": {"fontFamily": "New Rocker", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Game-inspired fantasy aesthetic with bold, premium visuals, rich color palettes, and immersive thematic elements.", "slug": "fantasy", "category": "Retro & Playful"}, "fiction": {"name": "Fiction", "colors": {"primary": "#222222", "secondary": "#FFE9CE", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Cossette Texte", "fontSize": "2rem"}, "body-md": {"fontFamily": "Cossette Texte", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Playful, storybook-inspired interface with warm surfaces, chunky outlines, and expressive display typography.", "slug": "fiction", "category": "Retro & Playful"}, "flat": {"name": "Flat", "colors": {"primary": "#F2673C", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Two-dimensional minimalist style with vibrant colors, clean typography, and no 3D effects for fast, user-friendly interfaces.", "slug": "flat", "category": "Minimal & Clean"}, "friendly": {"name": "Friendly", "colors": {"primary": "#F2D9DC", "secondary": "#D9F2D8", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Noto Serif Display", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Noto Serif Display", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Space Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "compact density mode"}, "overview": "Approachable, intuitive design with rounded elements, ample whitespace, and soft pastel color palettes.", "slug": "friendly", "category": "Retro & Playful"}, "futuristic": {"name": "Futuristic", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Audiowide", "fontSize": "3rem"}, "body-md": {"fontFamily": "Roboto", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Anonymous Pro", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Forward-looking design with tech-inspired typography, modern layouts, and a sleek, innovation-driven aesthetic.", "slug": "futuristic", "category": "Futuristic & Cyber"}, "geometric": {"name": "Geometric", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Geometric, structured design with clean typography, neutral colors, precise shapes, and intuitive layouts that stay out of the way.", "slug": "geometric", "category": "Retro & Playful"}, "glassmorphism": {"name": "Glassmorphism", "colors": {"primary": "#1856FF", "secondary": "#3A344E", "success": "#07CA6B", "warning": "#E89558", "danger": "#EA2143", "surface": "#FFFFFF", "text": "#141414", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Plus Jakarta Sans", "fontSize": "3rem"}, "body-md": {"fontFamily": "Plus Jakarta Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "mobile-first compact scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "comfortable density mode"}, "overview": "Frosted glass effect with translucent layers, subtle blur, and luminous borders for depth and modern elegance.", "slug": "glassmorphism", "category": "Tactile & Depth"}, "gradient": {"name": "Gradient", "colors": {"primary": "#990FFA", "secondary": "#E60076", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Space Grotesk", "fontSize": "2.25rem"}, "body-md": {"fontFamily": "Montserrat", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/18/24/30/36", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Smooth color transitions and gradient-rich surfaces for modern, playful interfaces with visual depth.", "slug": "gradient", "category": "Retro & Playful"}, "immersive": {"name": "Immersive", "colors": {"primary": "#00592B", "secondary": "#0023D1", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Oswald", "fontSize": "2rem"}, "body-md": {"fontFamily": "Oswald", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Exhibit-style interface that blends storytelling and game-like interaction on a continuous deep-green canvas.", "slug": "immersive", "category": "Futuristic & Cyber"}, "impeccable": {"name": "Impeccable", "colors": {"primary": "#CC8800", "secondary": "#C55221", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Chakra Petch", "fontSize": "2rem"}, "body-md": {"fontFamily": "Chakra Petch", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Graphic editorial-poster aesthetic with warm cream and burnt-orange rhythm plus a sharp amber accent.", "slug": "impeccable", "category": "Minimal & Clean"}, "levels": {"name": "Levels", "colors": {"primary": "#27272A", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Conversion-focused design that removes friction and guides users toward action through clarity, trust, and speed.", "slug": "levels", "category": "Modern UI & System"}, "lingo": {"name": "Lingo", "colors": {"primary": "#58cc02", "secondary": "#ce82ff", "success": "#58cc02", "warning": "#ffc800", "danger": "#ff4b4b", "surface": "#FFFFFF", "text": "#3c3c3c", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Nunito", "fontSize": "2rem"}, "body-md": {"fontFamily": "Nunito", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Playful, minimal design with bright colors, rounded shapes, tactile 3D borders, and friendly illustrations for approachable interfaces.", "slug": "lingo", "category": "Modern UI & System"}, "material": {"name": "Material", "colors": {"primary": "#6442D6", "secondary": "#C8B3FD", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Roboto", "fontSize": "2rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Fira Code", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Google's Material Design with layered surfaces, dynamic theming, built-in motion, and responsive cross-platform patterns.", "slug": "material", "category": "Retro & Playful"}, "matrix": {"name": "Matrix", "colors": {"primary": "#2DB58A", "secondary": "#0B0C14", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Space Mono", "fontSize": "2rem"}, "body-md": {"fontFamily": "Space Mono", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Space Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Dark cyber-terminal visual language with mono typography, dense data layouts, and one green interaction accent.", "slug": "matrix", "category": "Futuristic & Cyber"}, "minimal": {"name": "Minimal", "colors": {"primary": "#0C0C09", "secondary": "#312C85", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#F4F4F1", "text": "#0C0C09", "neutral": "#F4F4F1"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "3rem"}, "body-md": {"fontFamily": "Open Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Inconsolata", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Stripped-back design emphasizing whitespace, clean typography, and restrained color for maximum clarity and focus.", "slug": "minimal", "category": "Minimal & Clean"}, "modern": {"name": "Modern", "colors": {"primary": "#553F83", "secondary": "#111111", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#553F83", "text": "#ffffff", "neutral": "#553F83"}, "typography": {"h1": {"fontFamily": "IBM Plex Serif", "fontSize": "2rem"}, "body-md": {"fontFamily": "IBM Plex Serif", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Contemporary editorial style with serif typography, minimal palettes, and clean layouts for polished digital products.", "slug": "modern", "category": "Modern UI & System"}, "mono": {"name": "Mono", "colors": {"primary": "#37F712", "secondary": "#00A6F4", "success": "#00A63D", "warning": "#FE9900", "danger": "#FF2157", "surface": "#E7E5E4", "text": "#78716B", "neutral": "#E7E5E4"}, "typography": {"h1": {"fontFamily": "Space Mono", "fontSize": "3rem"}, "body-md": {"fontFamily": "Space Mono", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "compact density mode"}, "overview": "Monospace-driven, matrix-inspired design with high-contrast elements, compact density, and a hacker-chic aesthetic.", "slug": "mono", "category": "Minimal & Clean"}, "neobrutalism": {"name": "Neobrutalism", "colors": {"primary": "#FDC800", "secondary": "#432DD7", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FBFBF9", "text": "#1C293C", "neutral": "#FBFBF9"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2.1875rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "0.9375rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.8125rem"}, "sourceScale": "13/15/17/21/27/35", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Modern take on brutalism with bold borders, vivid accent colors, and raw, high-contrast layouts on warm surfaces.", "slug": "neobrutalism", "category": "Bold & Expressive"}, "neon": {"name": "Neon", "colors": {"primary": "#BBF351", "secondary": "#00BCFF", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "STIX Two Text", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Roboto", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Source Code Pro", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Electric neon glow effects with high-contrast color pairings for bold, attention-grabbing interfaces.", "slug": "neon", "category": "Futuristic & Cyber"}, "neumorphism": {"name": "Neumorphism", "colors": {"primary": "#006666", "secondary": "#F1F2F5", "success": "#00A63D", "warning": "#FE9900", "danger": "#FF2157", "surface": "#E7E5E4", "text": "#1E2938", "neutral": "#E7E5E4"}, "typography": {"h1": {"fontFamily": "Space Mono", "fontSize": "3rem"}, "body-md": {"fontFamily": "Space Mono", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "compact density mode"}, "overview": "Soft, extruded UI elements with inner and outer shadows on monochromatic surfaces for a tactile, embedded look.", "slug": "neumorphism", "category": "Tactile & Depth"}, "pacman": {"name": "Pacman", "colors": {"primary": "#2A3FE5", "secondary": "#F4B9B0", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#000000", "text": "#111827", "neutral": "#000000"}, "typography": {"h1": {"fontFamily": "Press Start 2P", "fontSize": "3rem"}, "body-md": {"fontFamily": "Press Start 2P", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Space Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Retro arcade-inspired design with pixel fonts, dotted borders, playful high-contrast colors, and 8-bit game aesthetics.", "slug": "pacman", "category": "Retro & Playful"}, "paper": {"name": "Paper", "colors": {"primary": "#111111", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Montserrat", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Roboto", "fontSize": "1rem"}, "label-caps": {"fontFamily": "PT Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Paper-textured, print-inspired design with minimal colors, clean serif/sans typography, and tactile surface qualities.", "slug": "paper", "category": "Tactile & Depth"}, "perspective": {"name": "Perspective", "colors": {"primary": "#00BD7D", "secondary": "#00BD7D", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Oswald", "fontSize": "2rem"}, "body-md": {"fontFamily": "Poppins", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Spatial depth design with isometric views, vanishing points, and layered elements that guide attention through 3D-like realism.", "slug": "perspective", "category": "Futuristic & Cyber"}, "power": {"name": "Power", "colors": {"primary": "#FAFAFA", "secondary": "#FAFAFA", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#000000", "text": "#ffffff", "neutral": "#000000"}, "typography": {"h1": {"fontFamily": "Oswald", "fontSize": "3rem"}, "body-md": {"fontFamily": "Oswald", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "High-end dark aesthetic with bold headings, monochromatic palette, and premium feel for premium brand experiences.", "slug": "power", "category": "Bold & Expressive"}, "premium": {"name": "Premium", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2.25rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/18/24/30/36", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Apple-inspired premium aesthetic with precise spacing, modern typography, and a refined, polished visual language.", "slug": "premium", "category": "Editorial & Premium"}, "professional": {"name": "Professional", "colors": {"primary": "#FECE14", "secondary": "#000000", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Poppins", "fontSize": "3rem"}, "body-md": {"fontFamily": "Poppins", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Mono", "fontSize": "0.75rem"}, "sourceScale": "mobile-first compact scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Polished, business-ready design with modern typography, structured layouts, and a trustworthy visual identity.", "slug": "professional", "category": "Editorial & Premium"}, "pulse": {"name": "Pulse", "colors": {"primary": "#EA580B", "secondary": "#F59E0B", "background": "#FFEDD5", "surface": "#FDBA74", "text": "#EA580C", "neutral": "#FDBA74"}, "typography": {"h1": {"fontFamily": "Limelight", "fontSize": "3rem"}, "body-md": {"fontFamily": "Limelight", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32/48", "weights": "400"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32/48/64"}, "overview": "Dynamic, vibrant style with thick borders, geometric shapes, high-contrast colors, and expressive typography conveying motion and vitality.", "slug": "pulse", "category": "Futuristic & Cyber"}, "refined": {"name": "Refined", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Playfair Display", "fontSize": "2rem"}, "body-md": {"fontFamily": "Playfair Display", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Carefully curated, modern minimal style with elegant serif typography and understated, sophisticated palettes.", "slug": "refined", "category": "Minimal & Clean"}, "retro": {"name": "Retro", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Macondo", "fontSize": "3rem"}, "body-md": {"fontFamily": "Macondo", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Throwback design with vintage-inspired typography, high-contrast retro palettes, and nostalgic visual elements.", "slug": "retro", "category": "Retro & Playful"}, "riso": {"name": "Riso", "colors": {"primary": "#F237A1", "secondary": "#2C40A7", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Space Grotesk", "fontSize": "2rem"}, "body-md": {"fontFamily": "Space Grotesk", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Overpass Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Playful two-color risograph-inspired system with paper-like warmth, vivid pink actions, and bold blue structure.", "slug": "riso", "category": "Retro & Playful"}, "roku": {"name": "Roku", "colors": {"primary": "#9333ea", "secondary": "#a855f7", "success": "#10b981", "warning": "#f59e0b", "danger": "#ef4444", "surface": "#FFFFFF", "text": "#09090b", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "2rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "App dashboard with purple-themed aesthetic, top-bar navigation, card-based layouts, and developer-first workflows.", "slug": "roku", "category": "Retro & Playful"}, "sega": {"name": "Sega", "colors": {"primary": "#4502FF", "secondary": "#FFDA14", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "VT323", "fontSize": "2.1875rem"}, "body-md": {"fontFamily": "VT323", "fontSize": "0.9375rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.8125rem"}, "sourceScale": "13/15/17/21/27/35", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Arcade-inspired game interface with pixel typography, hard edges, and physically punchy, offset-shadow controls.", "slug": "sega", "category": "Retro & Playful"}, "shadcn": {"name": "Shadcn", "colors": {"primary": "#000000", "secondary": "#111111", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Geist", "fontSize": "2rem"}, "body-md": {"fontFamily": "Geist", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Fira Code", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Shadcn/ui-inspired design with minimal, clean components, monochrome palette, and utility-first patterns.", "slug": "shadcn", "category": "Modern UI & System"}, "sketch": {"name": "Sketch", "colors": {"primary": "#1DAD97", "secondary": "#F4EDE0", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Delicious Handrawn", "fontSize": "2rem"}, "body-md": {"fontFamily": "Delicious Handrawn", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Hand-drawn sketch aesthetic on warm paper with soft teal accents, dashed outlines, and tactile illustrated shadows.", "slug": "sketch", "category": "Tactile & Depth"}, "skeumorphism": {"name": "Skeumorphism", "colors": {"primary": "#FA3C00", "secondary": "#F08321", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Germania One", "fontSize": "2rem"}, "body-md": {"fontFamily": "Roboto", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Real-world mimicry with textured surfaces, 3D effects, and familiar physical metaphors for intuitive digital interfaces.", "slug": "skeumorphism", "category": "Tactile & Depth"}, "sleek": {"name": "Sleek", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Inter", "fontSize": "3rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Modern minimalist aesthetic with clean lines, intentional color palette, subtle interactions, and consistent spacing.", "slug": "sleek", "category": "Minimal & Clean"}, "spacious": {"name": "Spacious", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Montserrat", "fontSize": "2.25rem"}, "body-md": {"fontFamily": "Open Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "IBM Plex Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/18/24/30/36", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "8pt baseline grid"}, "overview": "Generous whitespace, consistent padding, and grid-based layouts for clean, readable, and breathing interfaces.", "slug": "spacious", "category": "Minimal & Clean"}, "square": {"name": "Square", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Google Sans", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Google Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Anonymous Pro", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Graceful, refined aesthetic with delicate typography, minimal palettes, and polished layouts that exude sophistication.", "slug": "square", "category": "Modern UI & System"}, "stitch": {"name": "Stitch", "colors": {"primary": "#072C2C", "secondary": "#FF5F03", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#EDEADE", "text": "#111827", "neutral": "#EDEADE"}, "typography": {"h1": {"fontFamily": "Oswald", "fontSize": "3rem"}, "body-md": {"fontFamily": "Ubuntu", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Ubuntu Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "8px", "md": "16px", "sourceScale": "comfortable density mode"}, "overview": "Clean, high-contrast enterprise design for data-driven workflows with intuitive drag-and-drop patterns and structured layouts.", "slug": "stitch", "category": "Modern UI & System"}, "storytelling": {"name": "Storytelling", "colors": {"primary": "#3B82F6", "secondary": "#8B5CF6", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Abril Fatface", "fontSize": "3rem"}, "body-md": {"fontFamily": "Inter", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Narrative-driven design using visuals, copy, and interaction to guide users through engaging, emotionally resonant journeys.", "slug": "storytelling", "category": "Editorial & Premium"}, "terracotta": {"name": "Terracotta", "colors": {"primary": "#C56A3C", "secondary": "#F3E9D8", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#111827", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "DM Serif Display", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "DM Serif Display", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "Sun-baked, clay-toned editorial system with warm cream surfaces, serif headlines, and a single terracotta accent.", "slug": "terracotta", "category": "Editorial & Premium"}, "tetris": {"name": "Tetris", "colors": {"primary": "#1C202B", "secondary": "#7107E7", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#DFE7FF", "text": "#1C398E", "neutral": "#DFE7FF"}, "typography": {"h1": {"fontFamily": "Bangers", "fontSize": "3rem"}, "body-md": {"fontFamily": "Bangers", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "desktop-first expressive scale", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "compact density mode"}, "overview": "Classic block-game inspired design with playful colors, bold display fonts, and compact, high-energy layouts.", "slug": "tetris", "category": "Retro & Playful"}, "vibrant": {"name": "Vibrant", "colors": {"primary": "#7C61D4", "secondary": "#EAAE87", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#FFFFFF", "text": "#2F281D", "neutral": "#FFFFFF"}, "typography": {"h1": {"fontFamily": "Fascinate", "fontSize": "2.5rem"}, "body-md": {"fontFamily": "Noto Sans", "fontSize": "1rem"}, "label-caps": {"fontFamily": "Fira Code", "fontSize": "0.875rem"}, "sourceScale": "14/16/18/24/32/40", "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "2px", "md": "4px", "sourceScale": "2/4/8/12/16/24/32/48"}, "overview": "Lively, colorful design with bold playful typography, warm accents, and dynamic visual energy.", "slug": "vibrant", "category": "Bold & Expressive"}, "vintage": {"name": "Vintage", "colors": {"primary": "#008080", "secondary": "#C0C0C0", "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626", "surface": "#C0C0C0", "text": "#000000", "neutral": "#C0C0C0"}, "typography": {"h1": {"fontFamily": "Silkscreen", "fontSize": "2rem"}, "body-md": {"fontFamily": "Silkscreen", "fontSize": "1rem"}, "label-caps": {"fontFamily": "JetBrains Mono", "fontSize": "0.75rem"}, "sourceScale": "12/14/16/20/24/32", "weights": "400, 700"}, "rounded": {"sm": "4px", "md": "8px"}, "spacing": {"sm": "4px", "md": "8px", "sourceScale": "4/8/12/16/24/32"}, "overview": "1950s-1990s nostalgia with skeuomorphic touches, grainy textures, retro color palettes, and pixel-style typography.", "slug": "vintage", "category": "Retro & Playful"}};
+    const DESIGN_KEYS = Object.keys(DESIGNS);
+    let currentIndex = DESIGN_KEYS.indexOf("clean") >= 0 ? DESIGN_KEYS.indexOf("clean") : 0;
+    let currentCategory = "All";
+    let searchQuery = "";
+
+    // Dynamic Google Font Loader
+    function loadGoogleFont(fontName) {
+      if (!fontName || fontName === 'Sans' || fontName.includes('system-ui') || fontName === 'Anthropic Sans') return;
+      const clean = fontName.replace(/['"]/g, '').trim();
+      const id = 'font-' + clean.toLowerCase().replace(/\s+/g, '-');
+      if (document.getElementById(id)) return;
+      const link = document.createElement('link');
+      link.id = id;
+      link.rel = 'stylesheet';
+      link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(clean)}:wght@300;400;500;600;700;800;900&display=swap`;
+      document.head.appendChild(link);
+    }
+
+    // Apply any of the 67 designs
+    function applyDesign(slug) {
+      const d = DESIGNS[slug];
+      if (!d) return;
+
+      currentIndex = DESIGN_KEYS.indexOf(slug);
+      const colors = d.colors || {};
+      const typography = d.typography || {};
+      const rounded = d.rounded || {};
+
+      // Colors
+      const bg = colors.surface || colors.neutral || "#FFFFFF";
+      const text = colors.text || "#111827";
+      const primary = colors.primary || "#3B82F6";
+      const secondary = colors.secondary || "#8B5CF6";
+
+      // Typography
+      const h1Font = typography.h1?.fontFamily || typography['h1']?.fontFamily || 'Inter';
+      const bodyFont = typography['body-md']?.fontFamily || 'Inter';
+      loadGoogleFont(h1Font);
+      loadGoogleFont(bodyFont);
+
+      // Border radius
+      let rad = rounded.md || "8px";
+      if (rad === "0px" || rad === 0) rad = "0px";
+
+      // Card background and border contrast
+      const isDark = isColorDark(bg);
+      let cardBg = bg;
+      let border = "rgba(0, 0, 0, 0.08)";
+      let textMuted = "#64748B";
+
+      if (isDark) {
+        border = "rgba(255, 255, 255, 0.12)";
+        cardBg = lightenColor(bg, 14);
+        textMuted = "rgba(255, 255, 255, 0.65)";
+      } else {
+        border = "rgba(0, 0, 0, 0.08)";
+        cardBg = darkenColor(bg, 2);
+        textMuted = "#64748B";
+      }
+
+      const btnTextColor = isColorDark(primary) ? "#FFFFFF" : "#0F172A";
+
+      // Apply root variables
+      const root = document.documentElement;
+      root.style.setProperty('--bg', bg);
+      root.style.setProperty('--surface', bg);
+      root.style.setProperty('--card-bg', cardBg);
+      root.style.setProperty('--text', text);
+      root.style.setProperty('--text-muted', textMuted);
+      root.style.setProperty('--primary', primary);
+      root.style.setProperty('--secondary', secondary);
+      root.style.setProperty('--border', border);
+      root.style.setProperty('--radius', rad);
+      root.style.setProperty('--btn-primary-text', btnTextColor);
+      root.style.setProperty('--font-display', `'${h1Font}', -apple-system, sans-serif`);
+      root.style.setProperty('--font-body', `'${bodyFont}', -apple-system, sans-serif`);
+
+      // Update labels
+      document.getElementById('activeStyleLabel').innerText = `Style: ${d.name}`;
+      document.getElementById('activeDot').style.background = primary;
+      document.getElementById('lookbookName').innerText = d.name;
+      document.getElementById('lookbookIndex').innerText = `Style ${currentIndex + 1} of ${DESIGN_KEYS.length}:`;
+
+      // Highlight active in drawer
+      document.querySelectorAll('.style-card-item').forEach(el => {
+        if (el.dataset.slug === slug) el.classList.add('active-style');
+        else el.classList.remove('active-style');
+      });
+    }
+
+    function isColorDark(hex) {
+      if (!hex || !hex.startsWith('#')) return false;
+      let c = hex.substring(1);
+      if (c.length === 3) c = c.split('').map(x=>x+x).join('');
+      if (c.length !== 6) return false;
+      const rgb = parseInt(c, 16);
+      const r = (rgb >> 16) & 0xff;
+      const g = (rgb >>  8) & 0xff;
+      const b = (rgb >>  0) & 0xff;
+      const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      return luma < 128;
+    }
+
+    function lightenColor(col, amt) {
+      return adjustColor(col, amt);
+    }
+    function darkenColor(col, amt) {
+      return adjustColor(col, -amt);
+    }
+    function adjustColor(col, amt) {
+      if (!col || !col.startsWith('#')) return col;
+      let hex = col.slice(1);
+      if (hex.length === 3) hex = hex.split('').map(x=>x+x).join('');
+      if (hex.length !== 6) return col;
+      let num = parseInt(hex, 16);
+      let r = Math.min(255, Math.max(0, ((num >> 16) & 0xFF) + amt));
+      let g = Math.min(255, Math.max(0, ((num >> 8) & 0xFF) + amt));
+      let b = Math.min(255, Math.max(0, (num & 0xFF) + amt));
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+
+    // Lookbook next/prev
+    function nextStyle() {
+      currentIndex = (currentIndex + 1) % DESIGN_KEYS.length;
+      applyDesign(DESIGN_KEYS[currentIndex]);
+    }
+    function prevStyle() {
+      currentIndex = (currentIndex - 1 + DESIGN_KEYS.length) % DESIGN_KEYS.length;
+      applyDesign(DESIGN_KEYS[currentIndex]);
+    }
+
+    // Drawer management
+    function openDrawer() {
+      document.body.classList.add('drawer-open');
+    }
+    function closeDrawer() {
+      document.body.classList.remove('drawer-open');
+    }
+
+    // Render 67 Styles in drawer
+    function renderStylesList() {
+      const container = document.getElementById('stylesList');
+      const filtered = DESIGN_KEYS.filter(slug => {
+        const d = DESIGNS[slug];
+        const matchCat = currentCategory === "All" || d.category === currentCategory;
+        const matchSearch = !searchQuery || d.name.toLowerCase().includes(searchQuery.toLowerCase()) || slug.includes(searchQuery.toLowerCase());
+        return matchCat && matchSearch;
+      });
+
+      container.innerHTML = filtered.map(slug => {
+        const d = DESIGNS[slug];
+        const colors = d.colors || {};
+        const primary = colors.primary || "#3B82F6";
+        const surface = colors.surface || "#FFFFFF";
+        const text = colors.text || "#111827";
+        const isActive = slug === DESIGN_KEYS[currentIndex];
+
+        return `
+          <div class="style-card-item ${isActive ? 'active-style' : ''}" data-slug="${slug}" onclick="applyDesign('${slug}'); closeDrawer();">
+            <div class="style-item-header">
+              <span class="style-item-name">${d.name}</span>
+              <div class="style-swatches">
+                <span class="swatch-dot" style="background:${primary};" title="Primary: ${primary}"></span>
+                <span class="swatch-dot" style="background:${surface};" title="Surface: ${surface}"></span>
+                <span class="swatch-dot" style="background:${text};" title="Text: ${text}"></span>
+              </div>
+            </div>
+            <div class="style-item-meta">
+              ${d.category || 'Modern'} • ${d.typography?.h1?.fontFamily || 'Sans'}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterStyles(val) {
+      searchQuery = val;
+      renderStylesList();
+    }
+
+    function setCategoryFilter(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.drawer-cat-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderStylesList();
+    }
+
+    // Init
+    window.addEventListener('DOMContentLoaded', () => {
+      renderStylesList();
+      applyDesign("clean");
+    });
+
+    // Keyboard navigation (Left / Right arrow to flip styles)
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT') return;
+      if (e.key === 'ArrowRight') nextStyle();
+      if (e.key === 'ArrowLeft') prevStyle();
+    });
+  </script>
+
+</body>
+</html>
